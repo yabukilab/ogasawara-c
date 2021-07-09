@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS</title>
+               <link rel="stylesheet" href="0.css">
+    </head>
+    <body>
+        <h1 style=" background-color: rgb(131, 130, 130);"><center>予定確認</center></h1>
+        <div class="kakomi-box1">直近予定
+        </div> 
+        <div class="container">
+            <a href="#" class="btn-push0">仕&emsp;事</a>
+            </div>
+            <br><br>
+      
+
+    <div class="container">
+        
+            <a href="#" class="btn-push2">課&emsp;題</a>
+            </div>
+            <br><br>
+    <div class="container">
+                <a href="#" class="btn-push3">買い物</a>
+                </div>
+                <br><br>
+    <div class="container">
+                    <a href="#" class="btn-push4">遊&emsp;び</a>
+                    </div>
+                    <br>
+    <div class="container>
+                    <div class="container">
+                    <a href="#" class="btn-push6">&emsp;&emsp;履歴↻&emsp;&emsp;</a>
+                     </div>
+                    <br>
+    <div class="container">
+                     <a href="#" class="btn-push5">その他</a>
+                      </div>
+                      <br>
+
+     <div class="container">
+                        <a href="#" class="btn-push7">&emsp;ホーム画面&emsp;</a>
+                        </div>
+                        <br>
+
+                      
+    
+
+
+    </body>
+</html>
