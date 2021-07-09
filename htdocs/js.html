@@ -1,12 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-  </head>
-  <body>
-    
-    <canvas id="canvas1" width="300" height="300"></canvas>
-    <script type="text/javascript" src="a.js"></script>
-  </body>
-  </html>
+<head>
+  <meta charset="utf-8">
+　<title>グラフ</title> 
+</head>
+<body>
+  <h1>円グラフ</h1>
+  $sql
+  <canvas id="myPieChart"></canvas>
+  <script src="http://localhost/phpmyadmin/index.php?route=/sql&db=ogasawarac&table=itemtable&pos=0"></script>
+
+  <script>
+  var ctx = document.getElementById("myPieChart");
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ["A型", "O型", "B型", "AB型"],
+      datasets: [{
+          backgroundColor: [
+              "#BB5179",
+              "#FAFF67",
+              "#58A27C",
+              "#3C00FF"
+          ],
+          data: [38, 31, 21, 10]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: '血液型 割合'
+      }
+    }
+  });
+  </script>
+   <script type="text/javascript" src="a.js"></script>
+</body>
+</html>
+  
+
+ 
