@@ -2,20 +2,20 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>買い物確認</title>
+        <title>課題確認</title>
                <link rel="stylesheet" href="jobs.css" >
     </head>
     <body>
         <h1 style="background-color: rgb(130, 131, 130);">
         <center>予定確認</center></h1>
 
-      <div class="shop2-box">
-        <div class="shop1-box"　
+      <div class="kadai2-box">
+        <div class="kadai1-box"　
            style="background-color: rgb(144, 238, 144);">
-        <center>買い物</center>
+        <center>課題</center>
         </div>
       </div>
-      <div class="hyou3">
+      <div class="hyou2">
         <style>
          section {
 	        overflow: scroll;

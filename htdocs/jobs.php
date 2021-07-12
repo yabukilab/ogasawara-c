@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>課題確認</title>
+        <title>仕事確認</title>
                <link rel="stylesheet" href="jobs.css" >
     </head>
     <body>
@@ -33,15 +33,10 @@
           
           ?>
          </section>
-         <div class="jobs3-box">
-           <div class="container1">
-             <a href="#" class="btn-border">前の画面へ戻る</a>
-           </div>
-            </div>
-            <div class="jobs4-box">
-           <div class="container2">
-             <a href="#" class="btn-border1"></a>
-            </div>
-            </div>
+        <div class="jobs3-box">
+            <button  onclick="location.href='./check.php'" 
+                   class="container">
+            <a href="#" class="btn-push1">&emsp;前の画面へ&emsp;</a>
+          </botton>
    </body>
 </html>

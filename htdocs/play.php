@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>課題確認</title>
+        <title>遊び確認</title>
                <link rel="stylesheet" href="jobs.css" >
     </head>
     <body>

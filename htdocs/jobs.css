@@ -1,5 +1,6 @@
 h1{
   font-size:40px;
+  text-align: center;
   color: rgb(255, 255, 255);
    }
  .jobs2-box{
@@ -11,7 +12,6 @@ h1{
      margin: 10px auto;
      width: 50%;
      max-width: 100%;
-     box-align: center;
      font-size: 40px;
      color: #121312;
      text-decoration: none;
@@ -30,7 +30,6 @@ h1{
      margin: 10px auto;
      width: 50%;
      max-width: 100%;
-     box-align: center;
      font-size: 40px;
      color: #121312;
      text-decoration: none;
@@ -49,7 +48,6 @@ h1{
      margin: 10px auto;
      width: 50%;
      max-width: 100%;
-     box-align: center;
      font-size: 40px;
      color: #FFF;
      text-decoration: none;
@@ -69,7 +67,6 @@ h1{
      margin: 10px auto;
      width: 50%;
      max-width: 100%;
-     box-align: center;
      font-size: 40px;
      color: #121312;
      text-decoration: none;
@@ -88,7 +85,6 @@ h1{
      margin: 10px auto;
      width: 50%;
      max-width: 100%;
-     box-align: center;
      font-size: 40px;
      color: #121312;
      text-decoration: none;
@@ -98,48 +94,50 @@ h1{
      padding: 0.5em;  
      border-bottom: solid 4px #566320;
      }  
- .jobs3-box{
+ .history2{
    text-align: center;
-   }
- .btn-border {
-   margin: 10px auto;
-   width: 50%;
-   max-width: 80%;
-   box-align: center;
-   display: inline-block;
-   background-color: #979796;
-   font-size: 30px;
-   color: #FFF;
-   text-decoration: none;
-   font-weight: bold;
-   padding: 8px 88px;
-   border-radius: 4px;
-   border-bottom: 4px solid #585858;
-   }
- .btn-border:active {
-     transform: translateY(4px);
-     border-bottom: none;
-   }
-   .btn-border1 {
+ }
+ .history1{
+   
+  background:#ced;
+  display: inline-block;
+  margin: 10px auto;
+  width: 50%;
+  max-width: 100%;
+  font-size: 40px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 40px;
+  transition: .40s;
+  padding: 0.5em;  
+  border-bottom: solid 4px rgb(244, 247, 244);
+
+ }
+     .jobs3-box{
+   text-align: center;
+  }
+  .btn-push9 {
     position:fixed;
-    right:100px auto;
-    margin: 10px auto;
-    width: 50%;
-    max-width: 80%;
+    left:530px;
+    top:250px;
     display: inline-block;
-    font-size: 30px;
+    max-width: 360px;
+    text-align: left;
+    background-color: #999999;
+    font-size: 80px;
     color: #FFF;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 88px;
+    padding: 12px 32px;
     border-radius: 4px;
-    }
-  .btn-border1:active {
+    border-bottom: 4px solid #928f92c2;
+  }
+  
+  .btn-push9:active {
       transform: translateY(4px);
       border-bottom: none;
-    }
-  
-
+  }
 
 
 

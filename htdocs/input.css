@@ -1,0 +1,24 @@
+h1{
+  text-align: center;
+  font-size:60px;
+  color: #fdfdfd;
+  }
+  
+  .input1-box{
+    text-align: center;
+  } 
+    .input2-box{
+      background:#57d830c0;
+      display: inline-block;
+      margin: 10px auto;
+      width: 50%;
+      max-width: 100%;
+      font-size: 40px;
+      color: #121312;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 40px;
+      transition: .40s;
+      padding: 0.5em;  
+      border-bottom: solid 4px #2c6d18;
+      }
