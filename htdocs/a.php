@@ -1,18 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+
+<title>グラフ</title>
+</head>
+<body>
 <?php
-//データベース接続設定
-$dbServer = '127.0.0.1';
-$dbName = 'ogasawarac';
-$dsn = "mysql:host={$dbServer};
-dbname={$dbName};
-charset=utf8";
-$dbUser = 'test';
-$dbPass = 'pass';
-$db = new PDO($dsn, $dbUser, $dbPass);
-//検索実行
-$sql = 'select * from itemtable';
-$stmt = $dbh->query($sql);
-foreach ($stmt as $row) {
- echo $row['name'].'：'.$row['population'].'人';
- echo '<br>';
+require 'db.php';
+$sql = 'SELECT * FROM itemtable where userid = 1942001';
+$prepare = $db->prepare($sql);
+$prepare->execute();
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+$jobs=0;$subject=0;$shop=0;$play=0;$spare=0;
+foreach ($result as $r) {
+    if ($r['カテゴリ'] == "仕事") { ++$jobs;
+    }
+if ($r['カテゴリ'] == "課題") { ++$subject;
+    }
+if ($r['カテゴリ'] == "買い物") { ++$shop;
+    }
+if ($r['カテゴリ'] == "遊び") { ++$play;
+    }
+if ($r['カテゴリ'] == "その他") { ++$spare;
+    }
 }
+echo $jobs,$subject,$shop,$play,$spare
+
+
+
+
 ?>
+
+</body>
+</html>
