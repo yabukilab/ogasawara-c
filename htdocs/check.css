@@ -49,10 +49,10 @@ h1{
   
     
     .btn-push3 {
-      
+      position:fixed;
       left:50px;
       display: inline-block;
-      max-width: 180px;
+      max-width: 100px;
       text-align: left;
       background-color: #fcbf3dc0;
       font-size: 10px;
