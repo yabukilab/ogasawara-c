@@ -68,16 +68,16 @@ echo '</table>';
  
         </div> 
         <button  onclick="location.href='./jobs.php'" style="font-size:18px"
-                   class="btn-push0">仕事</button>
+                   class="btn-push0">仕 事</button>
             <br><br><br>
         <button  onclick="location.href='./subject.php'"style="font-size:18px"
-                   class="btn-push2">課題</button>
+                   class="btn-push2">課 題</button>
             <br><br><br>
             <button  onclick="location.href='./shop.php'" style="font-size:18px"
             class="btn-push3">買い物</button>
                 <br><br><br>
             <button  onclick="location.href='./play.php'"style="font-size:18px"
-            class="btn-push4">遊び</button>
+            class="btn-push4">遊 び</button>
                     <br><br>  
             <button  onclick="location.href='./history.php'"style="font-size:18px"
             class="btn-push6">履歴↻</button>
