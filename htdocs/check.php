@@ -70,10 +70,10 @@ echo '</table>';
         <button  onclick="location.href='./jobs.php'" 
                    class="btn-push0">仕事</button>
             <br><br><br>
-        <button  onclick="location.href='./subject.php'" style="font-size:4px"
+        <button  onclick="location.href='./subject.php'"
                    class="btn-push2">課題</button>
             <br><br><br>
-            <button  onclick="location.href='./shop.php'"
+            <button  onclick="location.href='./shop.php'" style="font-size:20px"
             class="btn-push3">買い物</button>
                 <br><br><br>
             <button  onclick="location.href='./play.php'"
