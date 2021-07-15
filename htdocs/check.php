@@ -30,7 +30,7 @@ charset=utf8";
 $dbUser = 'test';
 $dbPass = 'pass';
 //データベースへの接続
-$db = new PDO($dsn, $dbUser, $dbPass);
+$db =  PDO($dsn, $dbUser, $dbPass);
 $sql = 'SELECT * FROM itemtable 
 where userid = 1942001
 order by date
