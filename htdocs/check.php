@@ -71,7 +71,7 @@ echo '</table>';
                    class="btn-push0">仕事</button>
             <br><br><br>
         <button  onclick="location.href='./subject.php'" 
-                   class="btn-push2">課題</button>
+                   class="btn-push2"style="font: size 4px;>課題</button>
             <br><br><br>
             <button  onclick="location.href='./shop.php'"
             class="btn-push3">買い物</button>
