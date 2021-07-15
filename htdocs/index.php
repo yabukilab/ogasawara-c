@@ -7,7 +7,7 @@ if (isset($_POST['userid'], $_POST['password'])) {
   $password = $_POST['password']; 
  //DBの接続とDBhへの登録//
  require 'db.php';
-  $sql = 'select * from ogasawarac where userid= "'.$userid.'" && passwd="'.$password.'"';
+  $sql = 'select * from usertable where userid= "'.$userid.'" && passwd="'.$password.'"';
   $prepare = $db->prepare($sql);
   $prepare->execute();
   $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
