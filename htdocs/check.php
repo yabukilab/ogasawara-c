@@ -72,31 +72,31 @@ echo '</table>';
             <a href="#" class="btn-push0">仕&emsp;事</a>
         </button>
             <br><br><br>
-        <button  onclick="location.href='./subject.php'" 
-                   class="container">
-        <a href="#" class="btn-push2">課&emsp;題</a>
-        </button>
+    <div class="container">
+        
+            <a href="subject.php" class="btn-push2">課&emsp;題</a>
+            </div>
             <br><br><br>
     <div class="container">
-                <a href="http://localhost/new/shop.php" class="btn-push3">買い物</a>
+                <a href="shop.php" class="btn-push3">買い物</a>
                 </div>
                 <br><br><br>
     <div class="container">
-                    <a href="http://localhost/new/play.php" class="btn-push4">遊&emsp;び</a>
+                    <a href="play.php" class="btn-push4">遊&emsp;び</a>
                     </div>
                     <br><br>  
     <div class="container">
                     <div class="container">
-                    <a href="http://localhost/new/history.php" class="btn-push6">&emsp;&emsp;履歴↻&emsp;&emsp;</a>
+                    <a href="history.php" class="btn-push6">&emsp;&emsp;履歴↻&emsp;&emsp;</a>
                      </div>
                     <br>
     <div class="container">
-                     <a href="http://localhost/new/spare.php" class="btn-push5">その他</a>
+                     <a href="spare.php" class="btn-push5">その他</a>
                       </div>
                       <br><br>
 
      <div class="container">
-                        <a href="http://localhost/new/submit2.php" class="btn-push6">&emsp;ホーム画面&emsp;</a>
+                        <a href="submit2.php" class="btn-push6">&emsp;ホーム画面&emsp;</a>
                         </div>
                         <br>            
 
