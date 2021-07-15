@@ -67,26 +67,26 @@ echo '</table>';
 ?>   
  
         </div> 
-        <button  onclick="location.href='./jobs.php'" 
+        <button  onclick="location.href='./jobs.php'" style="font-size:18px"
                    class="btn-push0">仕事</button>
             <br><br><br>
-        <button  onclick="location.href='./subject.php'"
+        <button  onclick="location.href='./subject.php'"style="font-size:18px"
                    class="btn-push2">課題</button>
             <br><br><br>
             <button  onclick="location.href='./shop.php'" style="font-size:18px"
             class="btn-push3">買い物</button>
                 <br><br><br>
-            <button  onclick="location.href='./play.php'"
+            <button  onclick="location.href='./play.php'"style="font-size:18px"
             class="btn-push4">遊び</button>
                     <br><br>  
-            <button  onclick="location.href='./history.php'"
+            <button  onclick="location.href='./history.php'"style="font-size:18px"
             class="btn-push6">履歴↻</button>
                     <br>
-            <button  onclick="location.href='./spare.php'"
+            <button  onclick="location.href='./spare.php'"style="font-size:18px"
             class="btn-push4">その他</button>
                       <br><br>
 
-            <button  onclick="location.href='./submit2.php'"
+            <button  onclick="location.href='./submit2.php'"style="font-size:18px"
             class="btn-push6">ホーム画面</button>
                         <br>            
 
