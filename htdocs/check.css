@@ -49,6 +49,7 @@ h1{
   
     
     .btn-push3 {
+      padding: auto;
       position:fixed;
       left:50px;
       display: inline-block;
