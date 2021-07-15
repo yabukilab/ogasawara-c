@@ -74,7 +74,7 @@ echo '</table>';
             <br><br><br>
         <button  onclick="location.href='./subject.php'" 
                    class="btn-push2">
-        <a href="#" class="btn-push2">課&emsp;題</a>
+        課&emsp;題
         </button>
             <br><br><br>
     <div class="container">
