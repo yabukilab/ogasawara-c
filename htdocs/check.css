@@ -2,19 +2,21 @@ h1{
   font-size:40px;
   color: #fdfdfd;
   }
+
+
   
   .btn-push0 {
       position:fixed;
-      left:30px;
+      left:50px;
       display: inline-block;
       max-width: 180px;
       text-align: left;
       background-color: #70c6ffc2;
-      font-size: 16px;
+      font-size: 25px;
       color: #FFF;
       text-decoration: none;
       font-weight: bold;
-      padding: 6px 16px;
+      padding: 10px 60px;
       border-radius: 4px;
       border-bottom: 4px solid #2c6266c2;
     }
@@ -26,16 +28,16 @@ h1{
   
     .btn-push2 {
       position:fixed;
-      left:30px;
+      left:50px;
       display: inline-block;
       max-width: 180px;
       text-align: left;
       background-color: #57d830c0;
-      font-size: 16px;
+      font-size: 25px;
       color: #FFF;
       text-decoration: none;
       font-weight: bold;
-      padding: 6px 16px;
+      padding: 10px 60px;
       border-radius: 4px;
       border-bottom: 4px solid #2c6d18;
     }
@@ -48,16 +50,16 @@ h1{
     
     .btn-push3 {
       position:fixed;
-      left:30px;
+      left:50px;
       display: inline-block;
       max-width: 180px;
       text-align: left;
       background-color: #fcbf3dc0;
-      font-size: 16px;
+      font-size: 25px;
       color: #FFF;
       text-decoration: none;
       font-weight: bold;
-      padding: 6px 16px;
+      padding: 10px 60px;
       border-radius: 4px;
       border-bottom: 4px solid #6d531b;
     }
@@ -70,16 +72,16 @@ h1{
     
     .btn-push4 {
       position:fixed;
-      left:30px;
+      left:50px;
       display: inline-block;
       max-width: 180px;
       text-align: left;
       background-color: #bcc906;
-      font-size: 16px;
+      font-size: 25px;
       color: #FFF;
       text-decoration: none;
       font-weight: bold;
-      padding: 6px 16px;
+      padding: 10px 60px;
       border-radius: 4px;
       border-bottom: 4px solid #566320;
     }
@@ -92,16 +94,16 @@ h1{
     
     .btn-push5 {
       position:fixed;
-      left:30px;
+      left:50px;
       display: inline-block;
       max-width: 180px;
       text-align: left;
       background-color: #8f8f8f;
-      font-size: 16px;
+      font-size: 25px;
       color: #FFF;
       text-decoration: none;
       font-weight: bold;
-      padding: 6px 16px;
+      padding: 10px 60px;
       border-radius: 4px;
       border-bottom: 4px solid #383838c2;
     }
@@ -120,11 +122,11 @@ h1{
       max-width: 180px;
       text-align: left;
       background-color: #979796;
-      font-size: 16px;
+      font-size: 20px;
       color: #FFF;
       text-decoration: none;
       font-weight: bold;
-      padding: 8px 88px;
+      padding: 8px 220px;
       border-radius: 4px;
       border-bottom: 4px solid #585858;
     }
@@ -134,21 +136,18 @@ h1{
         border-bottom: none;
         
     }
-  
-  
     .btn-push7 {
+      left: 400px;
       position:fixed;
-      right:50px;
-  
       display: inline-block;
-      max-width: 180px;
-      text-align: left;
+      max-width: 100px;
+      text-align: center;
       background-color: #979796;
-      font-size: 16px;
-      color: #FFF;
+      font-size: 10px;
+      color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      padding: 8px 88px;
+      padding: 110px 110px;
       border-radius: 4px;
       border-bottom: 4px solid #585858;
     }
@@ -156,16 +155,20 @@ h1{
     .btn-push7:active {
         transform: translateY(4px);
         border-bottom: none;
+        
     }
   
+  
     .kakomi-box1 {
+      box-sizing: border-box;
       position:fixed;
       right:50px;
       color: #979796;
       text-align: center;
-      margin: 1em auto;
-      padding: 2em;
-      width: 25%;
+      margin: 0em auto;
+      padding: 0m;
+      width: auto;
+      height: auto;
       background-color: #FFF; /* 背景色 */
       border: 3px solid #979796; /* 枠線 */
      }

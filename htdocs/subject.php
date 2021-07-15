@@ -29,13 +29,53 @@
           figure { width: 30px;}
         </style>
          <section>
-	      <?php
-
+	       <?php
+          //データベース接続設定
+          $dbServer = '127.0.0.1';
+          $dbName = 'ogasawarac';
+          $dsn = "mysql:host={$dbServer};
+          dbname={$dbName};
+          charset=utf8";
+          $dbUser = 'test';
+          $dbPass = 'pass';
+          //データベースへの接続
+          $db = new PDO($dsn, $dbUser, $dbPass);
+          $sql = 'SELECT * FROM itemtable where userid = 1942001
+          and status="確認"
+          and category="課題"
+          ORDER BY date';
+          $prepare = $db->prepare($sql);
+          $prepare->execute();
+          $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+  
+          echo '<table border="0">';
+        
+          
+  foreach ($result as $r) {
+  echo '<tr >';
+  switch ($r['category']) {
+      case "課題":
+          echo '  <th><font color=#66CCFF>';
+          break;
+  }
+ 
+  echo '  </th>';
+  echo '  <th >';
+  echo '<font size ="6">';
+  echo $r['contents'];
+  echo '  </th>';
+  echo '  <th>';
+  echo '<font size ="6">';
+  echo $r['date'];
+  echo '  </th>';
+  echo '<tr>';
+  }
+  echo '</table>';
           ?>
          </section>
          <div class="jobs3-box">
            <div class="container1">
-             <a href="#" class="btn-border">前の画面へ戻る</a>
+             <a href="http://localhost/new/check.php" class="btn-border">前の画面へ戻る</a>
            </div>
         </div>
 

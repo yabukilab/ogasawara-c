@@ -114,6 +114,8 @@ h1{
     .btn-push6 {
       position:fixed;
       right:50px;
+      
+  
       display: inline-block;
       max-width: 180px;
       text-align: left;
@@ -158,12 +160,12 @@ h1{
   
     .kakomi-box1 {
       position:fixed;
-      right:50px;
+      right:100px;
       color: #979796;
       text-align: center;
       margin: 1em auto;
-      padding: 2em;
-      width: 25%;
+      padding: 3em;
+      width: 55%;
       background-color: #FFF; /* 背景色 */
       border: 3px solid #979796; /* 枠線 */
      }

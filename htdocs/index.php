@@ -14,7 +14,7 @@ if (isset($_POST['userid'], $_POST['password'])) {
   if($result != null){
     session_regenerate_id();  // セッションを作り直す
     $_SESSION['userid'] = $userid;
-    header('Location: submit.php');
+    header('Location: submit2.php');
   } else { 
     $message = "ユーザ名またはパスワードが違います．";
   }
