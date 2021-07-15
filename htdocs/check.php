@@ -68,7 +68,7 @@ echo '</table>';
  
         </div> 
         <button  onclick="location.href='./jobs.php'" 
-                   class="btn-push0">仕&emsp;事</button>
+                   class="btn-push0">仕事</button>
             <br><br><br>
         <button  onclick="location.href='./subject.php'" 
                    class="btn-push2">課題</button>
