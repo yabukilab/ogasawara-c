@@ -73,27 +73,21 @@ echo '</table>';
         <button  onclick="location.href='./subject.php'" 
                    class="btn-push2">課題</button>
             <br><br><br>
-    <div class="container">
-                <a href="shop.php" class="btn-push3">買い物</a>
-                </div>
+            <button  onclick="location.href='./shop.php'"
+            class="btn-push3">買い物</button>
                 <br><br><br>
-    <div class="container">
-                    <a href="play.php" class="btn-push4">遊&emsp;び</a>
-                    </div>
+            <button  onclick="location.href='./play.php'"
+            class="btn-push4">遊び</button>
                     <br><br>  
-    <div class="container">
-                    <div class="container">
-                    <a href="history.php" class="btn-push6">&emsp;&emsp;履歴↻&emsp;&emsp;</a>
-                     </div>
+            <button  onclick="location.href='./history.php'"
+            class="btn-push6">履歴↻</button>
                     <br>
-    <div class="container">
-                     <a href="spare.php" class="btn-push5">その他</a>
-                      </div>
+            <button  onclick="location.href='./spare.php'"
+            class="btn-push4">その他</button>
                       <br><br>
 
-     <div class="container">
-                        <a href="submit2.php" class="btn-push6">&emsp;ホーム画面&emsp;</a>
-                        </div>
+            <button  onclick="location.href='./submit2.php'"
+            class="btn-push6">&emsp;ホーム画面&emsp;</button>
                         <br>            
 
                       
