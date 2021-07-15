@@ -87,7 +87,7 @@ echo '</table>';
                       <br><br>
 
             <button  onclick="location.href='./submit2.php'"
-            class="btn-push6">&emsp;ホーム画面&emsp;</button>
+            class="btn-push6">ホーム画面</button>
                         <br>            
 
                       
