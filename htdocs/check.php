@@ -10,9 +10,6 @@
         <h1 style=" background-color: rgb(131, 130, 130);"><center>予定確認</center></h1>
         <div class="kakomi-box1">
             <font size="6">直近予定</font>
-
-            
-
           
             <button  onclick="location.href='./test.php'" 
                    class="container">
@@ -75,9 +72,10 @@ echo '</table>';
 ?>   
  
         </div> 
-        <div class="container">
-            <a href="http://localhost/new/jobs.php" class="btn-push0">仕&emsp;事</a>
-            </div>
+        <button  onclick="location.href='./jobs.php'" 
+                   class="container">
+            <a href="#" class="btn-push0">仕&emsp;事</a>
+        </button>
             <br><br><br>
     <div class="container">
         
