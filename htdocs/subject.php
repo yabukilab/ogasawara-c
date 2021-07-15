@@ -73,10 +73,11 @@
   echo '</table>';
           ?>
          </section>
-         <div class="jobs3-box">
-           <div class="container1">
-             <a href="check.php" class="btn-border">前の画面へ戻る</a>
-           </div>
+        <div class="jobs3-box">
+        <button  onclick="location.href='./check.php'" 
+                 class="container1">
+        <a href="#" class="btn-border">前の画面へ戻る</a>
+        </botton>
         </div>
 
 
