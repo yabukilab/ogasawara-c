@@ -35,6 +35,7 @@ if (isset($_POST['userid'], $_POST['password'])) {
  
   <h2 style="background-color: #fff; 
              text-align: center;">
+             
     <?php echo $message; ?></h2>
   
   <div style="text-align: center;">
