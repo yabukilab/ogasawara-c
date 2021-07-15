@@ -10,9 +10,12 @@
         <div class="con">
             <div class="target">完了しました</div>
           </div>
+
+          
+
           <button  onclick="location.href='./submit2.php'" 
                    class="container">
-            <a href="http://localhost/new/submit2.php" class="btn-push8">&emsp;ホーム画面&emsp;</a>
+            <a href="#" class="btn-push8">&emsp;ホーム画面&emsp;</a>
           </botton>
          
 
