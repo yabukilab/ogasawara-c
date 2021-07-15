@@ -72,10 +72,10 @@ echo '</table>';
             <a href="#" class="btn-push0">仕&emsp;事</a>
         </button>
             <br><br><br>
-    <div class="container">
-        
-            <a href="http://localhost/new/subject.php" class="btn-push2">課&emsp;題</a>
-            </div>
+        <button  onclick="location.href='./subject.php'" 
+                   class="container">
+        <a href="#" class="btn-push2">課&emsp;題</a>
+        </button>
             <br><br><br>
     <div class="container">
                 <a href="http://localhost/new/shop.php" class="btn-push3">買い物</a>
