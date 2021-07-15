@@ -117,7 +117,7 @@ h1{
      .jobs3-box{
    text-align: center;
   }
-  .btn-push9 {
+  .btn-push {
     position:fixed;
     left:530px;
     top:250px;
@@ -134,11 +134,11 @@ h1{
     border-bottom: 4px solid #928f92c2;
   }
   
-  .btn-push9:active {
+  .btn-push:active {
       transform: translateY(4px);
       border-bottom: none;
   }
-
+  
 
 
 

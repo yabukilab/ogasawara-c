@@ -32,7 +32,7 @@
 	       <?php
           //データベース接続設定
           $dbServer = '127.0.0.1';
-          $dbName = 'ogasawarac';
+          $dbName = 'mydb';
           $dsn = "mysql:host={$dbServer};
           dbname={$dbName};
           charset=utf8";
@@ -73,10 +73,11 @@
   echo '</table>';
           ?>
          </section>
-         <div class="jobs3-box">
-           <div class="container1">
-             <a href="http://localhost/new/check.php" class="btn-border">前の画面へ戻る</a>
-           </div>
+        <div class="jobs3-box">
+        <button  onclick="location.href='./check.php'" 
+                 class="container1">
+        <a href="#" class="btn-border">前の画面へ戻る</a>
+        </botton>
         </div>
 
 
