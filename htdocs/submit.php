@@ -14,21 +14,19 @@ $userid = $_SESSION['userid']; // ユーザ名を思い出す．
   <link rel="stylesheet" href="submit.css">
 </head>
 <body>
-    <h1 style="background-color: rgb(131, 130, 130)"> 
+    <h1 style="background-color: rgb(131, 130, 130);
+               text-align: center;"> 
     TODO管理システム</h1>
 
     <button  onclick="location.href='./input.php'" 
              class="container">
-    <a href="#" class="btn-push0"
-       style="background-color: #928f92c2 " >予定入力</a>
-    </botton>
-    
-    
+    <a href="#" class="btn-push0">予定入力</a>
+</botton>
+    <br><br>
     <button  onclick="location.href='./check.php'" 
              class="container">
-    <a href="#" class="btn-push1"
-       style="background-color: #928f92c2">予定確認</a>
-    </botton>
-      
+    <a href="#" class="btn-push1">予定確認</a>
+</botton>
+    <br><br>  
 </body>
 </html>
