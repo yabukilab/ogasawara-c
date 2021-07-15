@@ -10,9 +10,15 @@
         <h1 style=" background-color: rgb(131, 130, 130);"><center>予定確認</center></h1>
         <div class="kakomi-box1">
             <font size="6">直近予定</font>
-            <div class="container">
-        <a href="http://localhost/new/test.php" class="btn-push7">&emsp;グラフを見る&emsp;</a>
-        </div>
+
+            
+
+          
+            <button  onclick="location.href='./test.php'" 
+                   class="container">
+        <a href="#" class="btn-push7">&emsp;グラフを見る&emsp;</a>
+        </botton>
+
         <br>
         <?php
 //データベース接続設定
