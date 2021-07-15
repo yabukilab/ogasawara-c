@@ -1,0 +1,141 @@
+h1{
+    font-size:40px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+     }
+   .jobs2-box{
+     text-align: center;
+     }
+     .jobs1-box {
+       background:#70c6ffc2;
+       display: inline-block;
+       margin: 10px auto;
+       width: 50%;
+       max-width: 100%;
+       font-size: 40px;
+       color: #121312;
+       text-decoration: none;
+       font-weight: bold;
+       border-radius: 40px;
+       transition: .40s;
+       padding: 0.5em;  
+       border-bottom: solid 4px #70c6ffc2;
+       }
+   .kadai2-box{
+     text-align: center;
+     }
+     .kadai1-box {
+       background:#57d830c0;
+       display: inline-block;
+       margin: 10px auto;
+       width: 50%;
+       max-width: 100%;
+       font-size: 40px;
+       color: #121312;
+       text-decoration: none;
+       font-weight: bold;
+       border-radius: 40px;
+       transition: .40s;
+       padding: 0.5em;  
+       border-bottom: solid 4px #2c6d18;
+       }
+   .spare2-box{
+     text-align: center;
+     }
+     .spare1-box {
+       background:#ced;
+       display: inline-block;
+       margin: 10px auto;
+       width: 50%;
+       max-width: 100%;
+       font-size: 40px;
+       color: #FFF;
+       text-decoration: none;
+       font-weight: bold;
+       border-radius: 40px;
+       transition: .40s;
+       padding: 0.5em;  
+       border-bottom: solid 4px rgb(244, 247, 244);
+       }
+   
+   .shop2-box{
+     text-align: center;
+     }
+     .shop1-box {
+       background:#fcbf3dc0;
+       display: inline-block;
+       margin: 10px auto;
+       width: 50%;
+       max-width: 100%;
+       font-size: 40px;
+       color: #121312;
+       text-decoration: none;
+       font-weight: bold;
+       border-radius: 40px;
+       transition: .40s;
+       padding: 0.5em;  
+       border-bottom: solid 4px #6d531b;
+       }
+   .play2-box{
+     text-align: center;
+     }
+     .play1-box {
+       background:#bcc906;
+       display: inline-block;
+       margin: 10px auto;
+       width: 50%;
+       max-width: 100%;
+       font-size: 40px;
+       color: #121312;
+       text-decoration: none;
+       font-weight: bold;
+       border-radius: 40px;
+       transition: .40s;
+       padding: 0.5em;  
+       border-bottom: solid 4px #566320;
+       }  
+   .history2{
+     text-align: center;
+   }
+   .history1{
+     
+    background:#ced;
+    display: inline-block;
+    margin: 10px auto;
+    width: 50%;
+    max-width: 100%;
+    font-size: 40px;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: .40s;
+    padding: 0.5em;  
+    border-bottom: solid 4px rgb(244, 247, 244);
+  
+   }
+       .jobs3-box{
+     text-align: center;
+    }
+    .btn-push9 {
+      position:fixed;
+      left:530px;
+      top:250px;
+      display: inline-block;
+      max-width: 360px;
+      text-align: left;
+      background-color: #999999;
+      font-size: 80px;
+      color: #FFF;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 32px;
+      border-radius: 4px;
+      border-bottom: 4px solid #928f92c2;
+    }
+    
+    .btn-push9:active {
+        transform: translateY(4px);
+        border-bottom: none;
+    }
+  
