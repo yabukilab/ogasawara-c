@@ -79,14 +79,14 @@ echo '</table>';
             <button  onclick="location.href='./play.php'"style="font-size:18px"
             class="btn-push4">遊 び</button>
                     <br><br>  
-            <button  onclick="location.href='./history.php'"style="font-size:18px"
+            <button  onclick="location.href='./history.php'"style="font-size:10px"
             class="btn-push6">履歴↻</button>
                     <br>
             <button  onclick="location.href='./spare.php'"style="font-size:18px"
             class="btn-push4">その他</button>
                       <br><br>
 
-            <button  onclick="location.href='./submit2.php'"style="font-size:18px"
+            <button  onclick="location.href='./submit2.php'"style="font-size:10px"
             class="btn-push6">ホーム画面</button>
                         <br>            
 
