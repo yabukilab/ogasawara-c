@@ -32,7 +32,7 @@
 	      <?php
           //データベース接続設定
           $dbServer = '127.0.0.1';
-          $dbName = 'ogasawarac';
+          $dbName = 'mydb';
           $dsn = "mysql:host={$dbServer};
           dbname={$dbName};
           charset=utf8";
