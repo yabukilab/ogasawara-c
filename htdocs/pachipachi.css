@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.store {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.store h2 {
+    color: #333;
+}
+
+.store img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+}
+.links a {
+    color: white;
+    /* 他のスタイル（例：フォントサイズ、マージンなど）もここに追加できます */
+}
+.links {
+    background-color: gray; /* グレー色に設定 */
+}
+header {
+    background-color: #333; /* 暗い背景色 */
+    /* 他のスタイル */
+}
+
+.links {
+    background-color: #444; /* 明るいグレー色 */
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+    /* 他のスタイル */
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    /* リンクのスタイル */
+}
+
+h1 {
+    color: white;
+    background-color: #333; /* `header` と同じ背景色を適用 */
+    margin: 0;
+    padding: 1em 0;
+    /* タイトルのスタイル */
+}
