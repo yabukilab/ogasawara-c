@@ -3,7 +3,11 @@ body{
     font-size: larger;
 }
 
-@media only screen and (max-width: 600px) {
+p{
+	text-align: left;
+}
+
+@media only screen and (max-width: 800px) {
     /* 小さな画面用にフォントサイズを調整 */
     body {
         font-size: 14px;
@@ -22,11 +26,12 @@ body{
 table , td, th {
 	border: 1px solid #595959;
 	border-collapse: collapse;
-    font-size: large;
+    font-size: 30px;
+	
 }
 td, th {
 	padding: 3px;
-	width: 250px;
+	width: 500px;
 	height: 15px;
 }
 th {
@@ -41,14 +46,22 @@ th {
 
 h1{
     color: white;
-    font-size: 200%;
+    font-size: 300%;
+}
+
+h2{
+	font-size: 300%;
 }
 
 h3{
-	font-size: 150%;
+	font-size: 300%;
 }
 
 h4{
+	font-size: 300%;
+}
+
+h5{
 	font-size: 150%;
 }
 
@@ -85,3 +98,7 @@ section {
 	margin-bottom: 20px;
 	border-radius: 8px;
   }
+
+  table{
+	margin: auto;
+}
