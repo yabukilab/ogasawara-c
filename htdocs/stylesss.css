@@ -3,8 +3,8 @@ body{
     font-size: larger;
 }
 
-p1{
-	font-size: larger;
+p{
+	text-align: left;
 }
 
 @media only screen and (max-width: 800px) {
