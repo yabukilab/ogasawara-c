@@ -27,6 +27,7 @@ table , td, th {
 	border: 1px solid #595959;
 	border-collapse: collapse;
     font-size: 30px;
+	
 }
 td, th {
 	padding: 3px;
