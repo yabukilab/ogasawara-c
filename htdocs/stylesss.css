@@ -1,9 +1,12 @@
 body{
     text-align: center;
-    font-size: larger;
 }
 
-@media only screen and (max-width: 600px) {
+p{
+	text-align: left;
+}
+
+@media only screen and (max-width: 800px) {
     /* 小さな画面用にフォントサイズを調整 */
     body {
         font-size: 14px;
@@ -22,11 +25,12 @@ body{
 table , td, th {
 	border: 1px solid #595959;
 	border-collapse: collapse;
-    font-size: large;
+    font-size: 15px;
+	
 }
 td, th {
 	padding: 3px;
-	width: 250px;
+	width: 300px;
 	height: 15px;
 }
 th {
@@ -40,17 +44,25 @@ th {
 }
 
 h1{
-    color: white;
-    font-size: 200%;
+	font-size: xx-large;
+}
+
+h2{
+	font-size: 300%;
 }
 
 h3{
-	font-size: 150%;
+	font-size: 300%;
 }
 
 h4{
+	font-size: 300%;
+}
+
+h5{
 	font-size: 150%;
 }
+
 
 header {
 	background-color: orange;
@@ -63,14 +75,14 @@ nav {
 	display: flex;
 	justify-content: space-around;
 	background-color: rgb(255, 140, 0);
-	padding: 1.5em;
+	padding: 1.2em;
 }
 
 nav a {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 1.5em;
 }
 
 iframe {
@@ -85,3 +97,7 @@ section {
 	margin-bottom: 20px;
 	border-radius: 8px;
   }
+
+  table{
+	margin: auto;
+}
