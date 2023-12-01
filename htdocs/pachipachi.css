@@ -15,8 +15,8 @@ header {
 nav {
 	display: flex;
 	justify-content: space-around;
-	background-color: rgb(255, 140, 0);
-	padding: 1.5em;
+	background-color: rgb(25, 16, 87);
+	padding: 1.2em;
 }
 
 nav a {
