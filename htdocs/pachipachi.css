@@ -104,6 +104,6 @@ h1 {
 }
 
 iframe {
-	width: 100%;
+	width: 500px;
 	height: 300px; /* マップの高さを調整 */
 }
