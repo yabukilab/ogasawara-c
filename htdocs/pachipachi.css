@@ -6,25 +6,12 @@ body {
 }
 
 header {
-	background-color: orange;
-	color: #fff;
-	text-align: center;
-	padding: 1em;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
 }
 
-nav {
-	display: flex;
-	justify-content: space-around;
-	background-color: rgb(25, 16, 87);
-	padding: 1.2em;
-}
-
-nav a {
-	color: #fff;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 1.5em;
-}
 header h1 {
     margin: 0;
 }
@@ -47,7 +34,7 @@ header h1 {
 }
 
 table {
-    width: 50%;
+    width: 100%;
     margin-top: 10px;
     border-collapse: collapse;
 }
@@ -95,29 +82,17 @@ header {
     /* リンクのスタイル */
 }
 
-h1 {
-    color: white;
-    background-color: #333; /* `header` と同じ背景色を適用 */
-    margin: 0;
-    padding: 1em 0;
-    /* タイトルのスタイル */
+.links a {
+    font-size: 20px; /* 希望のサイズに設定 */
+    /* 他のスタイル */
 }
-<<<<<<< HEAD
-/* メディアクエリを追加 */
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 1000px) {
     .links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
     }
-
     .links a {
-        margin: 10px 0;
+        display: block;
+        margin-bottom: 10px;
     }
-=======
-
-iframe {
-	width: 300px;
-	height: 300px; /* マップの高さを調整 */
->>>>>>> 6058be072b9ebfc2b0f87bfe3ae38c29b8e8af6e
 }
