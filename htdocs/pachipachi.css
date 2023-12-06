@@ -55,36 +55,16 @@ th {
 .links {
     display: flex;
     justify-content: space-around;
-}
-.links a {
-    color: white;
-    /* 他のスタイル（例：フォントサイズ、マージンなど）もここに追加できます */
-}
-.links {
-    background-color: gray; /* グレー色に設定 */
-}
-header {
-    background-color: #333; /* 暗い背景色 */
-    /* 他のスタイル */
-}
-
-.links {
-    background-color: #444; /* 明るいグレー色 */
-    display: flex;
-    justify-content: space-around;
+    background-color: #444;
     padding: 1em 0;
-    /* 他のスタイル */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .links a {
     color: white;
     text-decoration: none;
-    /* リンクのスタイル */
-}
-
-.links a {
-    font-size: 20px; /* 希望のサイズに設定 */
-    /* 他のスタイル */
 }
 
 @media screen and (max-width: 1000px) {
