@@ -1,11 +1,6 @@
 <?php
-$servername = "127.0.0.1";
-$username = "testuser";
-$password = "pass";
-$dbname = "mydb";
-
-// データベース接続
-$conn = new mysqli($servername, $username, $password, $dbname);
+session_start();
+require('db.php');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
