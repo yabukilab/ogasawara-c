@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "db_food";
 $password = "food";
-$dbname = "food_archive";
+$dbname = "mydb";
 
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
