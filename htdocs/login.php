@@ -1,48 +1,36 @@
 <?php
 session_start();
-
-$servername = "127.0.0.1";
-$username = "testuser";
-$password = "pass";
-$dbname = "mydb";
-
-// データベース接続
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require('db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST["user_name"];
     $user_pass = $_POST["user_pass"];
 
-    // SQL インジェクション対策としてプリペアドステートメントを使用
-    $stmt = $conn->prepare("SELECT user_id, user_name, user_pass FROM Users WHERE user_name = ?");
-    $stmt->bind_param("s", $user_name);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    try {
+        // SQL インジェクション対策としてプリペアドステートメントを使用
+        $stmt = $db->prepare("SELECT user_id, user_name, user_pass FROM Users WHERE user_name = ?");
+        $stmt->bindParam(1, $user_name);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($user_pass, $row["user_pass"])) {
-            // ログイン成功時の処理
-            $_SESSION["user_id"] = $row["user_id"];  // ユーザーIDをセッションに保存
-            $_SESSION["user_name"] = $row["user_name"];  // ユーザー名もセッションに保存
-            $stmt->close();
-            header("Location: menu.php");
-            exit(); // リダイレクト後にスクリプトの実行を終了
+        if ($row) {
+            if (password_verify($user_pass, $row["user_pass"])) {
+                // ログイン成功時の処理
+                $_SESSION["user_id"] = $row["user_id"];  // ユーザーIDをセッションに保存
+                $_SESSION["user_name"] = $row["user_name"];  // ユーザー名もセッションに保存
+                header("Location: menu.php");
+                exit(); // リダイレクト後にスクリプトの実行を終了
+            } else {
+                // パスワードが一致しない場合
+                echo "パスワードが一致しません";
+            }
         } else {
-            // パスワードが一致しない場合
-            echo "パスワードが一致しません";
+            // ユーザーが見つからない場合
+            echo "ユーザーが見つかりません";
         }
-    } else {
-        // ユーザーが見つからない場合
-        echo "ユーザーが見つかりません";
+    } catch (PDOException $e) {
+        echo "Error: " . h($e->getMessage());
     }
-
-    $stmt->close();
-    $conn->close();
 }
 ?>
 
