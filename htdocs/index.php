@@ -1,10 +1,5 @@
 <?php
-session_start();
 require('db.php');
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST["user_name"];
@@ -16,31 +11,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user_pass !== $confirm_password) {
         echo "パスワードが間違っています．もう一度入力し直してください．";
     } else {
-        // 学籍番号が既に存在するか確認
-        $check_sql = "SELECT * FROM Users WHERE user_name = '$user_name'";
-        $result = $conn->query($check_sql);
+        try {
+            // 学籍番号が既に存在するか確認
+            $check_sql = "SELECT * FROM Users WHERE user_name = :user_name";
+            $stmt = $db->prepare($check_sql);
+            $stmt->bindParam(':user_name', $user_name);
+            $stmt->execute();
 
-        if ($result->num_rows > 0) {
-            echo "この学籍番号はすでに登録されています";
-        } else {
-            // パスワードをハッシュ化
-            $hashed_password = password_hash($user_pass, PASSWORD_DEFAULT);
-
-            $sql = "INSERT INTO Users (user_name, user_pass, user_gender) VALUES ('$user_name', '$hashed_password', '$user_gender')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "登録が完了しました";
-                // 登録後にログインページにリダイレクト
-                header("Location: login.php");
-                exit();
+            if ($stmt->rowCount() > 0) {
+                echo "この学籍番号はすでに登録されています";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                // パスワードをハッシュ化
+                $hashed_password = password_hash($user_pass, PASSWORD_DEFAULT);
+
+                $sql = "INSERT INTO Users (user_name, user_pass, user_gender) VALUES (:user_name, :user_pass, :user_gender)";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':user_name', $user_name);
+                $stmt->bindParam(':user_pass', $hashed_password);
+                $stmt->bindParam(':user_gender', $user_gender);
+
+                if ($stmt->execute()) {
+                    echo "登録が完了しました";
+                    // 登録後にログインページにリダイレクト
+                    header("Location: login.php");
+                    exit();
+                } else {
+                    echo "Error: " . $sql . "<br>" . $db->errorInfo();
+                }
             }
+        } catch (PDOException $e) {
+            echo "Error: " . h($e->getMessage());
         }
     }
 }
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
