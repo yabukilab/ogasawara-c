@@ -65,6 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <p>未登録の方はこちら</p>
-    <a href="register.php">新規登録ページ</a>
+    <a href="index.php">新規登録ページ</a>
 </body>
 </html>
