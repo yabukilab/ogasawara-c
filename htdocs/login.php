@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "db_food";
-$password = "food";
-$dbname = "food_archive";
+$servername = "127.0.0.1";
+$username = "testuser";
+$password = "pass";
+$dbname = "mydb";
 
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
