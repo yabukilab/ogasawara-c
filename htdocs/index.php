@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "db_food";
-$password = "food";
+$servername = "127.0.0.1";
+$username = "testuser";
+$password = "pass";
 $dbname = "mydb";
 
 // データベース接続
