@@ -29,7 +29,7 @@ $stmt_update_average->close();
 
 $conn->close();
 
-// 評価が保存された後にmenu.phpにリダイレクトする 
+// 評価が保存された後にmenu.phpにリダイレクトする
 header("Location: menu.php");
 exit();
 ?>

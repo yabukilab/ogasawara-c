@@ -2,7 +2,7 @@
 session_start();
 require('db.php');
 
-// データベース接続 
+// データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {

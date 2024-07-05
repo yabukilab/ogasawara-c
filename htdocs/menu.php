@@ -81,7 +81,7 @@ $result_ranking = $conn->query($sql_ranking);
 
             if ($menu_result->num_rows > 0) {
                 while ($row = $menu_result->fetch_assoc()) {
-                    // 空のメニューを表示しないようにする 
+                    // 空のメニューを表示しないようにする
                     if (empty($row['menu_name']) && empty($row['menu_img']) && $row['rating_count'] == 0 && $row['average_rate'] == 0) {
                         continue;
                     }

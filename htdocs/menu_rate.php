@@ -5,7 +5,7 @@ require('db.php');
 // MySQLデータベースに接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// 接続をチェック
+// 接続をチェック 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
