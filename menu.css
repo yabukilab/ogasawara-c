@@ -1,0 +1,87 @@
+body {
+    text-align: center;
+    background-color: rgb(rgb(199, 199, 199),);
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    width: calc(50% - 20px);
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.menu-link h2 {
+    margin: 0;
+    padding: 10px;
+    background-color: #dffabd;
+}
+
+.menu-link img {
+    width: 100%;
+    height: auto;
+}
+
+.menu-link p {
+    margin: 10px 0;
+}
+
+.back-button{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.back-button input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu_rate_img{
+    width: 300px;
+    height: auto;
+}
+
+.back-button input[type="submit"]:hover {
+    background-color: #45a049;
+}
