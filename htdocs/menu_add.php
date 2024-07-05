@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 // メニュー選択の処理
-$sql_select_menu = "SELECT menu_id, menu_name FROM Menu";
+$sql_select_menu = "SELECT menu_id, menu_name FROM menu";
 $result_select_menu = $conn->query($sql_select_menu);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
