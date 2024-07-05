@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+body{
+    font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+    border-top: 10px solid #7A903D !important;
+    border-bottom: 10px solid #7A903D !important;
+}
+
+.zentai{
+    margin: 0 auto;
+}
+
+.header{
+    text-align: center;
+    font-size: 300%;
+    font-weight:bold;
+    list-style-type: none;/*「・」を無くす*/
+}
+.header p{
+    color: #7A903D;
+    padding: 10px 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.kensaku {
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 400px;
+    overflow: hidden;
+	/*position: relative;*/
+	/* margin: 40px 3%;*/
+}
+.kensaku input[type='text'] {
+    width: 350px;
+    border: none;
+    height: 2.0em;
+    color: #7A903D;
+    /*
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 50%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #333;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+    */
+}
+.ef input[type='text']:focus {
+    outline: 0;
+	/*outline: none;
+	box-shadow: inset 1px 1px 2px 0 #c9c9c9;*/
+}
+.ef input[type="submit"]{
+    /*content: "\f002"; */
+    cursor: pointer;
+    /*font-family: "FontAwesome Free";*/
+    font-family: FontAwesome;
+    font-size: 1.3em;
+    /*font-weight: 900;*/
+    border: none;
+    background: none;
+    color: #7A903D;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    right: 0;
+    top: -10px;
+    outline : none;
+}
+
+.purchase{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    display: flex;/*横並び*/
+    white-space: nowrap;
+    justify-content: center;
+}
+.purchase a{
+    width: 400px;
+    margin:0 auto;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: #7A903D;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    text-decoration:none; 
+}
+.purchase :hover{
+    opacity: 0.7;
+    transition-duration: 0.1s;
+}
+
+.copy{
+    text-align: center;
+    color: #7A903D;
+    font-size: 100%;
+    padding: 7px 0 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

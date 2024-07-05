@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body{
+    font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+    border-top: 10px solid #7A903D !important;
+    border-bottom: 10px solid #7A903D !important;
+}
+
+.zentai{
+    margin: 0 auto;
+}
+
+.header{
+    text-align: center;
+    font-size: 300%;
+    font-weight:bold;
+    list-style-type: none;/*「・」を無くす*/
+}
+.header p{
+    color: #7A903D;
+    padding: 10px 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mannaka{
+    text-align:center;
+    margin:0 auto;
+}
+.mannaka p{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 150%;
+}
+.mannaka input{
+    width: 200px;
+    height: 30px;
+}
+.mannaka select{
+    width: 210px;
+    height: 30px;
+}
+label{
+    display: inline-block;
+    text-align: left;
+    width: 150px;
+}
+
+.purchase{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;/*横並び*/
+    white-space: nowrap;
+    justify-content: center;
+}
+.purchase input{
+    width: 20%;
+    height: 20%;
+    margin:0 auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 150%;
+    color: #fff;
+    background: #7A903D;
+    display: block;
+    border-radius: 5px;
+    border:none;
+}
+.purchase :hover{
+    opacity: 0.7;
+    transition-duration: 0.1s;
+}
+
+.copy{
+    text-align: center;
+    color: #7A903D;
+    font-size: 100%;
+    padding: 7px 0 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
