@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "パスワードが間違っています．もう一度入力し直してください．";
     } else {
         // 学籍番号が既に存在するか確認
-        $check_sql = "SELECT * FROM Users WHERE user_name = :user_name";
+        $check_sql = "SELECT * FROM users WHERE user_name = :user_name";
         $stmt = $db->prepare($check_sql);
         $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
         $stmt->execute();
