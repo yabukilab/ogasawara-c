@@ -1,40 +1,46 @@
 <?php
 session_start();
+error_reporting(E_ALL); // すべてのエラーを報告する
+ini_set('display_errors', 1); // エラーを画面に表示する
+
 require('db.php');
 
+// MySQLデータベースに接続
 $conn = new mysqli($dbServer, $dbUser, $dbPass, $dbName);
 
+// 接続をチェック
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 // 星形評価を表示する関数
 function displayStarRating($averageRate) {
-    $stars = "";
     $fullStars = floor($averageRate);
     $halfStar = ($averageRate - $fullStars) >= 0.5;
 
+    $stars = "";
+
     // Full stars
     for ($i = 0; $i < $fullStars; $i++) {
-        $stars .= "★";
+        $stars .= "<span class='star full-star'>★</span>";
     }
 
     // Half star if applicable
     if ($halfStar) {
-        $stars .= "☆";
+        $stars .= "<span class='star half-star'>★</span>";
+    }
+
+    // Empty stars
+    for ($i = $fullStars + $halfStar; $i < 5; $i++) {
+        $stars .= "<span class='star empty-star'>★</span>";
     }
 
     return $stars;
 }
 
 // メニューランキングの取得
-$sql_ranking = "SELECT menu_name, average_rate FROM menuwithaveragerate ORDER BY average_rate DESC LIMIT 5";
+$sql_ranking = "SELECT menu_name, average_rate FROM MenuWithAverageRate ORDER BY average_rate DESC LIMIT 5";
 $result_ranking = $conn->query($sql_ranking);
-
-if ($result_ranking === false) {
-    die("SQLエラー: " . $conn->error);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +50,11 @@ if ($result_ranking === false) {
     <link href="menu.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="container">
+    <img src="menuuuuu.png" alt="pic1" class="foodmenus">
+    <div>
     <h1>メニューランキング</h1>
-    <table border="1">
+    <table>
         <tr>
             <th>順位</th>
             <th>メニュー名</th>
@@ -67,6 +76,8 @@ if ($result_ranking === false) {
         }
         ?>
     </table>
+    </div>
+    </div>
 
     <h1>選択されたメニュー</h1>
     <div class="menu-container">
@@ -74,12 +85,11 @@ if ($result_ranking === false) {
     if (isset($_SESSION['selected_menu_ids']) && !empty($_SESSION['selected_menu_ids'])) {
         foreach ($_SESSION['selected_menu_ids'] as $selected_menu_id) {
             $sql_all_menus = "SELECT m.menu_id, m.menu_name, m.menu_img, 
-                        COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
-                        COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
-                  FROM menu m
-                  LEFT JOIN rate r ON m.menu_id = r.menu_id
-                  WHERE m.menu_id = ?";
-
+                                    COALESCE((SELECT COUNT(*) FROM Rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
+                                    COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
+                              FROM Menu m
+                              LEFT JOIN Rate r ON m.menu_id = r.menu_id
+                              WHERE m.menu_id = ?";
             $stmt = $conn->prepare($sql_all_menus);
             $stmt->bind_param("i", $selected_menu_id);
             $stmt->execute();
@@ -95,8 +105,8 @@ if ($result_ranking === false) {
                     echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($row['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
                     echo "<h2>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
                     if ($row['menu_img']) {
-                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" style="width:200px;height:200px;"/>';
-                    } else {
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
+                    }   else {
                         echo "<p>画像がありません</p>";
                     }
                     echo "<p>評価数: " . htmlspecialchars($row['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";

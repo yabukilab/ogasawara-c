@@ -3,22 +3,39 @@ body {
     background-color: rgb(rgb(199, 199, 199),);
 }
 
-h1 {
-    text-align: center;
+h1{
+    margin-top: 100px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.foodmenus{
+    width: 40%;
+    height: auto;
+
 }
 
 table {
     margin: 0 auto;
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
+}
+
+th{
+    background-color: #cdcdcd;
 }
 
 th, td {
-    padding: 10px;
+    padding: 30px;
     text-align: center;
 }
 
@@ -29,11 +46,11 @@ th, td {
 }
 
 .menu-item {
-    width: calc(50% - 20px);
+    width: calc(40% - 20px);
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
     overflow: hidden;
 }
@@ -48,17 +65,20 @@ th, td {
 }
 
 .menu-link h2 {
+    font-size: 30px;
     margin: 0;
     padding: 10px;
     background-color: #dffabd;
 }
 
 .menu-link img {
-    width: 100%;
+    width: 50%;
     height: auto;
+    border-radius: 15px;
 }
 
 .menu-link p {
+    font-size: 20px;
     margin: 10px 0;
 }
 
@@ -80,8 +100,48 @@ th, td {
 .menu_rate_img{
     width: 300px;
     height: auto;
+    border-radius: 20px;
 }
 
 .back-button input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+.star {
+    display: inline-block;
+    font-size: 24px; /* 文字サイズを調整 */
+    color: #FFD700; /* 金色 */
+    line-height: 1; /* 行の高さを調整 */
+}
+
+.full-star, .empty-star {
+    display: inline-block;
+    vertical-align: middle; /* 各星の垂直方向の位置を揃える */
+}
+
+.full-star, .empty-star {
+    color: #FFD700; /* 金色 */
+}
+
+.empty-star {
+    color: #b3b3b3; /* 灰色 */
+}
+
+.half-star {
+    position: relative;
+    display: inline-block;
+    width: 0.5em; /* 0.5emの幅を設定 */
+    margin-right: 0.5em;
+    overflow: hidden;
+    vertical-align: middle; /* 垂直方向の位置を揃える */
+}
+
+.half-star:before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 1em; /* 1emの幅を持つ完全な星 */
+    height: 1em; /* 1emの高さを設定 */
+    line-height: 1em; /* 行の高さを調整 */
+    color: #FFD700; /* 金色 */
 }
