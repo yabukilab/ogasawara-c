@@ -79,6 +79,7 @@ if ($result_ranking === false) {
                   FROM menu m
                   LEFT JOIN Rate r ON m.menu_id = r.menu_id
                   WHERE m.menu_id = ?";
+                  
             $stmt = $conn->prepare($sql_all_menus);
             $stmt->bind_param("i", $selected_menu_id);
             $stmt->execute();
