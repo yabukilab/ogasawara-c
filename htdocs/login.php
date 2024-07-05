@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_pass = $_POST["user_pass"];
 
     // SQL インジェクション対策としてプリペアドステートメントを使用
-    $stmt = $db->prepare("SELECT user_id, user_name, user_pass FROM Users WHERE user_name = ?");
+    $stmt = $db->prepare("SELECT user_id, user_name, user_pass FROM users WHERE user_name = ?");
     $stmt->execute([$user_name]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
