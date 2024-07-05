@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div>
         <?php
         // メニューの平均評価を表示するクエリ
-        $sql_average_rating = "SELECT menu_name, average_rate FROM MenuWithAverageRate ORDER BY average_rate DESC LIMIT 5";
+        $sql_average_rating = "SELECT menu_name, average_rate FROM menuwithaveragerate ORDER BY average_rate DESC LIMIT 5";
         $result_average_rating = $conn->query($sql_average_rating);
 
         if ($result_average_rating->num_rows > 0) {
