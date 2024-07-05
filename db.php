@@ -1,6 +1,4 @@
 <?php
-session_start();
-require('db.php');
 
 # HTMLでのエスケープ処理をする関数（データベースとは無関係だが，ついでにここで定義しておく．）
 function h($var) {
