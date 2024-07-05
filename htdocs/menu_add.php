@@ -47,13 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             if ($menu_img['error'] === UPLOAD_ERR_OK) {
                 $img_data = file_get_contents($menu_img['tmp_name']);
-                $stmt = $conn->prepare("SELECT menu_id FROM Menu WHERE menu_name = ?");
+                $stmt = $conn->prepare("SELECT menu_id FROM menu WHERE menu_name = ?");
                 $stmt->bind_param("s", $menu_name);
                 $stmt->execute();
                 $stmt->store_result();
 
                 if ($stmt->num_rows == 0) {
-                    $stmt = $conn->prepare("INSERT INTO Menu (menu_name, menu_img) VALUES (?, ?)");
+                    $stmt = $conn->prepare("INSERT INTO menu (menu_name, menu_img) VALUES (?, ?)");
                     $stmt->bind_param("ss", $menu_name, $img_data);
                     $stmt->send_long_data(1, $img_data);
                     $stmt->execute();
