@@ -2,9 +2,17 @@
 session_start();
 require('db.php');
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 接続が成功したかどうかを確認する
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST["user_name"];
     $user_pass = $_POST["user_pass"];
+
 
     // SQL インジェクション対策としてプリペアドステートメントを使用
     $stmt = $conn->prepare("SELECT user_id, user_name, user_pass FROM Users WHERE user_name = ?");
