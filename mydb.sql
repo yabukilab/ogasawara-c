@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-07-05 11:33:11
+-- 生成日時: 2024-07-05 11:36:07
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- テーブルの構造 `menu`
 --
 
+DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL,
   `menu_name` varchar(50) DEFAULT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE `menu` (
 -- ビュー用の代替構造 `menuwithaveragerate`
 -- (実際のビューを参照するには下にあります)
 --
+DROP VIEW IF EXISTS `menuwithaveragerate`;
 CREATE TABLE `menuwithaveragerate` (
 `menu_id` int(11)
 ,`menu_name` varchar(50)
@@ -53,6 +55,7 @@ CREATE TABLE `menuwithaveragerate` (
 -- テーブルの構造 `rate`
 --
 
+DROP TABLE IF EXISTS `rate`;
 CREATE TABLE `rate` (
   `rate_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
@@ -63,6 +66,7 @@ CREATE TABLE `rate` (
 --
 -- トリガ `rate`
 --
+DROP TRIGGER IF EXISTS `update_menu_average_rate`;
 DELIMITER $$
 CREATE TRIGGER `update_menu_average_rate` AFTER INSERT ON `rate` FOR EACH ROW BEGIN
     UPDATE Menu m
@@ -82,6 +86,7 @@ DELIMITER ;
 -- テーブルの構造 `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(50) DEFAULT NULL,
@@ -104,6 +109,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_gender`) VALUES
 --
 DROP TABLE IF EXISTS `menuwithaveragerate`;
 
+DROP VIEW IF EXISTS `menuwithaveragerate`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `menuwithaveragerate`  AS SELECT `m`.`menu_id` AS `menu_id`, `m`.`menu_name` AS `menu_name`, `m`.`menu_img` AS `menu_img`, coalesce(round(avg(`r`.`rate`),1),0) AS `average_rate` FROM (`menu` `m` left join `rate` `r` on(`m`.`menu_id` = `r`.`menu_id`)) GROUP BY `m`.`menu_id`, `m`.`menu_name`, `m`.`menu_img` ;
 
 --
