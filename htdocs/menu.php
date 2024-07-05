@@ -76,7 +76,7 @@ if ($result_ranking === false) {
             $sql_all_menus = "SELECT m.menu_id, m.menu_name, m.menu_img, 
                         COALESCE((SELECT COUNT(*) FROM Rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
                         COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
-                  FROM menuwithaveragerate m
+                  FROM Menu m
                   LEFT JOIN Rate r ON m.menu_id = r.menu_id
                   WHERE m.menu_id = ?";
             $stmt = $conn->prepare($sql_all_menus);
