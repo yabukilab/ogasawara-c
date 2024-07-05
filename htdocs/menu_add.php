@@ -1,5 +1,8 @@
 <?php
 session_start();
+error_reporting(E_ALL); // すべてのエラーを報告する
+ini_set('display_errors', 1); // エラーを画面に表示する
+
 require('db.php');
 
 // MySQLデータベースに接続
@@ -89,4 +92,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
     }
 }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>メニュー管理</title>
+    <link href="menu.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>メニュー管理</h1>
+
+    <h2>メニュー追加</h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <label for="add_menu_name">メニュー名:</label>
+        <input type="text" id="add_menu_name" name="menu_name" required>
+        <label for="add_menu_img">画像:</label>
+        <input type="file" id="add_menu_img" name="menu_img" accept="image/*" required>
+        <input type="submit" name="add_menu" value="メニューを追加">
+    </form>
+
+    <h2>メニュー削除</h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <label for="delete_menu_id">削除するメニュー:</label>
+        <select id="delete_menu_id" name="menu_id">
+            <?php
+            // メニュー選択クエリの結果を再度利用する
+            if ($result_select_menu->num_rows > 0) {
+                while ($row = $result_select_menu->fetch_assoc()) {
+                    echo "<option value='" . $row['menu_id'] . "'>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</option>";
+                }
+            } else {
+                echo "<option value=''>メニューがありません</option>";
+            }
+            ?>
+        </select>
+        <input type="submit" name="delete_menu" value="メニューを削除">
+    </form>
+
+    <h2>表示メニューの選択</h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <label for="select_menu_id">選択するメニュー:</label>
+        <select id="select_menu_id" name="menu_id">
+            <?php
+            // メニュー選択クエリの結果を再度利用する
+            if ($result_select_menu->num_rows > 0) {
+                // クエリ結果を再度リセットしてループを繰り返す
+                $result_select_menu->data_seek(0);
+                while ($row = $result_select_menu->fetch_assoc()) {
+                    echo "<option value='" . $row['menu_id'] . "'>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</option>";
+                }
+            } else {
+                echo "<option value=''>メニューがありません</option>";
+            }
+            ?>
+        </select>
+        <input type="submit" name="select_menu" value="メニューを選択">
+    </form>
+
+    <h2>選択メニューの解除</h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="submit" name="deselect_menu" value="選択メニューを解除">
+    </form>
+</body>
+</html>
+
+<?php
+$conn->close();
 ?>
