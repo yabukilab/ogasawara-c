@@ -77,9 +77,9 @@ if ($result_ranking === false) {
                         COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
                         COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
                   FROM menu m
-                  LEFT JOIN Rate r ON m.menu_id = r.menu_id
+                  LEFT JOIN rate r ON m.menu_id = r.menu_id
                   WHERE m.menu_id = ?";
-                  
+
             $stmt = $conn->prepare($sql_all_menus);
             $stmt->bind_param("i", $selected_menu_id);
             $stmt->execute();
