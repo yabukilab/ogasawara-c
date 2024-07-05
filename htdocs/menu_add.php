@@ -2,8 +2,10 @@
 session_start();
 require('db.php');
 
+// MySQLデータベースに接続
 $conn = new mysqli($dbServer, $dbUser, $dbPass, $dbName);
 
+// 接続をチェック
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -35,44 +37,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } elseif (isset($_POST['add_menu'])) {
         $menu_name = trim($_POST['menu_name']);
-        $menu_img = $_FILES['menu_img'];
+        $menu_img = $_FILES['menu_img']['tmp_name'];
 
-        // デバッグ情報
-        echo "<pre>";
-        print_r($menu_img);
-        echo "</pre>";
-
-        if (empty($menu_name)) {
-            echo "<script>alert('メニュー名が入力されていません。');</script>";
-        }
-        if ($menu_img['error'] != 0) {
-            echo "<script>alert('画像のアップロードに失敗しました。');</script>";
-        }
-        if (empty($menu_name) || $menu_img['error'] != 0) {
+        if (empty($menu_name) || empty($menu_img)) {
             echo "<script>alert('メニュー名と画像の両方を入力してください。');</script>";
         } else {
-            $img_data = file_get_contents($menu_img['tmp_name']);
+            $img_data = file_get_contents($menu_img);
             $stmt = $conn->prepare("SELECT menu_id FROM Menu WHERE menu_name = ?");
-            if (!$stmt) {
-                die("Prepare failed: " . $conn->error);
-            }
             $stmt->bind_param("s", $menu_name);
             $stmt->execute();
             $stmt->store_result();
 
             if ($stmt->num_rows == 0) {
                 $stmt = $conn->prepare("INSERT INTO Menu (menu_name, menu_img) VALUES (?, ?)");
-                if (!$stmt) {
-                    die("Prepare failed: " . $conn->error);
-                }
-                $stmt->bind_param("sb", $menu_name, $img_data);
+                $stmt->bind_param("ss", $menu_name, $img_data);
                 $stmt->send_long_data(1, $img_data);
-                if ($stmt->execute()) {
-                    echo "<script>alert('メニューが追加されました。'); window.location.href = window.location.href;</script>";
-                    exit();
-                } else {
-                    echo "<script>alert('メニューの追加に失敗しました。: " . htmlspecialchars($stmt->error, ENT_QUOTES, 'UTF-8') . "');</script>";
-                }
+                $stmt->execute();
+                echo "<script>alert('メニューが追加されました。'); window.location.href = window.location.href;</script>";
+                exit();
             } else {
                 echo "<script>alert('既に同じ名前のメニューが存在します。');</script>";
             }
@@ -84,25 +66,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // 関連するRateテーブルのレコードを削除
         $stmt_rate_delete = $conn->prepare("DELETE FROM Rate WHERE menu_id = ?");
-        if (!$stmt_rate_delete) {
-            die("Prepare failed: " . $conn->error);
-        }
         $stmt_rate_delete->bind_param("i", $menu_id);
         $stmt_rate_delete->execute();
         $stmt_rate_delete->close();
 
         // メニューを削除
-        $stmt = $conn->prepare("DELETE FROM Menu WHERE menu_id = ?");
-        if (!$stmt) {
-            die("Prepare failed: " . $conn->error);
-        }
+        $stmt = $conn->prepare("DELETE FROM menu WHERE menu_id = ?");
         $stmt->bind_param("i", $menu_id);
-        if ($stmt->execute()) {
-            echo "<script>alert('メニューが削除されました。'); window.location.href = window.location.href;</script>";
-            exit();
-        } else {
-            echo "<script>alert('メニューの削除に失敗しました。: " . htmlspecialchars($stmt->error, ENT_QUOTES, 'UTF-8') . "');</script>";
-        }
+        $stmt->execute();
+        echo "<script>alert('メニューが削除されました。'); window.location.href = window.location.href;</script>";
+        exit();
 
         // 選択されたメニューから削除
         if (isset($_SESSION['selected_menu_ids']) && in_array($menu_id, $_SESSION['selected_menu_ids'])) {
@@ -174,29 +147,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <input type="submit" name="deselect_menu" value="選択メニューを解除">
     </form>
-
-    <h2>メニュー平均評価</h2>
-    <div>
-        <?php
-        // メニューの平均評価を表示するクエリ
-        $sql_average_rating = "SELECT menu_name, average_rate FROM menuwithaveragerate ORDER BY average_rate DESC LIMIT 5";
-        $result_average_rating = $conn->query($sql_average_rating);
-
-        if ($result_average_rating->num_rows > 0) {
-            echo "<ul>";
-            while ($row = $result_average_rating->fetch_assoc()) {
-                echo "<li>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . ": 平均評価 " . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . "</li>";
-            }
-            echo "</ul>";
-        } else {
-            echo "メニューの平均評価がありません。";
-        }
-        ?>
-    </div>
 </body>
 </html>
 
 <?php
-// MySQL接続を閉じる
 $conn->close();
 ?>
