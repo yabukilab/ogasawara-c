@@ -145,9 +145,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <input type="submit" name="deselect_menu" value="選択メニューを解除">
     </form>
+
+    <h2>メニュー平均評価</h2>
+    <div>
+        <?php
+        // メニューの平均評価を表示するクエリ
+        $sql_average_rating = "SELECT menu_name, average_rate FROM MenuWithAverageRate ORDER BY average_rate DESC LIMIT 5";
+        $result_average_rating = $conn->query($sql_average_rating);
+
+        if ($result_average_rating->num_rows > 0) {
+            echo "<ul>";
+            while ($row = $result_average_rating->fetch_assoc()) {
+                echo "<li>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . ": 平均評価 " . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . "</li>";
+            }
+            echo "</ul>";
+        } else {
+            echo "平均評価はありません";
+        }
+        ?>
+    </div>
 </body>
 </html>
 
 <?php
+// MySQL接続を閉じる
 $conn->close();
 ?>
