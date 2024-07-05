@@ -28,7 +28,7 @@ function displayStarRating($averageRate) {
 }
 
 // メニューランキングの取得
-$sql_ranking = "SELECT menu_name, average_rate FROM MenuWithAverageRate ORDER BY average_rate DESC LIMIT 5";
+$sql_ranking = "SELECT menu_name, average_rate FROM menuwithaveragerate ORDER BY average_rate DESC LIMIT 5";
 $result_ranking = $conn->query($sql_ranking);
 ?>
 
