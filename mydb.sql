@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: mydb
 -- ------------------------------------------------------
--- Server version	10.4.32-MariaDB 
+-- Server version	10.4.32-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `menu` 
+-- Table structure for table `menu`
 --
 
 DROP TABLE IF EXISTS `menu`;
@@ -122,7 +122,7 @@ CREATE TABLE `users` (
   `user_pass` varchar(255) DEFAULT NULL,
   `user_gender` enum('male','female','none') DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,6 +131,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'2242020','$2y$10$rMqcp6kn75PwjmnSDph2o.sCnHsxpQtWXTI01sW4sM3wkG3j8Azh2','male'),(2,'2242046','$2y$10$AOfW1nj4SHq9YzOz4qLiXuhcxDS8MEcxUSqoj0OoMWmW08g3i6HUO','male');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-05 14:59:39
+-- Dump completed on 2024-07-05 18:25:44
