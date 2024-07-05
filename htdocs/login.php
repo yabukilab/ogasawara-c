@@ -2,25 +2,22 @@
 session_start();
 require('db.php');
 
-
+// ログインフォームが送信された場合の処理
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST["user_name"];
     $user_pass = $_POST["user_pass"];
 
-
     // SQL インジェクション対策としてプリペアドステートメントを使用
-    $stmt = $conn->prepare("SELECT user_id, user_name, user_pass FROM Users WHERE user_name = ?");
-    $stmt->bind_param("s", $user_name);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt = $db->prepare("SELECT user_id, user_name, user_pass FROM Users WHERE user_name = ?");
+    $stmt->execute([$user_name]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($user_pass, $row["user_pass"])) {
+    if ($result) {
+        // パスワードの比較
+        if (password_verify($user_pass, $result["user_pass"])) {
             // ログイン成功時の処理
-            $_SESSION["user_id"] = $row["user_id"];  // ユーザーIDをセッションに保存
-            $_SESSION["user_name"] = $row["user_name"];  // ユーザー名もセッションに保存
-            $stmt->close();
+            $_SESSION["user_id"] = $result["user_id"];  // ユーザーIDをセッションに保存
+            $_SESSION["user_name"] = $result["user_name"];  // ユーザー名もセッションに保存
             header("Location: menu.php");
             exit(); // リダイレクト後にスクリプトの実行を終了
         } else {
@@ -31,9 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // ユーザーが見つからない場合
         echo "ユーザーが見つかりません";
     }
-
-    $stmt->close();
-    $conn->close();
 }
 ?>
 
