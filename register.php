@@ -1,6 +1,6 @@
 <?php
-require('db.php')
-
+session_start();
+require('db.php');
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -1,5 +1,6 @@
 <?php
-require('db.php')
+session_start();
+require('db.php');
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
