@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "db_food";
-$password = "food";
-$dbname = "food_archive";
+$password = "YES";
+$dbname = "mydb";
 
 // データベース接続
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($conn->query($sql) === TRUE) {
                 echo "登録が完了しました";
                 // 登録後にログインページにリダイレクト
-                header("Location: login.php");
+                header("Location: index.php");
                 exit();
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
@@ -78,6 +78,6 @@ $conn->close();
     </form>
     
     <p>登録済みの方はこちら</p>
-    <a href="login.php">ログインページ</a>
+    <a href="index.php">ログインページ</a>
 </body>
 </html>

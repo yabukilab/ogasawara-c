@@ -3,8 +3,8 @@ session_start();
 
 $servername = "localhost";
 $username = "db_food";
-$password = "food";
-$dbname = "food_archive";
+$password = "YES";
+$dbname = "mydb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
