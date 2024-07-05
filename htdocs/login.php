@@ -2,13 +2,6 @@
 session_start();
 require('db.php');
 
-// データベース接続
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST["user_name"];
     $user_pass = $_POST["user_pass"];
