@@ -1,5 +1,5 @@
 <?php
-// db.php を読み込む
+// db.php を読み込む 
 require('db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

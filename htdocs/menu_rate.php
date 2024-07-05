@@ -62,7 +62,7 @@ function getAverageRate($conn, $menu_id, $gender = null) {
     return $average_rate;
 }
 
-// 選択された評価タイプに基づいて平均評価を取得
+// 選択された評価タイプに基づいて平均評価を取得 
 if ($display_type == 'male') {
     $average_rate = getAverageRate($conn, $menu_id, 'male');
 } elseif ($display_type == 'female') {

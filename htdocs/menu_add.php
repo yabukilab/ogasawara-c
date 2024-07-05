@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="delete_menu_id">削除するメニュー:</label>
         <select id="delete_menu_id" name="menu_id">
             <?php
-            // メニュー選択クエリの結果を再度利用する
+            // メニュー選択クエリの結果を再度利用する 
             if ($result_select_menu->num_rows > 0) {
                 while ($row = $result_select_menu->fetch_assoc()) {
                     echo "<option value='" . $row['menu_id'] . "'>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</option>";
