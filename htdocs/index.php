@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="confirm_password">パスワード再入力:</label>
             <input type="password" id="confirm_password" name="confirm_password" required>
         </div>
+    </div>
             <label for="user_gender">性別:</label>
             <input type="radio" id="male" name="user_gender" value="male" checked>
             <label for="male">男性</label>
