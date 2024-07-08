@@ -15,15 +15,10 @@ $display_type = isset($_GET['display_type']) ? $_GET['display_type'] : 'overall'
 
 // メニュー名と画像を取得
 $stmt = $conn->prepare("SELECT menu_name, menu_img FROM menu WHERE menu_id = ?");
-if ($stmt === false) {
-    die("Prepare failed: " . $conn->error);
-}
 $stmt->bind_param("i", $menu_id);
 $stmt->execute();
 $stmt->bind_result($menu_name, $menu_img);
-if (!$stmt->fetch()) {
-    die("Fetch failed: " . $stmt->error);
-}
+$stmt->fetch();
 $stmt->close();
 
 // 星形評価を表示する関数
@@ -54,23 +49,15 @@ function getAverageRate($conn, $menu_id, $gender = null) {
             JOIN Users u ON r.user_id = u.user_id
             WHERE r.menu_id = ? AND u.user_gender = ?
         ");
-        if ($stmt === false) {
-            die("Prepare failed: " . $conn->error);
-        }
         $stmt->bind_param("is", $menu_id, $gender);
     } else {
         $stmt = $conn->prepare("SELECT ROUND(AVG(rate), 1) as average_rate FROM rate WHERE menu_id = ?");
-        if ($stmt === false) {
-            die("Prepare failed: " . $conn->error);
-        }
         $stmt->bind_param("i", $menu_id);
     }
 
     $stmt->execute();
     $stmt->bind_result($average_rate);
-    if (!$stmt->fetch()) {
-        die("Fetch failed: " . $stmt->error);
-    }
+    $stmt->fetch();
     $stmt->close();
     return $average_rate;
 }
@@ -132,9 +119,7 @@ $conn->close();
         <input type="hidden" name="menu_id" value="<?php echo htmlspecialchars($menu_id, ENT_QUOTES, 'UTF-8'); ?>">
         <label for="rate">評価 (1-5):</label>
         <input type="number" id="rate" name="rate" min="1" max="5" required><br>
-        <div class="inp-button">
-            <input type="submit" value="評価を送信">
-        </div>
+        <input type="submit" value="評価を送信">
     </form>
     <div class="back-button">
     <form action="menu.php" method="get">
