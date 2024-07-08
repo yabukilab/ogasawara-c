@@ -51,7 +51,7 @@ $result_ranking = $conn->query($sql_ranking);
 </head>
 <body>
     <div class="container">
-    <img src="menuuuuu.png" alt="pic1" class="foodmenus">
+    <img src="menu.png" alt="pic1" class="foodmenus">
     <div>
     <h1>メニューランキング</h1>
     <table>
