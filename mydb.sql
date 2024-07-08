@@ -69,10 +69,10 @@ CREATE TABLE `rate` (
 DROP TRIGGER IF EXISTS `update_menu_average_rate`;
 DELIMITER $$
 CREATE TRIGGER `update_menu_average_rate` AFTER INSERT ON `rate` FOR EACH ROW BEGIN
-    UPDATE Menu m
+    UPDATE menu m
     SET m.average_rate = (
         SELECT COALESCE(ROUND(AVG(r.rate), 1), 0)
-        FROM Rate r
+        FROM rate r
         WHERE r.menu_id = NEW.menu_id
     )
     WHERE m.menu_id = NEW.menu_id;
