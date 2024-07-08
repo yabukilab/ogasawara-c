@@ -1,10 +1,42 @@
 body {
     text-align: center;
-    background-color: rgb(rgb(199, 199, 199),);
+    background-color: rgb(240, 240, 240);
 }
 
-h1{
+h1 {
     margin-top: 100px;
+}
+
+.form-container {
+    display: inline-block;
+    text-align: left;
+    margin-right: 150px;
+}
+.form {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 300px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.inp-button input[type="submit"] {
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inp-button input[type="submit"]:hover {
+    background-color: #45a049;
 }
 
 .container{
@@ -62,6 +94,7 @@ th, td {
 .menu-link {
     text-decoration: none;
     color: #1a1a1a;
+    background-color: #ffffff;
 }
 
 .menu-link h2 {
@@ -89,7 +122,7 @@ th, td {
 
 .back-button input[type="submit"] {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 30px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -97,14 +130,14 @@ th, td {
     cursor: pointer;
 }
 
+.back-button input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
 .menu_rate_img{
     width: 300px;
     height: auto;
     border-radius: 20px;
-}
-
-.back-button input[type="submit"]:hover {
-    background-color: #45a049;
 }
 
 .star {
