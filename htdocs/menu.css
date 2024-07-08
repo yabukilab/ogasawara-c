@@ -16,6 +16,12 @@ h1 {
     justify-content: flex-end;
 }
 
+label {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
 .container{
     display: flex;
     justify-content: center;
