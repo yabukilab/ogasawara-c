@@ -59,26 +59,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>新規登録</h2>
-    <form action="" method="POST">
-        <label for="user_name">学籍番号:</label>
-        <input type="text" id="user_name" name="user_name" pattern="\d{7}" title="7桁の学籍番号を入力してください" required>
-        <br>
-        <label for="user_pass">パスワード(4~16桁の英数字):</label>
-        <input type="password" id="user_pass" name="user_pass" pattern="[a-zA-Z0-9]{4,16}" title="パスワードは4～16桁の英数字であるか確認してください" required>
-        <br>
-        <label for="confirm_password">パスワード再入力:</label>
-        <input type="password" id="confirm_password" name="confirm_password" required>
-        <br>
-        <label for="user_gender">性別:</label>
-        <input type="radio" id="male" name="user_gender" value="male" checked>
-        <label for="male">男性</label>
-        <input type="radio" id="female" name="user_gender" value="female">
-        <label for="female">女性</label>
-        <input type="radio" id="none" name="user_gender" value="none">
-        <label for="none">未選択</label>
-        <br>
-        <input type="submit" value="登録">
-    </form>
+    <div class="form-container">
+        <form action="" method="POST">
+            <label for="user_name">学籍番号:</label>
+            <input type="text" id="user_name" name="user_name" pattern="\d{7}" title="7桁の学籍番号を入力してください" required>
+            <br>
+            <label for="user_pass">パスワード(4~16桁の英数字):</label>
+            <input type="password" id="user_pass" name="user_pass" pattern="[a-zA-Z0-9]{4,16}" title="パスワードは4～16桁の英数字であるか確認してください" required>
+            <br>
+            <label for="confirm_password">パスワード再入力:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+    </div>
+            <br>
+            <label for="user_gender">性別:</label>
+            <input type="radio" id="male" name="user_gender" value="male" checked>
+            <label for="male">男性</label>
+            <input type="radio" id="female" name="user_gender" value="female">
+            <label for="female">女性</label>
+            <input type="radio" id="none" name="user_gender" value="none">
+            <label for="none">未選択</label>
+            <br>
+            <input type="submit" value="登録">
+        </form>
     
     <p>登録済みの方はこちら</p>
     <a href="login.php">ログインページ</a>
