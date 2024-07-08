@@ -57,8 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="user_pass" name="user_pass" required>
         </div>
     </div>
-        <br><br>
+    <br>
+    <div class="inp-button">
         <input type="submit" value="ログイン">
+    </div>
     </form>
 
     <p>未登録の方はこちら</p>

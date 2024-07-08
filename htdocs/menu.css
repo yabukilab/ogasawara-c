@@ -24,6 +24,20 @@ label {
     margin-right: 10px;
 }
 
+.inp-button input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inp-button input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -114,14 +128,14 @@ th, td {
     cursor: pointer;
 }
 
+.back-button input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
 .menu_rate_img{
     width: 300px;
     height: auto;
     border-radius: 20px;
-}
-
-.back-button input[type="submit"]:hover {
-    background-color: #45a049;
 }
 
 .star {

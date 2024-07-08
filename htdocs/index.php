@@ -83,7 +83,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="radio" id="none" name="user_gender" value="none">
             <label for="none">未選択</label>
             <br>
-            <input type="submit" value="登録">
+    <div class="inp-button">
+        <input type="submit" value="登録">
+    </div>
         </form>
     
     <p>登録済みの方はこちら</p>
