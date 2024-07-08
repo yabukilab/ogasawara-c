@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(235, 235, 235);
 }
 
 h1 {
@@ -94,6 +94,7 @@ th, td {
 .menu-link {
     text-decoration: none;
     color: #1a1a1a;
+    background-color: #ffffff;
 }
 
 .menu-link h2 {
