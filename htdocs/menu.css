@@ -14,10 +14,11 @@ h1 {
 .form {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 label {
-    width: 150px;
+    width: 300px;
     text-align: right;
     margin-right: 10px;
 }
