@@ -3,8 +3,17 @@ body {
     background-color: rgb(rgb(199, 199, 199),);
 }
 
-h1{
+h1 {
     margin-top: 100px;
+}
+
+.form-container {
+    display: inline-block;
+    text-align: left;
+}
+.form {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .container{

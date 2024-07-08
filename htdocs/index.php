@@ -61,16 +61,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>新規登録</h2>
     <div class="form-container">
         <form action="" method="POST">
+        <div class="form">    
             <label for="user_name">学籍番号:</label>
             <input type="text" id="user_name" name="user_name" pattern="\d{7}" title="7桁の学籍番号を入力してください" required>
-            <br>
+        </div>
+        <div class="form">
             <label for="user_pass">パスワード(4~16桁の英数字):</label>
             <input type="password" id="user_pass" name="user_pass" pattern="[a-zA-Z0-9]{4,16}" title="パスワードは4～16桁の英数字であるか確認してください" required>
-            <br>
+        </div>
+        <div class="form">
             <label for="confirm_password">パスワード再入力:</label>
             <input type="password" id="confirm_password" name="confirm_password" required>
-    </div>
-            <br>
+        </div>
             <label for="user_gender">性別:</label>
             <input type="radio" id="male" name="user_gender" value="male" checked>
             <label for="male">男性</label>
