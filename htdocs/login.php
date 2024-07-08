@@ -57,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="user_pass" name="user_pass" required>
         </div>
     </div>
+        <br>
         <input type="submit" value="ログイン">
     </form>
 
