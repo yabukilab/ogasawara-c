@@ -11,10 +11,10 @@ if ($conn->connect_error) {
 }
 
 $menu_id = $_GET['menu_id'];
-$display_type = isset($_GET['display_type']) ? $_GET['display_type'] : 'overall';
+$display_type = isset($_GET['display_type']) ? $_GET['display_type'] : 'overall'; 
 
 // メニュー名と画像を取得
-$stmt = $conn->prepare("SELECT menu_name, menu_img FROM Menu WHERE menu_id = ?");
+$stmt = $conn->prepare("SELECT menu_name, menu_img FROM menu WHERE menu_id = ?");
 $stmt->bind_param("i", $menu_id);
 $stmt->execute();
 $stmt->bind_result($menu_name, $menu_img);
@@ -45,13 +45,13 @@ function getAverageRate($conn, $menu_id, $gender = null) {
     if ($gender) {
         $stmt = $conn->prepare("
             SELECT ROUND(AVG(r.rate), 1) as average_rate
-            FROM Rate r
+            FROM rate r
             JOIN Users u ON r.user_id = u.user_id
             WHERE r.menu_id = ? AND u.user_gender = ?
         ");
         $stmt->bind_param("is", $menu_id, $gender);
     } else {
-        $stmt = $conn->prepare("SELECT ROUND(AVG(rate), 1) as average_rate FROM Rate WHERE menu_id = ?");
+        $stmt = $conn->prepare("SELECT ROUND(AVG(rate), 1) as average_rate FROM rate WHERE menu_id = ?");
         $stmt->bind_param("i", $menu_id);
     }
 
