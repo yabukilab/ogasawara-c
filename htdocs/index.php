@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="menu.css" rel="stylesheet" />
 </head>
 <body>
-    <h2>新規登録</h2>
+    <h1>新規登録</h1>
     <div class="form-container">
         <form action="" method="POST">
         <div class="form">    
