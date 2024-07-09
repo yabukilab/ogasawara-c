@@ -36,7 +36,7 @@ label {
 }
 
 .inp-button input[type="submit"]:hover {
-    background-color: #000000;
+    background-color: #45a049;
 }
 
 .container{
@@ -123,7 +123,7 @@ th, td {
 .back-button input[type="submit"] {
     padding: 10px 20px;
     font-size: 30px;
-    background-color: #4CAF50;
+    background-color: #277f2bdb;
     color: white;
     border: none;
     border-radius: 5px;
@@ -131,7 +131,7 @@ th, td {
 }
 
 .back-button input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #277f2b;
 }
 
 .menu_rate_img{
