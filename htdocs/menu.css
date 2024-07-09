@@ -72,6 +72,10 @@ th{
     background-color: #cdcdcd;
 }
 
+td{
+    background-color: #ffffff;
+}
+
 th, td {
     padding: 30px;
     text-align: center;
