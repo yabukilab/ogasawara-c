@@ -119,9 +119,7 @@ $conn->close();
         <input type="hidden" name="menu_id" value="<?php echo htmlspecialchars($menu_id, ENT_QUOTES, 'UTF-8'); ?>">
         <label for="rate">評価 (1-5):</label>
         <input type="number" id="rate" name="rate" min="1" max="5" required><br>
-        <div class="inp-button">
-            <input type="submit" value="評価を送信">
-        </div>
+        <input type="submit" value="評価を送信">
     </form>
     <div class="back-button">
     <form action="menu.php" method="get">
