@@ -105,11 +105,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <h2>メニュー追加</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-        <label for="add_menu_name">メニュー名:</label>
-        <input type="text" id="add_menu_name" name="menu_name" required>
-        <label for="add_menu_img">画像:</label>
-        <input type="file" id="add_menu_img" name="menu_img" accept="image/*" required>
-        <input type="submit" name="add_menu" value="メニューを追加">
+            <label for="add_menu_name">メニュー名:</label>
+            <input type="text" id="add_menu_name" name="menu_name" required>
+            <label for="add_menu_img">画像:</label>
+            <input type="file" id="add_menu_img" name="menu_img" accept="image/*" required>
+        <div class="inp-button">
+            <input type="submit" name="add_menu" value="メニューを追加">
+        </div>
     </form>
 
     <h2>メニュー削除</h2>
@@ -127,7 +129,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
         </select>
-        <input type="submit" name="delete_menu" value="メニューを削除">
+        <div class="inp-button">
+            <input type="submit" name="delete_menu" value="メニューを削除">
+        </div>
     </form>
 
     <h2>表示メニューの選択</h2>
@@ -147,12 +151,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
         </select>
-        <input type="submit" name="select_menu" value="メニューを選択">
+        <div class="inp-button">
+            <input type="submit" name="select_menu" value="メニューを選択">
+        </div>
     </form>
 
     <h2>選択メニューの解除</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="submit" name="deselect_menu" value="選択メニューを解除">
+        <div class="inp-button">    
+            <input type="submit" name="deselect_menu" value="選択メニューを解除">
+        </div>
     </form>
 </body>
 </html>
