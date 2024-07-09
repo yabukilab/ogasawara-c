@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="user_name" name="user_name" required>
         </div>
         <div class="form">
-            <label for="user_pass">パスワード:</label>
+            <label for="user_pass">パスワード(4~16桁の英数字):</label>
             <input type="password" id="user_pass" name="user_pass" required>
         </div>
     </div>
