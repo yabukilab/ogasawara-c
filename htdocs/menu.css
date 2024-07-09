@@ -69,11 +69,11 @@ table, th, td {
 }
 
 th{
-    background-color: #cdcdcd;
+    background-color: rgb(220, 220, 220);
 }
 
 td{
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 th, td {
