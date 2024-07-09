@@ -89,7 +89,6 @@ $conn->close();
         echo "画像がありません<br>";
     }
     ?>
-    <h2>平均評価</h2>
     <form method="get">
         <input type="hidden" name="menu_id" value="<?php echo htmlspecialchars($menu_id, ENT_QUOTES, 'UTF-8'); ?>">
         <label for="display_type">評価タイプを選択:</label>
