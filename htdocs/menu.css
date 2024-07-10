@@ -197,11 +197,11 @@ th, td {
     padding-top: 60px;
     left: 0;
     top: 0;
-    width: 100%;
+    width: auto;
     height: 100%;
     overflow: auto;
     background-color: rgb(205, 205, 205);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(206, 206, 206, 0.9);
 }
 
 .popup-content {
