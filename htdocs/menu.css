@@ -105,7 +105,7 @@ th, td {
 .menu-link {
     text-decoration: none;
     color: #1a1a1a;
-    background-color: #ffffff;
+    background-color: #ffffff !important; 
 }
 
 .menu-link h2 {
