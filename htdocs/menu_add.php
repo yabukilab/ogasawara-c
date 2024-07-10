@@ -81,13 +81,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("DELETE FROM menu WHERE menu_id = ?");
         $stmt->bind_param("i", $menu_id);
         $stmt->execute();
-        echo "<script>alert('メニューが削除されました。'); window.location.href = window.location.href;</script>";
-        exit();
 
         // 選択されたメニューから削除
         if (isset($_SESSION['selected_menu_ids']) && in_array($menu_id, $_SESSION['selected_menu_ids'])) {
             $_SESSION['selected_menu_ids'] = array_diff($_SESSION['selected_menu_ids'], array($menu_id));
         }
+
+        echo "<script>alert('メニューが削除されました。'); window.location.href = window.location.href;</script>";
+        exit();
 
         $stmt->close();
     }
