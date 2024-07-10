@@ -51,7 +51,7 @@ $result_ranking = $conn->query($sql_ranking);
 </head>
 <body>
     <div class="container">
-        <img src="menu.png" alt="pic1" class="foodmenus" onclick="openPopup()">
+        <img src="menu.png" alt="pic1" class="foodmenus">
         <div>
             <h1>メニューランキング</h1>
             <table>
@@ -107,7 +107,7 @@ $result_ranking = $conn->query($sql_ranking);
                         echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($row['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
                         echo "<h2>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
                         if ($row['menu_img']) {
-                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image foodmenus" />';
                         } else {
                             echo "<p>画像がありません</p>";
                         }
@@ -130,7 +130,7 @@ $result_ranking = $conn->query($sql_ranking);
     <div id="popup" class="popup">
         <span class="close" onclick="closePopup()">&times;</span>
         <div class="popup-content">
-            <img src="menu.png" alt="pic1">
+            <img id="popup-img" src="" alt="Selected Menu Image">
         </div>
     </div>
 
