@@ -53,7 +53,7 @@ $result_ranking = $conn->query($sql_ranking);
     <div class="container">
     <img src="menu.png" alt="pic1" class="foodmenus">
     <div>
-    <h1>メニューランキング</h1>
+    <h1>本日のメニューランキング</h1>
     <table>
         <tr>
             <th>順位</th>
@@ -79,7 +79,7 @@ $result_ranking = $conn->query($sql_ranking);
     </div>
     </div>
 
-    <h1>選択されたメニュー</h1>
+    <h1>本日のメニュー</h1>
     <div class="menu-container">
     <?php
     // 削除されたメニューのIDを取得
