@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $menu_id = $_POST['menu_id'];
 
         // 関連するRateテーブルのレコードを削除
-        $stmt_rate_delete = $conn->prepare("DELETE FROM Rate WHERE menu_id = ?");
+        $stmt_rate_delete = $conn->prepare("DELETE FROM rate WHERE menu_id = ?");
         $stmt_rate_delete->bind_param("i", $menu_id);
         $stmt_rate_delete->execute();
         $stmt_rate_delete->close();
