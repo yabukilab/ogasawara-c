@@ -51,90 +51,81 @@ $result_ranking = $conn->query($sql_ranking);
 </head>
 <body>
     <div class="container">
-        <img src="menu.png" alt="pic1" class="foodmenus">
-        <div>
-            <h1>メニューランキング</h1>
-            <table>
-                <tr>
-                    <th>順位</th>
-                    <th>メニュー名</th>
-                    <th>平均評価</th>
-                </tr>
-                <?php
-                if ($result_ranking->num_rows > 0) {
-                    $rank = 1;
-                    while ($row = $result_ranking->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $rank . "</td>";
-                        echo "<td>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</td>";
-                        echo "<td>" . displayStarRating($row['average_rate']) . " (" . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . ")</td>";
-                        echo "</tr>";
-                        $rank++;
-                    }
-                } else {
-                    echo "<tr><td colspan='3'>ランキング情報がありません</td></tr>";
-                }
-                ?>
-            </table>
-        </div>
+    <img src="menu.png" alt="pic1" class="foodmenus">
+    <div>
+    <h1>メニューランキング</h1>
+    <table>
+        <tr>
+            <th>順位</th>
+            <th>メニュー名</th>
+            <th>平均評価</th>
+        </tr>
+        <?php
+        if ($result_ranking->num_rows > 0) {
+            $rank = 1;
+            while ($row = $result_ranking->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $rank . "</td>";
+                echo "<td>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</td>";
+                echo "<td>" . displayStarRating($row['average_rate']) . " (" . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . ")</td>";
+                echo "</tr>";
+                $rank++;
+            }
+        } else {
+            echo "<tr><td colspan='3'>ランキング情報がありません</td></tr>";
+        }
+        ?>
+    </table>
+    </div>
     </div>
 
     <h1>選択されたメニュー</h1>
     <div class="menu-container">
-        <?php
-        if (isset($_SESSION['selected_menu_ids']) && !empty($_SESSION['selected_menu_ids'])) {
-            foreach ($_SESSION['selected_menu_ids'] as $selected_menu_id) {
-                $sql_all_menus = "SELECT m.menu_id, m.menu_name, m.menu_img, 
-                                    COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
-                                    COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
-                                FROM menu m
-                                LEFT JOIN rate r ON m.menu_id = r.menu_id
-                                WHERE m.menu_id = ?
-                                GROUP BY m.menu_id, m.menu_name, m.menu_img";
+    <?php
+    if (isset($_SESSION['selected_menu_ids']) && !empty($_SESSION['selected_menu_ids'])) {
+        foreach ($_SESSION['selected_menu_ids'] as $selected_menu_id) {
+            $sql_all_menus = "SELECT m.menu_id, m.menu_name, m.menu_img, 
+                                COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
+                                COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
+                            FROM menu m
+                            LEFT JOIN rate r ON m.menu_id = r.menu_id
+                            WHERE m.menu_id = ?
+                            GROUP BY m.menu_id, m.menu_name, m.menu_img";
 
-                $stmt = $conn->prepare($sql_all_menus);
-                $stmt->bind_param("i", $selected_menu_id);
-                $stmt->execute();
-                $menu_result = $stmt->get_result();
+            $stmt = $conn->prepare($sql_all_menus);
+            $stmt->bind_param("i", $selected_menu_id);
+            $stmt->execute();
+            $menu_result = $stmt->get_result();
 
-                if ($menu_result->num_rows > 0) {
-                    while ($row = $menu_result->fetch_assoc()) {
-                        // 空のメニューを表示しないようにする
-                        if (empty($row['menu_name']) && empty($row['menu_img']) && $row['rating_count'] == 0 && $row['average_rate'] == 0) {
-                            continue;
-                        }
-                        echo "<div class='menu-item'>";
-                        echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($row['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
-                        echo "<h2>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
-                        if ($row['menu_img']) {
-                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image foodmenus" />';
-                        } else {
-                            echo "<p>画像がありません</p>";
-                        }
-                        echo "<p>評価数: " . htmlspecialchars($row['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";
-                        echo "<p>平均評価: " . displayStarRating($row['average_rate']) . " (" . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . ")</p>";
-                        echo "</a>";
-                        echo "</div>";
+            if ($menu_result->num_rows > 0) {
+                while ($row = $menu_result->fetch_assoc()) {
+                    // 空のメニューを表示しないようにする
+                    if (empty($row['menu_name']) && empty($row['menu_img']) && $row['rating_count'] == 0 && $row['average_rate'] == 0) {
+                        continue;
                     }
-                } else {
-                    echo "<p>表示するメニューがありません。</p>";
+                    echo "<div class='menu-item'>";
+                    echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($row['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
+                    echo "<h2>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
+                    if ($row['menu_img']) {
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
+                    }   else {
+                        echo "<p>画像がありません</p>";
+                    }
+                    echo "<p>評価数: " . htmlspecialchars($row['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";
+                    echo "<p>平均評価: " . displayStarRating($row['average_rate']) . " (" . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . ")</p>";
+                    echo "</a>";
+                    echo "</div>";
                 }
-                $stmt->close();
+            } else {
+                echo "<p>表示するメニューがありません。</p>";
             }
-        } else {
-            echo "<p>表示するメニューがありません。</p>";
+            $stmt->close();
         }
-        ?>
+    } else {
+        echo "<p>表示するメニューがありません。</p>";
+    }
+    ?>
     </div>
-
-    <div id="popup" class="popup">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <div class="popup-content">
-            <img id="popup-img" src="" alt="Selected Menu Image">
-        </div>
-    </div>
-
-    <script src="menu.js"></script>
 </body>
 </html>
 
