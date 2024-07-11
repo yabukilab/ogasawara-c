@@ -93,8 +93,8 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_gender`) VALUES
 -- ビューの作成 `menuwithaveragerate`
 --
 DROP VIEW IF EXISTS `menuwithaveragerate`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `menuwithaveragerate` AS 
-SELECT 
+CREATE ALGORITHM=UNDEFINED DEFINER=`testuser`@`localhost` SQL SECURITY DEFINER VIEW `menuwithaveragerate` AS 
+SELECT
     m.menu_id AS menu_id, 
     m.menu_name AS menu_name, 
     m.menu_img AS menu_img, 
