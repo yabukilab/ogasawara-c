@@ -42,8 +42,8 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- テーブル `menuwithaveragerate_table` の作成
-DROP TABLE IF EXISTS `menuwithaveragerate_table`;
-CREATE TABLE `menuwithaveragerate_table` (
+DROP TABLE IF EXISTS `menuwithaveragerate`;
+CREATE TABLE `menuwithaveragerate` (
   `menu_id` int(11) NOT NULL,
   `menu_name` varchar(50) DEFAULT NULL,
   `menu_img` mediumblob DEFAULT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE `menuwithaveragerate_table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- データの挿入
-INSERT INTO `menuwithaveragerate_table` (`menu_id`, `menu_name`, `menu_img`, `average_rate`)
+INSERT INTO `menuwithaveragerate` (`menu_id`, `menu_name`, `menu_img`, `average_rate`)
 SELECT 
     menu_id, 
     menu_name, 

@@ -10,6 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// デバッグ用コード：テーブルの存在確認
+$result = $conn->query("SHOW TABLES LIKE 'rate'");
+if ($result->num_rows == 0) {
+    die("Table 'rate' doesn't exist.");
+}
+
 // セッションからユーザーIDを取得
 $user_id = $_SESSION['user_id'];
 $menu_id = $_POST['menu_id'];
@@ -21,8 +27,8 @@ $stmt->bind_param("iiii", $user_id, $menu_id, $rate, $rate);
 $stmt->execute();
 $stmt->close();
 
-// 評価が保存された後にmenuwithaveragerate_tableを更新する
-$stmt_update_average = $conn->prepare("UPDATE menuwithaveragerate_table SET average_rate = (SELECT ROUND(AVG(rate), 1) FROM rate WHERE menu_id = ?) WHERE menu_id = ?");
+// 平均評価を更新するためにmenuテーブルを更新する
+$stmt_update_average = $conn->prepare("UPDATE menu SET average_rate = (SELECT ROUND(AVG(rate), 1) FROM rate WHERE menu_id = ?) WHERE menu_id = ?");
 $stmt_update_average->bind_param("ii", $menu_id, $menu_id);
 $stmt_update_average->execute();
 $stmt_update_average->close();
