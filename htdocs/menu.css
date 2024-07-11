@@ -285,6 +285,7 @@
 
     .menu-container{
         justify-content: center;
+        margin-left: 10px;
     }
 
     .menu-item {
