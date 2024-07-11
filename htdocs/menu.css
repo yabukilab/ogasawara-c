@@ -283,6 +283,10 @@
         text-align: center;
     }
 
+    .menu-container{
+        text-align: center;
+    }
+
     .menu-item {
         width: 90%;
         margin-bottom: 10px;

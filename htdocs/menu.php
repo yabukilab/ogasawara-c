@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 error_reporting(E_ALL); // すべてのエラーを報告する
 ini_set('display_errors', 1); // エラーを画面に表示する
