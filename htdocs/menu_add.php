@@ -25,7 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['selected_menu_ids'] = [];
             }
             if (!in_array($selected_menu_id, $_SESSION['selected_menu_ids'])) {
-                $_SESSION['selected_menu_ids'][] = $selected_menu_id; // セッションに選択されたメニューIDを追加
+                // セッションに選択されたメニューIDを追加
+                $_SESSION['selected_menu_ids'][] = $selected_menu_id;
+
+                // selectテーブルに選択情報を保存
+                $stmt = $conn->prepare("INSERT INTO `select` (menu_id) VALUES (?)");
+                $stmt->bind_param("i", $selected_menu_id);
+                $stmt->execute();
+                $stmt->close();
+
                 echo "<script>alert('メニューが選択されました。'); window.location.href = window.location.href;</script>";
                 exit();
             } else {
