@@ -10,8 +10,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$result = $conn->query("SHOW TABLES LIKE 'menuwithaveragerat'");
-if ($result->num_rows == 0) {
-    die("Table 'rate' doesn't exist.");
-}
+$sql = "SELECT * FROM menu ORDER BY update_at";
+$stmt = $conn->prepare($sql);
+$stmt -> execute();
+
 ?>
