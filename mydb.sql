@@ -25,7 +25,6 @@ DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_name` varchar(50) DEFAULT NULL,
-  `menu_non` varchar(50) DEFAULT NULL,
   `menu_img` mediumblob DEFAULT NULL,
   `average_rate` decimal(2,1) DEFAULT NULL,
   PRIMARY KEY (`menu_id`)
@@ -151,4 +150,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12  2:24:26
+-- Dump completed on 2024-07-12  3:43:33
