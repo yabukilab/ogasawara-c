@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL,
   `menu_name` varchar(50) DEFAULT NULL,
-  `menu_img` mediumblob DEFAULT NULL
+  `menu_img` mediumblob DEFAULT NULL,
   `average_rate` DECIMAL(2,1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
