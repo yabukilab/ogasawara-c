@@ -67,16 +67,6 @@ CREATE TABLE `menuwithaveragerate` (
   PRIMARY KEY (`menu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- データの挿入
-INSERT INTO `menuwithaveragerate` (`menu_id`, `menu_name`, `menu_img`, `average_rate`)
-SELECT 
-    menu_id, 
-    menu_name, 
-    menu_img, 
-    average_rate 
-FROM 
-    menuwithaveragerate;
-
 -- トリガ `update_menu_average_rate` の作成
 DROP TRIGGER IF EXISTS `update_menu_average_rate`;
 
