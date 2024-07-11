@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // カラム名を取得するためのクエリ
-$sql = "SHOW COLUMNS FROM rate";
+$sql = "SHOW COLUMNS FROM menuwithaveragerate";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
