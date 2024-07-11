@@ -7,7 +7,7 @@ $stmt->execute();
 
 $rec=$stmt->fetchall(PDO::FETCH_ASSOC);
 foreach ($rec AS $r){
-    echo $r['user_ide'];
+    echo $r['user_id'];
     echo $r['user_name'];
     echo $r['user_pass'];
     echo $r['user_gender'];
