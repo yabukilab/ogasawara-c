@@ -124,7 +124,7 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- ダンプしたテーブルの AUTO_INCREMENT
+-- テーブルの AUTO_INCREMENT の設定
 --
 
 --
@@ -146,15 +146,8 @@ ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- ダンプしたテーブルの制約
+-- トランザクションのコミット
 --
-
---
--- テーブルの制約 `rate`
---
-ALTER TABLE `rate`
-  ADD CONSTRAINT `rate_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `rate_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`menu_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
