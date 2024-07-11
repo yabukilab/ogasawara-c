@@ -80,8 +80,7 @@ CREATE TABLE `rate` (
   `rate` int(11) DEFAULT NULL CHECK (`rate` between 1 and 5),
   PRIMARY KEY (`rate_id`),
   UNIQUE KEY `unique_user_menu` (`user_id`,`menu_id`),
-  KEY `menu_id` (`menu_id`),
-  CONSTRAINT `fk_rate_menu_id` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`menu_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `menu_id` (`menu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -128,8 +127,7 @@ CREATE TABLE `selected_menus` (
   `select_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`select_id`),
-  KEY `menu_id` (`menu_id`),
-  CONSTRAINT `selected_menus_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`menu_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `menu_id` (`menu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -176,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12  5:23:50
+-- Dump completed on 2024-07-12  5:48:01
