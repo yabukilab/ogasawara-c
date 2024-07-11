@@ -117,28 +117,28 @@ DELIMITER ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
--- Table structure for table `select`
+-- Table structure for table `selected_menus`
 --
 
-DROP TABLE IF EXISTS `select`;
+DROP TABLE IF EXISTS `selected_menus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `select` (
+CREATE TABLE `selected_menus` (
   `select_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`select_id`),
   KEY `menu_id` (`menu_id`),
-  CONSTRAINT `select_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`menu_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `selected_menus_ibfk_1` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`menu_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `select`
+-- Dumping data for table `selected_menus`
 --
 
-LOCK TABLES `select` WRITE;
-/*!40000 ALTER TABLE `select` DISABLE KEYS */;
-/*!40000 ALTER TABLE `select` ENABLE KEYS */;
+LOCK TABLES `selected_menus` WRITE;
+/*!40000 ALTER TABLE `selected_menus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `selected_menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -175,4 +175,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12  4:20:11
+-- Dump completed on 2024-07-12  4:26:15
