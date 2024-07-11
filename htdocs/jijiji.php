@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$result = $conn->query("SHOW TABLES LIKE 'menuwithaveragerate'");
+$result = $conn->query("SHOW TABLES LIKE 'menuwithaveragerat'");
 if ($result->num_rows == 0) {
     die("Table 'rate' doesn't exist.");
 }
