@@ -106,17 +106,6 @@ CREATE TABLE `users` (
   `user_pass` varchar(255) DEFAULT NULL,
   `user_gender` enum('male','female','none') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- テーブルのデータのダンプ `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_gender`) VALUES
-(1, '2242020', '$2y$10$rMqcp6kn75PwjmnSDph2o.sCnHsxpQtWXTI01sW4sM3wkG3j8Azh2', 'male'),
-(2, '2242046', '$2y$10$AOfW1nj4SHq9YzOz4qLiXuhcxDS8MEcxUSqoj0OoMWmW08g3i6HUO', 'male');
-
--- --------------------------------------------------------
-
 --
 -- ビューの作成 `menuwithaveragerate`
 --
