@@ -31,23 +31,8 @@ DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL,
   `menu_name` varchar(50) DEFAULT NULL,
-  `menu_img` mediumblob DEFAULT NULL,
-  `average_rate` decimal(2,1) DEFAULT NULL
+  `menu_img` mediumblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- ビュー用の代替構造 `menuwithaveragerate`
--- (実際のビューを参照するには下にあります)
---
-DROP VIEW IF EXISTS `menuwithaveragerate`;
-CREATE TABLE `menuwithaveragerate` (
-`menu_id` int(11)
-,`menu_name` varchar(50)
-,`menu_img` mediumblob
-,`average_rate` decimal(12,1)
-);
 
 -- --------------------------------------------------------
 
@@ -105,12 +90,22 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_pass`, `user_gender`) VALUES
 -- --------------------------------------------------------
 
 --
--- ビュー用の構造 `menuwithaveragerate`
+-- ビューの作成 `menuwithaveragerate`
 --
-DROP TABLE IF EXISTS `menuwithaveragerate`;
-
 DROP VIEW IF EXISTS `menuwithaveragerate`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `menuwithaveragerate`  AS SELECT `m.menu_id` AS `menu_id`, `m.menu_name` AS `menu_name`, `m.menu_img` AS `menu_img`, coalesce(round(avg(r.rate),1),0) AS `average_rate` FROM (`menu` `m` left join `rate` `r` on(`m.menu_id` = `r.menu_id`)) GROUP BY `m.menu_id`, `m.menu_name`, `m.menu_img` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `menuwithaveragerate` AS 
+SELECT 
+    m.menu_id AS menu_id, 
+    m.menu_name AS menu_name, 
+    m.menu_img AS menu_img, 
+    COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate 
+FROM 
+    menu m 
+    LEFT JOIN rate r ON m.menu_id = r.menu_id 
+GROUP BY 
+    m.menu_id, 
+    m.menu_name, 
+    m.menu_img;
 
 --
 -- ダンプしたテーブルのインデックス
