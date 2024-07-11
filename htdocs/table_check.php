@@ -14,7 +14,7 @@ $sql = "SELECT * FROM menu ORDER BY menu_name";
 $stmt = $conn->prepare($sql);
 $stmt -> execute();
 
-while ($row = $stmt -> fetch(CONN::FETCH_ASSOC )) {
+while ($row = $stmt -> fetch(PDO::FETCH_ASSOC )) {
     print_r($row);
     echo("<br/>");
 }
