@@ -10,12 +10,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// デバッグ用コード：テーブルの存在確認
-$result = $conn->query("SHOW TABLES LIKE 'rate'");
-if ($result->num_rows == 0) {
-    die("Table 'rate' doesn't exist.");
-}
-
 // セッションからユーザーIDを取得
 $user_id = $_SESSION['user_id'];
 $menu_id = $_POST['menu_id'];
