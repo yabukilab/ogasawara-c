@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$menu_id = $_GET['menu_id'];
+$menu_id = isset($_GET['menu_id']) ? intval($_GET['menu_id']) : 0;
 $display_type = isset($_GET['display_type']) ? $_GET['display_type'] : 'overall'; 
 
 // メニュー名と画像を取得
@@ -46,7 +46,7 @@ function getAverageRate($conn, $menu_id, $gender = null) {
         $stmt = $conn->prepare("
             SELECT ROUND(AVG(r.rate), 1) as average_rate
             FROM rate r
-            JOIN Users u ON r.user_id = u.user_id
+            JOIN users u ON r.user_id = u.user_id
             WHERE r.menu_id = ? AND u.user_gender = ?
         ");
         $stmt->bind_param("is", $menu_id, $gender);
@@ -107,7 +107,7 @@ $conn->close();
         } else {
             echo "総合平均評価: ";
         }
-        if ($average_rate) {
+        if ($average_rate !== null) {
             echo displayStarRating($average_rate) . " (" . $average_rate . ")";
         } else {
             echo '評価がありません';
