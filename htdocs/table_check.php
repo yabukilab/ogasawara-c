@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
             echo $row['Field'] . "<br/>";
         }
     } else {
-        echo "No columns found.";
+        echo "No columns  found.";
     }
 } else {
     echo "Table 'rate' does not exist.";
