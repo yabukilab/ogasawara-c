@@ -11,14 +11,14 @@ if ($conn->connect_error) {
 }
 
 // テーブルの存在を確認
-$sql = "SHOW TABLES LIKE 'rate'";
+$sql = "SHOW TABLES LIKE 'selected_menus'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "Table 'rate' exists.<br/>";
+    echo "Table 'selected_menus' exists.<br/>";
 
     // カラム名を取得するためのクエリ
-    $sql = "SHOW COLUMNS FROM `rate`";
+    $sql = "SHOW COLUMNS FROM `selected_menus`";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -27,10 +27,10 @@ if ($result->num_rows > 0) {
             echo $row['Field'] . "<br/>";
         }
     } else {
-        echo "No columns  found.";
+        echo "No columns found.";
     }
 } else {
-    echo "Table 'rate' does not exist.";
+    echo "Table 'selected_menus' does not exist.";
 }
 
 // 接続を閉じる
