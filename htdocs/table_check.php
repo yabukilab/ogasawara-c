@@ -10,20 +10,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM menu ORDER BY menu_name";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
+// カラム名を取得するためのクエリ
+$sql = "SHOW COLUMNS FROM menu";
+$result = $conn->query($sql);
 
-// 結果の取得
-$result = $stmt->get_result();
-
-while ($row = $result->fetch_assoc()) {
-    print_r($row);
-    echo("<br/>");
+if ($result->num_rows > 0) {
+    // 各カラム名を出力
+    while ($row = $result->fetch_assoc()) {
+        echo $row['Field'] . "<br/>";
+    }
+} else {
+    echo "No columns found.";
 }
 
-// ステートメントを閉じる
-$stmt->close();
 // 接続を閉じる
 $conn->close();
 ?>
