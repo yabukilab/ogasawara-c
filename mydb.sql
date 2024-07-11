@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_name` varchar(50) DEFAULT NULL,
+  `menu_non` varchar(50) DEFAULT NULL,
   `menu_img` mediumblob DEFAULT NULL,
   `average_rate` DECIMAL(2,1) DEFAULT NULL,
   PRIMARY KEY (`menu_id`)
