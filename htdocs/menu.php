@@ -46,6 +46,7 @@ $result_ranking = $conn->query($sql_ranking);
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>メニュー一覧</title>
     <link href="menu.css" rel="stylesheet" />
 </head>
