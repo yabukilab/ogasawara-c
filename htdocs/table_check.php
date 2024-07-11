@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM menu ORDER BY update_at";
+$sql = "SELECT * FROM menu ORDER BY menu_name";
 $stmt = $conn->prepare($sql);
 $stmt -> execute();
 
