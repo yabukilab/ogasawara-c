@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // カラム名を取得するためのクエリ
-$sql = "SHOW COLUMNS FROM selected_menus";
+$sql = "SHOW COLUMNS FROM 'selected_menus'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
