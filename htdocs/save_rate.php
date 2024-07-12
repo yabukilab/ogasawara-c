@@ -15,6 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $rate = isset($_POST['rate']) ? intval($_POST['rate']) : 0;
     $user_id = isset($_SESSION['user_id']) ? intval($_SESSION['user_id']) : 0; // セッションからユーザーIDを取得
 
+    // デバッグ用コード
+    echo "menu_id: " . $menu_id . "<br>";
+    echo "rate: " . $rate . "<br>";
+    echo "user_id: " . $user_id . "<br>";
+    // テーブルの存在確認
+    $result = $conn->query("SHOW TABLES LIKE 'menu'");
+    if($result->num_rows == 0) {
+        die("menuテーブルが存在しません。");
+    }
+
     // 入力値のチェック
     if ($menu_id > 0 && $rate >= 1 && $rate <= 5 && $user_id > 0) {
         // 既存の評価があるかチェック
