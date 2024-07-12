@@ -42,6 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('メニューが選択されていません。');</script>";
         }
     } elseif (isset($_POST['deselect_menu'])) {
+        // selected_menusテーブルからすべてのレコードを削除
+        $stmt_delete_selected_menus = $conn->prepare("DELETE FROM `selected_menus`");
+        $stmt_delete_selected_menus->execute();
+        $stmt_delete_selected_menus->close();
+
         unset($_SESSION['selected_menu_ids']); // 選択されたメニューのIDをセッションから削除
         echo "<script>alert('表示メニューの選択をリセットしました。'); window.location.href = window.location.href;</script>";
         exit();
