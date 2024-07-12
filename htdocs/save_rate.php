@@ -34,6 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("usersテーブルが存在しません。");
     }
 
+    // menuテーブルの内容をデバッグ出力
+    $result = $conn->query("SELECT * FROM menu");
+    echo "<br>menuテーブルの内容:<br>";
+    while ($row = $result->fetch_assoc()) {
+        echo "menu_id: " . $row['menu_id'] . ", menu_name: " . $row['menu_name'] . "<br>";
+    }
+
     // menu_idがmenuテーブルに存在するかチェック
     $stmt = $conn->prepare("SELECT menu_id FROM menu WHERE menu_id = ?");
     $stmt->bind_param("i", $menu_id);
