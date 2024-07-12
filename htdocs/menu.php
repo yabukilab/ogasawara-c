@@ -48,17 +48,10 @@ $sql_selected_menus = "SELECT m.menu_id, m.menu_name, m.menu_img,
                             COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
                         FROM menu m
                         INNER JOIN selected_menus sm ON m.menu_id = sm.menu_id
-                        LEFT JOIN rate r ON m.menu_id = r.menu_id";
+                        LEFT JOIN rate r ON m.menu_id = r.menu_id
+                        GROUP BY m.menu_id, m.menu_name, m.menu_img";
+
 $result_selected_menus = $conn->query($sql_selected_menus);
-$selected_menus = [];
-
-if ($result_selected_menus->num_rows > 0) {
-    while ($row = $result_selected_menus->fetch_assoc()) {
-        $selected_menus[] = $row;
-    }
-}
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -101,26 +94,20 @@ $conn->close();
     <h1>本日のメニュー</h1>
     <div class="menu-container">
     <?php
-    // 削除されたメニューのIDを取得
-    $deleted_menu_ids = isset($_SESSION['deleted_menu_ids']) ? $_SESSION['deleted_menu_ids'] : [];
-
-    if (!empty($selected_menus)) {
-        foreach ($selected_menus as $selected_menu) {
-            // 削除されたメニューでなければ表示
-            if (!in_array($selected_menu['menu_id'], $deleted_menu_ids)) {
-                echo "<div class='menu-item'>";
-                echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($selected_menu['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
-                echo "<h2>" . htmlspecialchars($selected_menu['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
-                if ($selected_menu['menu_img']) {
-                    echo '<img src="data:image/jpeg;base64,' . base64_encode($selected_menu['menu_img']) . '" alt="' . htmlspecialchars($selected_menu['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
-                } else {
-                    echo "<p>画像がありません</p>";
-                }
-                echo "<p>評価数: " . htmlspecialchars($selected_menu['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";
-                echo "<p>平均評価: " . displayStarRating($selected_menu['average_rate']) . " (" . htmlspecialchars($selected_menu['average_rate'], ENT_QUOTES, 'UTF-8') . ")</p>";
-                echo "</a>";
-                echo "</div>";
+    if ($result_selected_menus->num_rows > 0) {
+        while ($row = $result_selected_menus->fetch_assoc()) {
+            echo "<div class='menu-item'>";
+            echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($row['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
+            echo "<h2>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
+            if ($row['menu_img']) {
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
+            } else {
+                echo "<p>画像がありません</p>";
             }
+            echo "<p>評価数: " . htmlspecialchars($row['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "<p>平均評価: " . displayStarRating($row['average_rate']) . " (" . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . ")</p>";
+            echo "</a>";
+            echo "</div>";
         }
     } else {
         echo "<p>表示するメニューがありません。</p>";
@@ -129,3 +116,7 @@ $conn->close();
     </div>
 </body>
 </html>
+
+<?php
+$conn->close();
+?>
