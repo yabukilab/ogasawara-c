@@ -39,18 +39,25 @@ function displayStarRating($averageRate) {
 }
 
 // メニューランキングの取得
-$sql_ranking = "SELECT menu_name, average_rate FROM menuwithaveragerate ORDER BY average_rate DESC LIMIT 5";
+$sql_ranking = "SELECT sm.menu_id, m.menu_name, m.menu_img,
+                    COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = sm.menu_id), 0) AS rating_count,
+                    COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
+                FROM selected_menus sm
+                LEFT JOIN menu m ON sm.menu_id = m.menu_id
+                LEFT JOIN rate r ON sm.menu_id = r.menu_id
+                GROUP BY sm.menu_id, m.menu_name, m.menu_img
+                ORDER BY average_rate DESC
+                LIMIT 5";
 $result_ranking = $conn->query($sql_ranking);
 
 // 選択されたメニューの取得
-$sql_selected_menus = "SELECT m.menu_id, m.menu_name, m.menu_img,
-                            COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count,
+$sql_selected_menus = "SELECT sm.menu_id, m.menu_name, m.menu_img,
+                            COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = sm.menu_id), 0) AS rating_count,
                             COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
-                        FROM menu m
-                        INNER JOIN selected_menus sm ON m.menu_id = sm.menu_id
-                        LEFT JOIN rate r ON m.menu_id = r.menu_id
-                        GROUP BY m.menu_id, m.menu_name, m.menu_img";
-
+                        FROM selected_menus sm
+                        LEFT JOIN menu m ON sm.menu_id = m.menu_id
+                        LEFT JOIN rate r ON sm.menu_id = r.menu_id
+                        GROUP BY sm.menu_id, m.menu_name, m.menu_img";
 $result_selected_menus = $conn->query($sql_selected_menus);
 ?>
 
