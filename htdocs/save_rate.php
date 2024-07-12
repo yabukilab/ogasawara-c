@@ -85,7 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // 評価を保存
         if ($stmt->execute()) {
-            // 平均評価を計算して更新
+            // デバッグ用コード
+            echo "評価が保存されました。<br>";
+
             $stmt->close();
 
             $stmt = $conn->prepare("SELECT ROUND(AVG(rate), 1) as average_rate FROM rate WHERE menu_id = ?");
@@ -98,8 +100,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // menuテーブルの平均評価を更新
             $stmt = $conn->prepare("UPDATE menu SET average_rate = ? WHERE menu_id = ?");
             $stmt->bind_param("di", $average_rate, $menu_id);
-            $stmt->execute();
+            if ($stmt->execute()) {
+                echo "平均評価が更新されました。<br>";
+            } else {
+                echo "平均評価の更新に失敗しました。<br>";
+            }
             $stmt->close();
+        } else {
+            echo "評価の保存に失敗しました。<br>";
         }
     }
 }
