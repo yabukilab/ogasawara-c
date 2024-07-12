@@ -26,6 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             if (!in_array($selected_menu_id, $_SESSION['selected_menu_ids'])) {
                 $_SESSION['selected_menu_ids'][] = $selected_menu_id; // セッションに選択されたメニューIDを追加
+                
+                // selected_menusテーブルに挿入
+                $stmt = $conn->prepare("INSERT INTO `selected_menus` (menu_id) VALUES (?)");
+                $stmt->bind_param("i", $selected_menu_id);
+                $stmt->execute();
+                $stmt->close();
+
                 echo "<script>alert('メニューが選択されました。'); window.location.href = window.location.href;</script>";
                 exit();
             } else {
@@ -82,6 +89,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("i", $menu_id);
         $stmt->execute();
 
+        // selected_menusテーブルから削除
+        $stmt_selected_delete = $conn->prepare("DELETE FROM `selected_menus` WHERE menu_id = ?");
+        $stmt_selected_delete->bind_param("i", $menu_id);
+        $stmt_selected_delete->execute();
+        $stmt_selected_delete->close();
+
         // 選択されたメニューから削除
         if (isset($_SESSION['selected_menu_ids']) && in_array($menu_id, $_SESSION['selected_menu_ids'])) {
             $_SESSION['selected_menu_ids'] = array_diff($_SESSION['selected_menu_ids'], array($menu_id));
@@ -122,50 +135,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php
             // メニュー選択クエリの結果を再度利用する
             if ($result_select_menu->num_rows > 0) {
-                while ($row = $result_select_menu->fetch_assoc()) {
-                    echo "<option value='" . $row['menu_id'] . "'>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</option>";
-                }
-            } else {
-                echo "<option value=''>メニューがありません</option>";
-            }
-            ?>
-        </select>
-        <div class="inp-button">
-            <input type="submit" name="delete_menu" value="メニューを削除">
-        </div>
-    </form>
-
-    <h2>表示メニューの選択</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="select_menu_id">選択するメニュー:</label>
-        <select id="select_menu_id" name="menu_id">
-            <?php
-            // メニュー選択クエリの結果を再度利用する
-            if ($result_select_menu->num_rows > 0) {
-                // クエリ結果を再度リセットしてループを繰り返す
-                $result_select_menu->data_seek(0);
-                while ($row = $result_select_menu->fetch_assoc()) {
-                    echo "<option value='" . $row['menu_id'] . "'>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</option>";
-                }
-            } else {
-                echo "<option value=''>メニューがありません</option>";
-            }
-            ?>
-        </select>
-        <div class="inp-button">
-            <input type="submit" name="select_menu" value="メニューを選択">
-        </div>
-    </form>
-
-    <h2>選択メニューの解除</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="inp-button">    
-            <input type="submit" name="deselect_menu" value="選択メニューを解除">
-        </div>
-    </form>
-</body>
-</html>
-
-<?php
-$conn->close();
-?>
+                while ($row = $result_select_menu->fetch_assoc
