@@ -15,6 +15,22 @@ $user_id = $_SESSION['user_id'];
 $menu_id = $_POST['menu_id'];
 $rate = $_POST['rate'];
 
+// menu_idの存在確認
+$check_sql = "SELECT COUNT(*) FROM menu WHERE menu_id = ?";
+$check_stmt = $conn->prepare($check_sql);
+if (!$check_stmt) {
+    die("Prepare failed: " . $conn->error);
+}
+$check_stmt->bind_param("i", $menu_id);
+$check_stmt->execute();
+$check_stmt->bind_result($count);
+$check_stmt->fetch();
+$check_stmt->close();
+
+if ($count == 0) {
+    die("Error: menu_id $menu_id does not exist in menu table.");
+}
+
 // 評価を保存または更新
 $stmt = $conn->prepare("INSERT INTO rate (user_id, menu_id, rate) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE rate = ?");
 if (!$stmt) {
