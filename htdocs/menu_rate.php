@@ -29,12 +29,12 @@ function displayStarRating($averageRate) {
 
     // Full stars
     for ($i = 0; $i < $fullStars; $i++) {
-        $stars .= "★";
+        $stars .= "<span class='full-star'>★</span>";
     }
 
     // Half star if applicable
     if ($halfStar) {
-        $stars .= "☆";
+        $stars .= "<span class='half-star'>☆</span>";
     }
 
     return $stars;
@@ -108,24 +108,24 @@ $conn->close();
             echo "総合平均評価: ";
         }
         if ($average_rate !== null) {
-            echo displayStarRating($average_rate) . " (" . $average_rate . ")";
+            echo "<span class='star'>" . displayStarRating($average_rate) . "</span> (" . $average_rate . ")";
         } else {
             echo '評価がありません';
         }
         ?>
     </p>
     <form action="save_rate.php" method="post">
-            <input type="hidden" name="menu_id" value="<?php echo htmlspecialchars($menu_id, ENT_QUOTES, 'UTF-8'); ?>">
-            <label for="rate">評価 (1-5):</label>
-            <input type="number" id="rate" name="rate" min="1" max="5" required><br>
+        <input type="hidden" name="menu_id" value="<?php echo htmlspecialchars($menu_id, ENT_QUOTES, 'UTF-8'); ?>">
+        <label for="rate">評価 (1-5):</label>
+        <input type="number" id="rate" name="rate" min="1" max="5" required><br>
         <div class="inp-button">
             <input type="submit" value="評価を送信">
         </div>
     </form>
     <div class="back-button">
-    <form action="menu.php" method="get">
-        <input type="submit" value="メニュー一覧に戻る">
-    </form>
+        <form action="menu.php" method="get">
+            <input type="submit" value="メニュー一覧に戻る">
+        </form>
     </div>
 </body>
 </html>
