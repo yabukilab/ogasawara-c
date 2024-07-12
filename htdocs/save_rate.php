@@ -19,10 +19,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "menu_id: " . $menu_id . "<br>";
     echo "rate: " . $rate . "<br>";
     echo "user_id: " . $user_id . "<br>";
+
     // テーブルの存在確認
     $result = $conn->query("SHOW TABLES LIKE 'menu'");
-    if($result->num_rows == 0) {
+    if ($result->num_rows == 0) {
         die("menuテーブルが存在しません。");
+    }
+    $result = $conn->query("SHOW TABLES LIKE 'rate'");
+    if ($result->num_rows == 0) {
+        die("rateテーブルが存在しません。");
+    }
+    $result = $conn->query("SHOW TABLES LIKE 'users'");
+    if ($result->num_rows == 0) {
+        die("usersテーブルが存在しません。");
+    }
+
+    // menu_idがmenuテーブルに存在するかチェック
+    $stmt = $conn->prepare("SELECT menu_id FROM menu WHERE menu_id = ?");
+    $stmt->bind_param("i", $menu_id);
+    $stmt->execute();
+    $stmt->bind_result($exists_menu_id);
+    $stmt->fetch();
+    $stmt->close();
+    if (!$exists_menu_id) {
+        die("menu_idがmenuテーブルに存在しません。");
+    }
+
+    // user_idがusersテーブルに存在するかチェック
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE user_id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->bind_result($exists_user_id);
+    $stmt->fetch();
+    $stmt->close();
+    if (!$exists_user_id) {
+        die("user_idがusersテーブルに存在しません。");
     }
 
     // 入力値のチェック
