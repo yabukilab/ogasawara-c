@@ -41,6 +41,24 @@ function displayStarRating($averageRate) {
 // メニューランキングの取得
 $sql_ranking = "SELECT menu_name, average_rate FROM menuwithaveragerate ORDER BY average_rate DESC LIMIT 5";
 $result_ranking = $conn->query($sql_ranking);
+
+// 選択されたメニューの取得
+$sql_selected_menus = "SELECT m.menu_id, m.menu_name, m.menu_img,
+                            COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count,
+                            COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
+                        FROM menu m
+                        INNER JOIN selected_menus sm ON m.menu_id = sm.menu_id
+                        LEFT JOIN rate r ON m.menu_id = r.menu_id";
+$result_selected_menus = $conn->query($sql_selected_menus);
+$selected_menus = [];
+
+if ($result_selected_menus->num_rows > 0) {
+    while ($row = $result_selected_menus->fetch_assoc()) {
+        $selected_menus[] = $row;
+    }
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -86,46 +104,22 @@ $result_ranking = $conn->query($sql_ranking);
     // 削除されたメニューのIDを取得
     $deleted_menu_ids = isset($_SESSION['deleted_menu_ids']) ? $_SESSION['deleted_menu_ids'] : [];
 
-    if (isset($_SESSION['selected_menu_ids']) && !empty($_SESSION['selected_menu_ids'])) {
-        foreach ($_SESSION['selected_menu_ids'] as $selected_menu_id) {
+    if (!empty($selected_menus)) {
+        foreach ($selected_menus as $selected_menu) {
             // 削除されたメニューでなければ表示
-            if (!in_array($selected_menu_id, $deleted_menu_ids)) {
-                $sql_all_menus = "SELECT m.menu_id, m.menu_name, m.menu_img, 
-                                    COALESCE((SELECT COUNT(*) FROM rate WHERE menu_id = m.menu_id), 0) AS rating_count, 
-                                    COALESCE(ROUND(AVG(r.rate), 1), 0) AS average_rate
-                                FROM menu m
-                                LEFT JOIN rate r ON m.menu_id = r.menu_id
-                                WHERE m.menu_id = ?
-                                GROUP BY m.menu_id, m.menu_name, m.menu_img";
-
-                $stmt = $conn->prepare($sql_all_menus);
-                $stmt->bind_param("i", $selected_menu_id);
-                $stmt->execute();
-                $menu_result = $stmt->get_result();
-
-                if ($menu_result->num_rows > 0) {
-                    while ($row = $menu_result->fetch_assoc()) {
-                        // 空のメニューを表示しないようにする
-                        if (empty($row['menu_name']) && empty($row['menu_img']) && $row['rating_count'] == 0 && $row['average_rate'] == 0) {
-                            continue;
-                        }
-                        echo "<div class='menu-item'>";
-                        echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($row['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
-                        echo "<h2>" . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
-                        if ($row['menu_img']) {
-                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['menu_img']) . '" alt="' . htmlspecialchars($row['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
-                        }   else {
-                            echo "<p>画像がありません</p>";
-                        }
-                        echo "<p>評価数: " . htmlspecialchars($row['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";
-                        echo "<p>平均評価: " . displayStarRating($row['average_rate']) . " (" . htmlspecialchars($row['average_rate'], ENT_QUOTES, 'UTF-8') . ")</p>";
-                        echo "</a>";
-                        echo "</div>";
-                    }
+            if (!in_array($selected_menu['menu_id'], $deleted_menu_ids)) {
+                echo "<div class='menu-item'>";
+                echo "<a href='menu_rate.php?menu_id=" . htmlspecialchars($selected_menu['menu_id'], ENT_QUOTES, 'UTF-8') . "' class='menu-link'>";
+                echo "<h2>" . htmlspecialchars($selected_menu['menu_name'], ENT_QUOTES, 'UTF-8') . "</h2>";
+                if ($selected_menu['menu_img']) {
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode($selected_menu['menu_img']) . '" alt="' . htmlspecialchars($selected_menu['menu_name'], ENT_QUOTES, 'UTF-8') . 'の画像" class="menu-image" />';
                 } else {
-                    echo "<p>表示するメニューがありません。</p>";
+                    echo "<p>画像がありません</p>";
                 }
-                $stmt->close();
+                echo "<p>評価数: " . htmlspecialchars($selected_menu['rating_count'], ENT_QUOTES, 'UTF-8') . "</p>";
+                echo "<p>平均評価: " . displayStarRating($selected_menu['average_rate']) . " (" . htmlspecialchars($selected_menu['average_rate'], ENT_QUOTES, 'UTF-8') . ")</p>";
+                echo "</a>";
+                echo "</div>";
             }
         }
     } else {
@@ -135,12 +129,3 @@ $result_ranking = $conn->query($sql_ranking);
     </div>
 </body>
 </html>
-
-<?php
-// メニューが削除された場合はセッションから削除する
-if (isset($_SESSION['deleted_menu_ids'])) {
-    unset($_SESSION['deleted_menu_ids']);
-}
-
-$conn->close();
-?>
