@@ -76,7 +76,6 @@ CREATE TABLE `rate` (
   `rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `menu_id` int(11) DEFAULT NULL,
-  `rating` int(11) DEFAULT NULL,
   `rate` int(11) DEFAULT NULL CHECK (`rate` between 1 and 5),
   PRIMARY KEY (`rate_id`),
   UNIQUE KEY `unique_user_menu` (`user_id`,`menu_id`),
@@ -174,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12  5:52:48
+-- Dump completed on 2024-07-12 10:19:30
