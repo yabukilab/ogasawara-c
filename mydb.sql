@@ -76,7 +76,6 @@ CREATE TABLE `rate` (
   `rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `menu_id` int(11) DEFAULT NULL,
-  `rating` int(11) DEFAULT NULL,
   `rate` int(11) DEFAULT NULL CHECK (`rate` between 1 and 5),
   PRIMARY KEY (`rate_id`),
   UNIQUE KEY `unique_user_menu` (`user_id`,`menu_id`),
@@ -92,29 +91,6 @@ LOCK TABLES `rate` WRITE;
 /*!40000 ALTER TABLE `rate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `rate` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER update_menu_average_rate AFTER INSERT ON rate FOR EACH ROW BEGIN
-    UPDATE menu m
-    SET m.average_rate = (
-        SELECT COALESCE(ROUND(AVG(r.rate), 1), 0)
-        FROM rate r
-        WHERE r.menu_id = NEW.menu_id
-    )
-    WHERE m.menu_id = NEW.menu_id;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `selected_menus`
@@ -174,4 +150,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12 12:14:40
+-- Dump completed on 2024-07-12 12:26:51
