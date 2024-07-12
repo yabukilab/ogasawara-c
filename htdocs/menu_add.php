@@ -134,6 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <select id="delete_menu_id" name="menu_id">
             <?php
             // メニュー選択クエリの結果を再度利用する
+            $result_select_menu->data_seek(0); // 結果セットのポインタを最初に戻す
             if ($result_select_menu->num_rows > 0) {
                 while ($row = $result_select_menu->fetch_assoc()) {
                     echo "<option value='" . $row['menu_id'] . "'>" . $row['menu_name'] . "</option>";
@@ -152,6 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <select id="select_menu_id" name="menu_id">
             <?php
             // メニュー選択クエリの結果を再度利用する
+            $result_select_menu->data_seek(0); // 結果セットのポインタを最初に戻す
             if ($result_select_menu->num_rows > 0) {
                 while ($row = $result_select_menu->fetch_assoc()) {
                     echo "<option value='" . $row['menu_id'] . "'>" . $row['menu_name'] . "</option>";
