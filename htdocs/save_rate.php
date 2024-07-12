@@ -16,7 +16,7 @@ $menu_id = $_POST['menu_id'];
 $rate = $_POST['rate'];
 
 // 評価を保存または更新
-$stmt = $conn->prepare("INSERT INTO 'rate' (user_id, menu_id, rate) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE rate = ?");
+$stmt = $conn->prepare("INSERT INTO rate (user_id, menu_id, rate) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE rate = ?");
 if (!$stmt) {
     die("Prepare failed: " . $conn->error);
 }
