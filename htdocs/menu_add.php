@@ -145,5 +145,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="submit" name="delete_menu" value="メニューを削除">
         </div>
     </form>
+
+    <h2>メニュー選択</h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <label for="select_menu_id">選択するメニュー:</label>
+        <select id="select_menu_id" name="menu_id">
+            <?php
+            // メニュー選択クエリの結果を再度利用する
+            if ($result_select_menu->num_rows > 0) {
+                while ($row = $result_select_menu->fetch_assoc()) {
+                    echo "<option value='" . $row['menu_id'] . "'>" . $row['menu_name'] . "</option>";
+                }
+            }
+            ?>
+        </select>
+        <div class="inp-button">
+            <input type="submit" name="select_menu" value="メニューを選択">
+        </div>
+    </form>
+
+    <h2>メニュー選択リセット</h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <div class="inp-button">
+            <input type="submit" name="deselect_menu" value="メニュー選択をリセット">
+        </div>
+    </form>
 </body>
 </html>
