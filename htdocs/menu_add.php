@@ -135,4 +135,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php
             // メニュー選択クエリの結果を再度利用する
             if ($result_select_menu->num_rows > 0) {
-                while ($row = $result_select_menu->fetch_assoc
+                while ($row = $result_select_menu->fetch_assoc()) {
+                    echo "<option value='" . $row['menu_id'] . "'>" . $row['menu_name'] . "</option>";
+                }
+            }
+            ?>
+        </select>
+        <div class="inp-button">
+            <input type="submit" name="delete_menu" value="メニューを削除">
+        </div>
+    </form>
+</body>
+</html>
