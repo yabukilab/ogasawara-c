@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['selected_menu_ids'][] = $selected_menu_id;
 
                 // selectテーブルに選択情報を保存
-                $stmt = $conn->prepare("INSERT INTO `select` (menu_id) VALUES (?)");
+                $stmt = $conn->prepare("INSERT INTO `selected_menus` (menu_id) VALUES (?)");
                 $stmt->bind_param("i", $selected_menu_id);
                 $stmt->execute();
                 $stmt->close();
