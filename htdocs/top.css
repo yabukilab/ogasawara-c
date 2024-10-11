@@ -1,4 +1,8 @@
 p{
 text-align:center ;
+position: relative;
+padding: 1.5rem 1.5rem calc(1.5rem + 10px);
+border: 5px solid #000;
+margin-top: 80px;
 
 }
