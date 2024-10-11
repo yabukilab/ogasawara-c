@@ -6,3 +6,7 @@ h1{
     background-image: -webkit-linear-gradient(left, #f83600 0%, #f9d423 100%);
     background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
   }
+
+  body {
+    background-color: #ffd894; /* 例：薄い灰色 */
+  }
