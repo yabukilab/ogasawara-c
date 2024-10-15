@@ -39,14 +39,14 @@ h2:after {
     left: -20px;
     font-size: 1.2em;
     font-weight: bold;
+    color: #fff;
+    /* 数字の色を白に */
+    background-color: #007bff;
+    /* 数字の背景色を青に */
+    border-radius: 50%;
+    padding: 3px 5px;
 }
 
 .ranking-list a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
-}
-
-.ranking-list a:hover {
-    color: #007bff;
+    /* ... */
 }
