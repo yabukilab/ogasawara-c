@@ -20,24 +20,23 @@ h2:after {
 .property-list {
     text-align: center;
     margin: 50px auto;
-}
-
-.property-list ul {
+  }
+  
+  .property-list ul {
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: flex; /* flexbox を使用 */
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 各項目を中央揃え */
     padding: 0;
-
-}
-
-.property-list li {
-    width: 30%;
+  }
+  
+  .property-list li {
+    width: 80%; /* 各項目の幅を調整 */
     margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
+  }
 
 .property-list img {
     max-width: 100%;
