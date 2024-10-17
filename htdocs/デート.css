@@ -1,17 +1,20 @@
 h1{
-    text-align: center;
-    font-size: 45px;
-    padding: 1rem 2rem;
-    border-top: 3px solid #000;
-    border-bottom: 3px solid #000;
-   
+  text-align: center;
+  font-size: 45px;
+  padding: 1rem 2rem;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+ 
+}
+ol{
+  text-decoration: none;
 }
 body {
     background:linear-gradient(white,rgb(0, 153, 255));
-  }
-  h2{
+}
+h2{
     font-size:15px
-  }
-  p{
+}
+p{
     font-size:13px
-  }
+}
