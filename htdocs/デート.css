@@ -7,7 +7,7 @@ h1{
    
 }
 body {
-    background:linear-gradient(white,blue,white);
+    background:linear-gradient(white,rgb(0, 153, 255),white);
   }
   h2{
     font-size:15px
