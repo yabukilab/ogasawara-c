@@ -1,4 +1,23 @@
 h1{
-    font-size:28px ;
-    
+    font-size: 2em ;
+}
+
+body{
+    font-family: arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333
+}
+
+section{
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+}
+
+h2{
+    color: #4caf50;
 }
