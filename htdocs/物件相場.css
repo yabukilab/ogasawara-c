@@ -76,13 +76,13 @@ a.btn-c i.fa {
 
 footer {
   background: #f1e767;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
+  background: -webkit-gradient(linear, center top, center bottom, from(#f1e767), to(#feb645));
   background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
 }
 
 footer {
-  background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
+  background: -webkit-gradient(linear, center bottom, center top, from(#f1e767), to(#feb645));
   background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
 }
