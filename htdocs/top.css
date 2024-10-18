@@ -18,6 +18,12 @@ h1 {
     background-color: #ffd894; /* 例：薄い灰色 */
   }
 
+p{
+    font-size: 2.oem;
+}
+
+
+
   
   .toc-002 {
     margin-bottom: 30px;
@@ -34,7 +40,7 @@ h1 {
     background-color: #63c5de;
     color: #fff;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 3.0em;
 }
 
 .toc-002 div::before {
