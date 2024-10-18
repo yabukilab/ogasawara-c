@@ -89,3 +89,10 @@ a.btn-radius-solid:hover {
   background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
 }
+.center {
+  text-align: center;
+}
+
+.btn-radius-solid {
+  display: inline-block; /* ボタンを中央に配置するために inline-block を設定 */
+}
