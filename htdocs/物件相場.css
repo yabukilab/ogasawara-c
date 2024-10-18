@@ -88,13 +88,15 @@ a.btn-radius-solid:hover {
 }
 
 .container {
+  text-align: center;
   height: 100vh;
-  /* ビューポートの高さを指定 */
+  /* または、親要素の高さに合わせて調整 */
 }
 
 a.btn-radius-solid {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
+  /* ページの一番下から20px上に配置 */
   left: 50%;
   transform: translateX(-50%);
   /* 既存のスタイル */
