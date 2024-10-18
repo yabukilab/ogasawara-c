@@ -98,7 +98,7 @@ p {
     /* テキストを中央揃え */
 
     /* ホバー時のスタイル */
-    &:hover {
+    li:hover {
         background-color: #e0e0e0;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
