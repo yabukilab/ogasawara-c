@@ -79,6 +79,9 @@ a.btn-radius-solid {
   background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
   background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+  padding: 20px 40px; /* ボタンの内側の余白を大きくする */
+  font-size: 1.5rem; /* フォントサイズを大きくする */
+  border-radius: 50px; /* ボタンの角を丸く */
 }
 
 a.btn-radius-solid:hover {
