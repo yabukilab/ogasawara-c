@@ -11,3 +11,29 @@ h1 {
   body {
     background-color: #34afb8;
   }
+
+
+
+  body {
+      font-size: 15px; 
+  }
+  p {
+      font-size: 35px; 
+  }
+  h1 {
+      font-size: 30px;
+  }
+  h2 {
+      font-size: 30px;
+  }
+  h3 {
+      font-size: 30px;
+  }
+  .image-container {
+      display: flex;
+      align-items: center; 
+  }
+  img {
+      width: 600px;
+      margin-right: 20px;
+  }
