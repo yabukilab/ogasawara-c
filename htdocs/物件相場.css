@@ -86,15 +86,18 @@ a.btn-radius-solid:hover {
   background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
 }
-a.btn-rasius-solid {
+.container {
   text-align: center;
+  height: 100vh; /* または、親要素の高さに合わせて調整 */
 }
 
 a.btn-radius-solid {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   /* 既存のスタイル */
   display: inline-block;
+  padding: 10px 20px;
   /* ... */
-
-  /* 中央揃えにするためのスタイル */
-  margin: 0 auto; /* 上下左右のマージンを自動で調整し、水平方向を中央揃え */
 }
