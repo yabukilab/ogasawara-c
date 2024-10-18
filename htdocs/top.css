@@ -96,12 +96,12 @@ p {
     cursor: pointer;
     text-align: center;
     /* テキストを中央揃え */
+}
 
-    /* ホバー時のスタイル */
-    &:hover {
-        background-color: #e0e0e0;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
+/* ホバー時のスタイル */
+.toc-002 li:hover {
+    background-color: #e0e0e0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 img {
