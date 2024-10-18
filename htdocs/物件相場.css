@@ -95,7 +95,7 @@ a.btn-radius-solid:hover {
 
 a.btn-radius-solid {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   /* ページの一番下から20px上に配置 */
   left: 50%;
   transform: translateX(-50%);
