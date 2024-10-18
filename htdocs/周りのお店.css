@@ -1,10 +1,10 @@
-h1{
-    font-size: 25px ;
+h1 {
+    font-size: 25px;
     padding: 1rem 2rem;
     border: 3px solid #000;
 }
 
-body{
+body {
     font-family: arial, sans-serif;
     line-height: 1.7;
     padding: 20px;
@@ -12,31 +12,32 @@ body{
     color: #333
 }
 
-.intro{
+.intro {
     background-color: #ffffff;
     border-left: 5px solid #4caf50;
     padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 1.1em;
     line-height: 1.8;
 }
-.section{
+
+.section {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 }
 
-h2{
+h2 {
     color: #4caf50;
     font-size: 1.4em;
     margin-bottom: 10px;
 }
 
-p{
+p {
     font-size: 1em;
     margin-bottom: 10px;
     line-height: 1.8;
@@ -48,19 +49,47 @@ img {
     display: block;
     margin: 10px auto;
     border-radius: 8px;
-  }
+}
 
 @media (max-width: 770px) {
     h2 {
-      font-size: 1.5em;
+        font-size: 1.5em;
     }
 
-    p{
+    p {
         font-size: 45px;
     }
-  
+
     section {
-      margin-bottom: 20px;
-      padding: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
     }
-  }  
+}
+
+a.btn-radius-solid {
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
+    background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
+    background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+    padding: 20px 40px;
+    /* ボタンの内側の余白を大きくする */
+    font-size: 1.5rem;
+    /* フォントサイズを大きくする */
+    border-radius: 50px;
+    /* ボタンの角を丸く */
+}
+
+a.btn-radius-solid:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
+    background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
+    background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-radius-solid {
+    display: inline-block;
+    /* ボタンを中央に配置するために inline-block を設定 */
+}
