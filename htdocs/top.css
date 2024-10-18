@@ -104,6 +104,14 @@ p {
     }
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
 .fo {
     text-align: center;
     padding: 1rem 2rem;
