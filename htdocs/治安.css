@@ -16,10 +16,6 @@ h1 {
 
   body {
       font-size: 15px; 
-      flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
   }
   p {
       font-size: 35px; 
@@ -41,3 +37,9 @@ h1 {
       width: 600px;
       margin-right: 20px;
   }
+div.test{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
