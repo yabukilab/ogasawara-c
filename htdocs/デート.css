@@ -50,10 +50,20 @@ p {
   font-size: 16px;
   margin: 10px;
 }
+
 .important-info {
   font-weight: bold;
   color: #333; 
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto; /* 中央に配置 */
+  border-radius: 8px; /* 画像の角を丸める */
+}
+
 @media (max-width: 768px) {
   h2 {
     font-size: 1.5em;
