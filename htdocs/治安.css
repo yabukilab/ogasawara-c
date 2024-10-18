@@ -37,11 +37,8 @@ h1 {
       width: 600px;
       margin-right: 20px;
   }
-  div.test {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* 高さを指定して中央に配置 */
-  }
-  
+div.test{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
