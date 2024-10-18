@@ -86,9 +86,10 @@ a.btn-radius-solid:hover {
   background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
 }
+
 .container {
-  text-align: center;
-  height: 100vh; /* または、親要素の高さに合わせて調整 */
+  height: 100vh;
+  /* ビューポートの高さを指定 */
 }
 
 a.btn-radius-solid {
