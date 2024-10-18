@@ -27,8 +27,8 @@ h1 {
       font-size: 30px;
   }
   h3 {
-      font-size: 30px;
-  }
+    font-size: 30px;
+}
   .image-container {
       display: flex;
       align-items: center; 
@@ -37,3 +37,9 @@ h1 {
       width: 600px;
       margin-right: 20px;
   }
+div.test{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

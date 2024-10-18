@@ -50,9 +50,13 @@ img {
     border-radius: 8px;
   }
 
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     h2 {
       font-size: 1.5em;
+    }
+
+    p{
+        font-size: 45px;
     }
   
     section {
