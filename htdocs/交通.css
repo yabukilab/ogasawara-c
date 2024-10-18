@@ -1,30 +1,62 @@
-h1{
+h1 {
     padding: 1rem 2rem;
     color: #fff;
     border-radius: 70px;
     background-image: -webkit-gradient(linear, left top, right top, from(#f83600), to(#f9d423));
     background-image: -webkit-linear-gradient(left, #f83600 0%, #f9d423 100%);
     background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
-  }
+}
 
-  body {
+body {
     background-color: #b7e3f8;
-  }
+}
 
-        body {
-            font-size: 30px; 
-        }
-        p {
-            font-size: 35px; 
-        }
-        h1 {
-            font-size: 30px;
-        }
-        .image-container {
-            display: flex;
-            align-items: center; 
-        }
-        img {
-            width: 400px;
-            margin-right: 20px;
-        }
+body {
+    font-size: 30px;
+}
+
+p {
+    font-size: 35px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 400px;
+    margin-right: 20px;
+}
+
+a.btn-radius-solid {
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
+    background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
+    background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+    padding: 20px 40px;
+    /* ボタンの内側の余白を大きくする */
+    font-size: 1.5rem;
+    /* フォントサイズを大きくする */
+    border-radius: 50px;
+    /* ボタンの角を丸く */
+}
+
+a.btn-radius-solid:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
+    background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
+    background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-radius-solid {
+    display: inline-block;
+    /* ボタンを中央に配置するために inline-block を設定 */
+}
