@@ -86,7 +86,7 @@ a.btn-radius-solid:hover {
   background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
 }
-.container {
+a.btn-rasius-solid {
   text-align: center;
 }
 
