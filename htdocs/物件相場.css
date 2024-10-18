@@ -74,15 +74,33 @@ a.btn-c i.fa {
   margin-right: 1rem;
 }
 
+.container {
+  text-align: center;
+}
+
 a.btn-radius-solid {
+  display: inline-block;
+  /* ボタンをインラインブロック要素にする */
+  padding: 10px 20px;
+  /* ボタンのサイズを調整 */
   background: #f1e767;
   background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
   background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+  borde r: none;
+  /* ボタンのボーダーを削除 */
+  border-radius: 5px;
+  /* ボタンの角を丸める */
+  color: #fff;
+  /* ボタンのテキスト色 */
+  text-decoration: none;
+  /* アンダーラインを削除 */
+  font-size: 16px;
+  /* ボタンのフォントサイズ */
 }
 
 a.btn-radius-solid:hover {
   background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
-  background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
-  background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+  background: -webkit-linear-gradient(bot tom, #f1e767 0%, #feb645 100%);
+  background: linear-gradient(to top, #f1e767 0%, #feb645 10 0%);
 }
