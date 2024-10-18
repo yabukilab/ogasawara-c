@@ -37,3 +37,7 @@ h1 {
       width: 600px;
       margin-right: 20px;
   }
+
+  ncenter {
+    align-items: center; 
+  }
