@@ -60,8 +60,8 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 10px auto; /* 中央に配置 */
-  border-radius: 8px; /* 画像の角を丸める */
+  margin: 10px auto;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
