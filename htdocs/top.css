@@ -3,9 +3,9 @@ h1 {
     position: relative;
     padding: 1rem 2rem calc(1rem + 10px);
     background: #fff100;
-  }
-  
-  h1:before {
+}
+
+h1:before {
     position: absolute;
     top: -7px;
     left: -7px;
@@ -13,19 +13,21 @@ h1 {
     height: 100%;
     content: '';
     border: 4px solid #000;
-  }
-  body {
-    background-color: #ffd894; /* 例：薄い灰色 */
-   }
+}
+
+body {
+    background-color: #ffd894;
+    /* 例：薄い灰色 */
+}
 
 
-p{
+p {
     font-size: 28px;
 }
 
 
 
-  
+
 .toc-002 {
     margin-bottom: 30px;
     border: 2px solid #63c5de;
@@ -59,7 +61,7 @@ p{
     overflow: hidden;
 }
 
-.toc-002 > ol {
+.toc-002>ol {
     padding: 1em 1em 1em 3em;
 }
 
@@ -84,7 +86,25 @@ p{
     font-size: 30px;
 }
 
-.fo{
+.toc-002 li {
+    /* ボタン風のスタイル */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    /* テキストを中央揃え */
+
+    /* ホバー時のスタイル */
+    &:hover {
+        background-color: #e0e0e0;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.fo {
     text-align: center;
     padding: 1rem 2rem;
     border: 3px solid #000;
