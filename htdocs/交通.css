@@ -10,3 +10,21 @@ h1{
   body {
     background-color: #348eb8;
   }
+
+        body {
+            font-size: 30px; 
+        }
+        p {
+            font-size: 35px; 
+        }
+        h1 {
+            font-size: 30px;
+        }
+        .image-container {
+            display: flex;
+            align-items: center; 
+        }
+        img {
+            width: 400px;
+            margin-right: 20px;
+        }
