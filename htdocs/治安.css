@@ -37,3 +37,9 @@ h1 {
       width: 600px;
       margin-right: 20px;
   }
+div.test{
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
