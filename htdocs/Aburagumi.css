@@ -1,0 +1,75 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Main heading styling */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+/* Ensure line breaks in h1 are visually spaced */
+h1 br {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Paragraph styling */
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+/* Image styling */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Link button styling */
+a {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+a:hover {
+    background-color: #2980b9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Adjusting heading size for mobile */
+    }
+
+    p {
+        font-size: 1rem; /* Adjusting paragraph font size for mobile */
+    }
+
+    a {
+        font-size: 1rem; /* Adjusting link font size for mobile */
+    }
+}
