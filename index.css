@@ -1,0 +1,64 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa); /* 淡い青と紫のグラデーション */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ヘッダー */
+header h1 {
+    color: #4b0082; /* 濃いインディゴ */
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* テキストに影を追加 */
+}
+
+/* メインコンテンツ */
+main p {
+    background-color: #fff8dc; /* パステルイエロー */
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    max-width: 600px;
+    margin: 20px auto;
+    color: #8b4513; /* セピア色 */
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ボックスの影を強調 */
+    border: 2px solid #d2b48c; /* タンカラーの枠線 */
+}
+
+/* 画像スタイル */
+main img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 画像に目立つ影を追加 */
+}
+
+/* リンクボタンのスタイル */
+nav a {
+    display: inline-block;
+    margin: 15px 10px;
+    padding: 15px 30px;
+    width: auto;
+    background-color: #4682b4; /* スチールブルー */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* ふんわりした影 */
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #5f9ea0; /* ライトシーフォームグリーン */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* ホバー時に影を軽く */
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+}
