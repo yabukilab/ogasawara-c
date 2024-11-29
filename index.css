@@ -1,64 +1,75 @@
-/* 全体のスタイル */
+
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.8;
-    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa); /* 淡い青と紫のグラデーション */
-    color: #333;
+    font-family: 'Arial', sans-serif; 
+    line-height: 1.6; 
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f4f4f4; 
+    color: #333; 
+  }
+  
+  
+  h1 {
+    text-align: center; 
+    color: #2c3e50; 
+    font-size: 2.5rem; 
+    margin-top: 20px;
+  }
+  
+  h1 br {
+    display: block; 
+    margin: 10px 0;
+  }
+  
+ 
+  p {
     text-align: center;
-}
-
-/* ヘッダー */
-header h1 {
-    color: #4b0082; /* 濃いインディゴ */
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* テキストに影を追加 */
-}
-
-/* メインコンテンツ */
-main p {
-    background-color: #fff8dc; /* パステルイエロー */
-    padding: 20px;
-    border-radius: 15px;
-    display: inline-block;
-    max-width: 600px;
+    font-size: 1.2rem;
+    padding: 10px;
     margin: 20px auto;
-    color: #8b4513; /* セピア色 */
-    text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ボックスの影を強調 */
-    border: 2px solid #d2b48c; /* タンカラーの枠線 */
-}
-
-/* 画像スタイル */
-main img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px auto;
+    max-width: 800px; 
+    line-height: 1.8;
+  }
+  
+  
+  img {
     display: block;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 画像に目立つ影を追加 */
-}
+    margin: 20px auto;
+    max-width: 100%; 
+    border-radius: 10px; 
+  }
+  
 
-/* リンクボタンのスタイル */
-nav a {
-    display: inline-block;
-    margin: 15px 10px;
-    padding: 15px 30px;
-    width: auto;
-    background-color: #4682b4; /* スチールブルー */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* ふんわりした影 */
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #5f9ea0; /* ライトシーフォームグリーン */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* ホバー時に影を軽く */
-    transform: scale(1.05); /* ホバー時に少し拡大 */
-}
+  a {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    text-decoration: none; 
+    padding: 10px;
+    background-color: #3498db; 
+    color: white; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+  }
+  
+ 
+  a:hover {
+    background-color: #2980b9; 
+  }
+  
+  /* モバイル表示時のスタイル */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem; 
+    }
+  
+    p {
+      font-size: 1rem; 
+    }
+  
+    a {
+      font-size: 1rem; 
+    }
+  }
+  
