@@ -98,11 +98,15 @@ a:hover {
 img {
     display: block;
     margin: 20px auto;
-    max-width: 100%;
+    width: 100%; /* 画像の幅を100%に設定 */
+    max-width: 600px; /* 画像の最大幅を600pxに設定 */
+    height: 400px; /* 画像の高さを400pxに設定 */
+    object-fit: cover; /* 画像を指定サイズに収める */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
 }
 
+/* 地図のスタイル */
 .map-container {
     display: flex; /* フレックスボックスを利用 */
     justify-content: center; /* 水平方向の中央揃え */
