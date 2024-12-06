@@ -118,6 +118,26 @@ footer p {
   font-size: 1rem;
 }
 
+/* 戻るボタンのスタイル */
+.back-button {
+  background-color: #3498db; /* ボタンの背景色 */
+  color: white; /* 文字色 */
+  font-size: 1.2rem; /* 文字サイズ */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  border: none; /* ボーダーなし */
+  border-radius: 5px; /* 角丸 */
+  cursor: pointer; /* カーソルをポインターに */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
+  margin-top: 20px; /* 上部に余白を追加 */
+}
+
+/* ホバー時のスタイル */
+.back-button:hover {
+  background-color: #2980b9; /* 背景色を濃いブルーに変更 */
+  transform: translateY(-2px); /* 上に少し動かす */
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 600px) {
   header h1 {
