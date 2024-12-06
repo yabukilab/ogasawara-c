@@ -103,6 +103,14 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
 }
 
+
+.map-container {
+    display: flex; /* フレックスボックスを利用 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え（必要なら） */
+    margin: 20px 0;
+}
+
 /* モバイル対応 */
 @media (max-width: 600px) {
     h1 {
