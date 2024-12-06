@@ -1,14 +1,13 @@
-/* ベースの設定 */
+/* 全体のスタイル */
 body {
     font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f4f4f4; /* 背景色：淡いグレー */
+    color: #333; /* テキスト色：ダークグレー */
 }
-  
-  /* ヘッダー */
+
 header {
     background-color: #3498db;
     color: white;
@@ -26,111 +25,103 @@ header p {
     margin: 10px 0;
     line-height: 1.6;
 }
-  
-  /* メインセクション */
+
 main {
     padding: 20px;
 }
-  
-  /* 店舗情報セクション */
-.about {
-    background-color: #fff;
+
+/* 店舗情報のセクション */
+.box15 {
+    background-color: #ffffff; /* 白い背景 */
+    border-radius: 10px; /* 角丸 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
 }
-  
-.about h2 {
+
+.box15 .namae {
     font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-weight: bold;
+    color: #3498db; /* 店名の強調色：ブルー */
+    margin-bottom: 10px;
 }
-  
-.about p {
-    font-size: 1.1rem;
-    margin: 5px 0;
+
+.box15 .tennpo h2 {
+    font-size: 1.6rem;
+    color: #34495e; /* 深いグレー */
+    margin-bottom: 10px;
 }
-  
-  /* メニューセクション */
-.menu {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-  
-.menu h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-  
-.menu-item {
-    margin-bottom: 15px;
-}
-  
-.menu-item h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-  
-.menu-item p {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-}
-  
-  /* ギャラリーセクション */
-.gallery img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-  
-  /* お問い合わせセクション */
-.contact {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-  
-.contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-  
-.contact p {
-    font-size: 1.1rem;
-    margin: 5px 0;
-}
-  
-  /* フッター */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-  
-footer p {
+
+.box15 .tennpo ul {
+    list-style-type: none;
+    padding: 0;
     margin: 0;
-    font-size: 1rem;
 }
-  
-  /* レスポンシブデザイン */
+
+.box15 .tennpo li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* おすすめセクション */
+.box21 {
+    background-color: #ecf0f1; /* 薄いブルーグレー */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.box21 .osusume h4 {
+    font-size: 1.6rem;
+    color: #2c3e50; /* 深いネイビー */
+    margin-bottom: 10px;
+}
+
+.box21 p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* 画像のスタイル */
+.restaurant-photo img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto; /* 高さを自動調整 */
+    border-radius: 10px;  /* 角丸 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+}
+
+/* 地図コンテナのスタイル */
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* モバイル対応 */
 @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
+    h1.test {
+        font-size: 2rem;
     }
-  
-    header p {
-      font-size: 1rem;
+
+    p {
+        font-size: 1rem;
     }
-  
-    .about h2, .menu h2, .contact h2 {
-      font-size: 1.5rem;
+
+    .box15, .box21 {
+        padding: 15px;
     }
-  
+
+    .restaurant-photo img {
+        max-width: 90%; /* モバイルでは画像の幅を小さく */
+    }
 }
-  
