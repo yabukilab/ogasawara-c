@@ -1,4 +1,4 @@
-/* 全体のスタイル */
+/* ベースの設定 */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -9,11 +9,18 @@ body {
 }
 
 /* ヘッダーのスタイル */
-h1 {
+header {
+    background-color: #3498db; /* 背景色：青 */
+    color: white; /* 文字色：白 */
     text-align: center;
-    color: #2c3e50; /* ヘッダーの文字色：ブルー系グレー */
-    font-size: 2.5rem;
-    margin-top: 20px;
+    padding: 50px 20px; /* パディングを増やして余白を調整 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影を加えて立体感を出す */
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    line-height: 1.2;
 }
 
 h1 br {
@@ -21,21 +28,33 @@ h1 br {
     margin: 10px 0;
 }
 
+header p {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
 /* 店舗情報セクション */
 .box15 {
     background-color: #ffffff; /* 白い背景 */
     border-radius: 10px; /* 角丸 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
-    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+    padding: 25px;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 900px; /* 最大幅を広げる */
     text-align: left;
 }
 
 .box15 .namae {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #3498db; /* 店名の強調色：ブルー */
+    margin-bottom: 15px;
+}
+
+.box15 .tennpo h2 {
+    font-size: 1.8rem;
+    color: #34495e; /* 深いグレー */
     margin-bottom: 10px;
 }
 
@@ -49,24 +68,24 @@ h1 br {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 /* おすすめセクション */
 .box21 {
     background-color: #ecf0f1; /* 薄いブルーグレー */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 900px;
     text-align: left;
 }
 
 .box21 h4 {
-    font-size: 1.6rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #2c3e50; /* 深いネイビー */
+    margin-bottom: 15px;
 }
 
 .box21 p {
@@ -82,16 +101,18 @@ a {
     font-size: 1.2rem;
     margin: 15px 5px;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #3498db; /* ボタン背景色：ブルー */
     color: white;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* ホバー時のスタイル */
 a:hover {
-    background-color: #2980b9; /* ホバー時：濃いブルー */
+    background-color: #2980b9; /* 背景色を濃いブルーに変更 */
+    transform: translateY(-2px); /* 上に少し動かす */
 }
 
 /* 画像のスタイル */
@@ -103,7 +124,7 @@ img {
     height: 400px; /* 画像の高さを400pxに設定 */
     object-fit: cover; /* 画像を指定サイズに収める */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
 }
 
 /* 地図のスタイル */
@@ -119,13 +140,16 @@ img {
     background-color: #3498db; /* ボタンの背景色 */
     color: white; /* 文字色 */
     font-size: 1.2rem; /* 文字サイズ */
-    padding: 10px 20px; /* ボタンの内側の余白 */
+    padding: 12px 25px; /* ボタンの内側の余白を増やす */
     border: none; /* ボーダーなし */
     border-radius: 5px; /* 角丸 */
     cursor: pointer; /* カーソルをポインターに */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
     transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-    margin-top: 20px; /* 上部に余白を追加 */
+    margin-top: 25px; /* 上部に余白を追加 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ホバー時のスタイル */
@@ -137,11 +161,11 @@ img {
 /* モバイル対応 */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     a {
@@ -150,6 +174,10 @@ img {
     }
 
     .box15, .box21 {
-        padding: 15px;
+        padding: 20px;
+    }
+
+    .restaurant-photo img {
+        max-width: 90%; /* モバイルでは画像の幅を小さく */
     }
 }
