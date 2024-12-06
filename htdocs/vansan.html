@@ -56,13 +56,15 @@
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         
-       
+        <button class="back-button" onclick="goBack()">戻る</button>
 
     </div>
 
-    <button class="back-button" onclick="goBack()">戻る</button>
-
-  <script src="script.js"></script>
+    <script>
+        function goBack() {
+            window.history.back(); // ブラウザの履歴を1つ戻る
+        }
+    </script>
 </body>
 
 </html>
