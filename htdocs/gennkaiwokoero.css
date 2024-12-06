@@ -3,8 +3,8 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f4f4f4; /* 背景色：淡いグレー */
+  color: #333; /* テキスト色：ダークグレー */
   line-height: 1.6;
 }
 
@@ -13,16 +13,17 @@ header {
   background-color: #3498db;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px; /* ヘッダーのパディングを増やして余白を調整 */
+  border-bottom: 5px solid #2980b9; /* ヘッダー下に明確な区切り線を追加 */
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin: 0;
 }
 
 header p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 10px 0;
   line-height: 1.6;
 }
@@ -35,48 +36,53 @@ main {
 /* 店舗情報セクション */
 .about {
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影を強調 */
 }
 
 .about h2 {
-  font-size: 1.8rem;
+  font-size: 2rem; /* 見出しの文字サイズを少し大きく */
+  color: #3498db; /* 見出しを青に */
   margin-bottom: 15px;
 }
 
 .about p {
-  font-size: 1.1rem;
-  margin: 5px 0;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
 }
 
 /* メニューセクション */
 .menu {
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .menu h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 15px;
-}
-
-.menu-item {
-  margin-bottom: 15px;
-}
-
-.menu-item h3 {
-  font-size: 1.5rem;
   color: #2c3e50;
 }
 
+.menu-item {
+  margin-bottom: 20px;
+}
+
+.menu-item h3 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
 .menu-item p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #7f8c8d;
+  line-height: 1.8;
 }
 
 /* ギャラリーセクション */
@@ -89,20 +95,23 @@ main {
 /* お問い合わせセクション */
 .contact {
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .contact h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: #3498db;
   margin-bottom: 15px;
 }
 
 .contact p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 5px 0;
+  color: #333;
+  line-height: 1.8;
 }
 
 /* フッター */
@@ -123,16 +132,15 @@ footer p {
   background-color: #3498db; /* ボタンの背景色 */
   color: white; /* 文字色 */
   font-size: 1.2rem; /* 文字サイズ */
-  padding: 10px 20px; /* ボタンの内側の余白 */
+  padding: 12px 25px; /* ボタンの内側の余白を増やす */
   border: none; /* ボーダーなし */
   border-radius: 5px; /* 角丸 */
   cursor: pointer; /* カーソルをポインターに */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
   transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-  margin-top: 20px; /* 上部に余白を追加 */
+  margin-top: 25px; /* 上部に余白を追加 */
 }
 
-/* ホバー時のスタイル */
 .back-button:hover {
   background-color: #2980b9; /* 背景色を濃いブルーに変更 */
   transform: translateY(-2px); /* 上に少し動かす */
@@ -141,15 +149,26 @@ footer p {
 /* レスポンシブデザイン */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .about h2, .menu h2, .contact h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
+  .menu-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .menu-item p, .about p, .contact p {
+    font-size: 1.1rem;
+  }
+
+  .restaurant-photo img {
+    max-width: 90%;
+  }
 }
