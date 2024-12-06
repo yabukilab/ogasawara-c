@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* 背景色：淡いグレー */
+    background-color: #f9f9f9; /* 背景色をより明るいグレーに */
     color: #333; /* テキスト色：ダークグレー */
     display: flex;
     flex-direction: column;
@@ -12,41 +12,43 @@ body {
     justify-content: flex-start;
     min-height: 100vh; /* 最小高さを100vhに設定 */
 }
+
 /* ヘッダー */
 header {
-    background-color: #3498db;
-    color: white;
+    background-color: #3498db; /* 背景色：青 */
+    color: white; /* 文字色：白 */
     text-align: center;
-    padding: 40px 20px;
-    width: 100%; /* ヘッダーの幅を全体に */
+    padding: 50px 20px; /* ヘッダー内の余白を調整 */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ヘッダーに影を追加 */
 }
-  
+
 header h1 {
     font-size: 2.8rem;
     margin: 0;
 }
-  
+
 header p {
     font-size: 1.4rem;
     margin: 10px 0;
+    line-height: 1.6;
 }
-
 
 /* 店舗情報セクション */
 .box15 {
     background-color: #ffffff; /* 白い背景 */
-    border-radius: 10px; /* 角丸 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
-    padding: 25px;
+    border-radius: 12px; /* 角丸を少し大きく */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1); /* 影を強調 */
+    padding: 30px; /* 内側の余白を広げる */
     margin: 20px auto;
-    max-width: 900px; /* 最大幅を広げる */
-    text-align: left;
+    max-width: 800px; /* 幅を少し狭める */
+    text-align: center; /* テキストを中央揃え */
 }
 
 .box15 .namae {
     font-size: 2rem;
     font-weight: bold;
-    color: #3498db; /* 店名の強調色：ブルー */
+    color: #2c3e50; /* 深いネイビー */
     margin-bottom: 15px;
 }
 
@@ -72,12 +74,12 @@ header p {
 /* おすすめセクション */
 .box21 {
     background-color: #ecf0f1; /* 薄いブルーグレー */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* 内側の余白を広げる */
     margin: 20px auto;
-    max-width: 900px;
-    text-align: left;
+    max-width: 800px;
+    text-align: center;
 }
 
 .box21 h4 {
@@ -97,20 +99,19 @@ a {
     display: inline-block;
     text-align: center;
     font-size: 1.2rem;
-    margin: 15px 5px;
+    margin: 20px 10px;
     text-decoration: none;
-    padding: 12px 25px;
-    background-color: #3498db; /* ボタン背景色：ブルー */
-    color: white;
-    border-radius: 5px;
+    padding: 12px 30px;
+    background-color: #3498db; /* ボタン背景色：青 */
+    color: white; /* テキスト色：白 */
+    border-radius: 8px; /* 角丸を強調 */
     transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
 }
 
-/* ホバー時のスタイル */
 a:hover {
     background-color: #2980b9; /* 背景色を濃いブルーに変更 */
-    transform: translateY(-2px); /* 上に少し動かす */
+    transform: translateY(-2px); /* 少し上に動かす */
 }
 
 /* 画像のスタイル */
@@ -118,11 +119,11 @@ img {
     display: block;
     margin: 20px auto;
     width: 100%; /* 画像の幅を100%に設定 */
-    max-width: 600px; /* 画像の最大幅を600pxに設定 */
-    height: 400px; /* 画像の高さを400pxに設定 */
-    object-fit: cover; /* 画像を指定サイズに収める */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+    max-width: 600px; /* 最大幅を600pxに設定 */
+    height: auto; /* 高さは自動 */
+    object-fit: cover; /* 画像を枠に収める */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影を追加 */
 }
 
 /* 地図のスタイル */
@@ -136,47 +137,49 @@ img {
 
 /* 戻るボタンのスタイル */
 .back-button {
-    background-color: #3498db; /* ボタンの背景色 */
+    background-color: #3498db; /* ボタン背景色 */
     color: white; /* 文字色 */
-    font-size: 1.2rem; /* 文字サイズ */
-    padding: 12px 25px; /* ボタンの内側の余白を増やす */
-    border: none; /* ボーダーなし */
-    border-radius: 5px; /* 角丸 */
-    cursor: pointer; /* カーソルをポインターに */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-    margin-top: 25px; /* 上部に余白を追加 */
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px; /* 角丸を強調 */
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* ホバー時のスタイル */
 .back-button:hover {
-    background-color: #2980b9; /* 背景色を濃いブルーに変更 */
-    transform: translateY(-2px); /* 上に少し動かす */
+    background-color: #2980b9;
+    transform: translateY(-2px); /* 少し上に動かす */
 }
 
 /* モバイル対応 */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2.2rem;
+    header h1 {
+        font-size: 2.4rem;
     }
 
-    p {
-        font-size: 1.1rem;
-    }
-
-    a {
-        font-size: 1rem;
-        padding: 8px 16px;
+    header p {
+        font-size: 1.2rem;
     }
 
     .box15, .box21 {
         padding: 20px;
     }
 
-    .restaurant-photo img {
-        max-width: 90%; /* モバイルでは画像の幅を小さく */
+    a {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    img {
+        max-width: 100%; /* モバイルでは画像を画面幅にフィット */
+    }
+
+    .back-button {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
