@@ -56,9 +56,14 @@ body {
 }
 
 .restaurant img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  /* レストランの画像を統一する */
+  width: 300px;          /* 幅を固定 */
+  height: 200px;         /* 高さを固定 */
+  margin: 10px auto;     /* 画像を中央に配置 */
+  border-radius: 8px;    /* 画像の角を丸める */
+  object-fit: cover;     /* 画像をトリミングして枠に合わせる */
+
+
 }
 
 .btn {
