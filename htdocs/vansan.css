@@ -1,4 +1,3 @@
-
 /* 全体のスタイル */
 body {
     font-family: 'Arial', sans-serif;
@@ -10,19 +9,15 @@ body {
 }
 
 /* ヘッダーのスタイル */
-h1 {
+h1.test {
     text-align: center;
-    color: #2c3e50; /* ヘッダーの文字色：ブルー系グレー */
+    color: #3498db; /* ヘッダーの文字色：ブルー */
     font-size: 2.5rem;
-    margin-top: 20px;
+    margin: 30px 0;
+    font-weight: bold;
 }
 
-h1 br {
-    display: block;
-    margin: 10px 0;
-}
-
-/* 店舗情報セクション */
+/* 店舗情報のセクション */
 .box15 {
     background-color: #ffffff; /* 白い背景 */
     border-radius: 10px; /* 角丸 */
@@ -38,5 +33,83 @@ h1 br {
     font-weight: bold;
     color: #3498db; /* 店名の強調色：ブルー */
     margin-bottom: 10px;
+}
+
+.box15 .tennpo h2 {
+    font-size: 1.6rem;
+    color: #2c3e50; /* 店舗情報タイトルの色 */
+    margin-bottom: 10px;
+}
+
+.box15 .tennpo ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box15 .tennpo li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* おすすめセクション */
+.box21 {
+    background-color: #ecf0f1; /* 薄いブルーグレー */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.box21 .osusume h4 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.box21 p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* 画像のスタイル */
+.restaurant-photo img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto; /* 高さを自動調整 */
+    border-radius: 10px;  /* 角丸 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+}
+
+/* 地図コンテナのスタイル */
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+    h1.test {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .box15, .box21 {
+        padding: 15px;
+    }
+
+    .restaurant-photo img {
+        max-width: 90%; /* モバイルでは画像の幅を小さく */
+    }
 }
 
