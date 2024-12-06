@@ -1,6 +1,6 @@
 /* 全体設定 */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
 }
 
 /* ヘッダー */
-header {
+.header {
     background-color: #3498db;
     color: white;
     text-align: center;
@@ -17,31 +17,14 @@ header {
     border-bottom: 3px solid #2980b9; /* ヘッダー下に線を追加 */
 }
 
-header h1 {
-    font-size: 2.8rem; /* 見出しのサイズを少し大きく */
+.header h1 {
+    font-size: 2.8rem;
     margin: 0;
 }
 
-header p {
-    font-size: 1.4rem; /* 少し大きめのフォントサイズ */
+.header p {
+    font-size: 1.4rem;
     margin: 10px 0;
-    line-height: 1.6;
-}
-
-/* 説明セクション */
-.intro {
-    text-align: center;
-    padding: 20px 10px;
-    background: #fff;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影を強化 */
-}
-
-.intro p {
-    font-size: 1.2rem;
-    line-height: 1.8;
 }
 
 /* 店舗情報のセクション */
@@ -56,7 +39,7 @@ header p {
 }
 
 .box15 .namae {
-    font-size: 2rem; /* 店名のフォントサイズを大きく */
+    font-size: 2rem;
     font-weight: bold;
     color: #3498db; /* 店名の強調色：ブルー */
     margin-bottom: 15px;
@@ -64,7 +47,7 @@ header p {
 
 .box15 .tennpo h2 {
     font-size: 1.6rem;
-    color: #34495e; /* 深いグレー */
+    color: #34495e;
     margin-bottom: 10px;
 }
 
@@ -78,12 +61,12 @@ header p {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #333;
-    margin-bottom: 8px; /* リストアイテムの間隔を広げる */
+    margin-bottom: 8px;
 }
 
 /* おすすめセクション */
 .box21 {
-    background-color: #ecf0f1; /* 薄いブルーグレー */
+    background-color: #ecf0f1;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 25px;
@@ -93,8 +76,8 @@ header p {
 }
 
 .box21 .osusume h4 {
-    font-size: 1.8rem; /* 見出しのサイズを大きく */
-    color: #2c3e50; /* 深いネイビー */
+    font-size: 1.8rem;
+    color: #2c3e50;
     margin-bottom: 15px;
 }
 
@@ -109,8 +92,8 @@ header p {
     display: block;
     margin: 20px auto;
     max-width: 100%;
-    height: auto; /* 高さを自動調整 */
-    border-radius: 10px;  /* 角丸 */
+    height: auto;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影を強化 */
 }
 
@@ -123,31 +106,27 @@ header p {
 
 /* 戻るボタンのスタイル */
 .back-button {
-    background-color: #3498db; /* ボタンの背景色 */
-    color: white; /* 文字色 */
-    font-size: 1.2rem; /* 文字サイズ */
-    padding: 12px 25px; /* ボタンの内側の余白を広げる */
-    border: none; /* ボーダーなし */
-    border-radius: 5px; /* 角丸 */
-    cursor: pointer; /* カーソルをポインターに */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* ホバー時のアニメーション */
-    margin-top: 25px; /* 上部に余白を追加 */
+    background-color: #3498db;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px;
 }
 
 .back-button:hover {
-    background-color: #2980b9; /* 背景色を濃いブルーに変更 */
-    transform: translateY(-2px); /* 上に少し動かす */
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 /* モバイル対応 */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 2rem; /* 小さい画面で文字を小さくする */
-    }
-
-    .intro p {
-        font-size: 1rem; /* 説明文のフォントサイズを小さく */
+        font-size: 2rem;
     }
 
     .box15, .box21 {
@@ -155,6 +134,6 @@ header p {
     }
 
     .restaurant-photo img {
-        max-width: 90%; /* モバイルでは画像の幅を小さく */
+        max-width: 90%;
     }
 }
