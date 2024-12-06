@@ -59,6 +59,15 @@ a:hover {
     background-color: #2980b9;
 }
 
+/* Centering the map container */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px; /* Adjust the width as needed */
+}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
     h1 {
@@ -71,5 +80,9 @@ a:hover {
 
     a {
         font-size: 1rem; /* Adjusting link font size for mobile */
+    }
+
+    .map-container {
+        width: 100%; /* Ensure full width on mobile */
     }
 }
