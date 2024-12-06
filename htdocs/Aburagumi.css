@@ -6,6 +6,11 @@ body {
     padding: 0;
     background-color: #f4f4f4; /* 背景色：淡いグレー */
     color: #333; /* テキスト色：ダークグレー */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央揃え */
+    justify-content: flex-start;
+    min-height: 100vh; /* 最小高さを100vhに設定 */
 }
 
 /* ヘッダーのスタイル */
@@ -13,7 +18,8 @@ header {
     background-color: #3498db; /* 背景色：青 */
     color: white; /* 文字色：白 */
     text-align: center;
-    padding: 50px 20px; /* パディングを増やして余白を調整 */
+    padding: 50px 20px;
+    width: 100%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影を加えて立体感を出す */
 }
 
@@ -21,11 +27,6 @@ h1 {
     font-size: 2.8rem;
     margin: 0;
     line-height: 1.2;
-}
-
-h1 br {
-    display: block;
-    margin: 10px 0;
 }
 
 header p {
@@ -131,8 +132,9 @@ img {
 .map-container {
     display: flex; /* フレックスボックスを利用 */
     justify-content: center; /* 水平方向の中央揃え */
-    align-items: center; /* 垂直方向の中央揃え（必要なら） */
+    align-items: center; /* 垂直方向の中央揃え */
     margin: 20px 0;
+    width: 100%;
 }
 
 /* 戻るボタンのスタイル */
