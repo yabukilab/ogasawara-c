@@ -12,13 +12,17 @@ body {
 .header {
     color: white;
     text-align: center;
-    padding: 40px 20px;
-    border-bottom: 3px solid #2980b9; /* ヘッダー下に線を追加 */
+    padding: 40px 20px; 
 }
 
 .header h1 {
     font-size: 2.8rem;
     margin: 0;
+    color: #3498db; /* 青文字 */
+    background-color: white; /* h1部分を白背景に */
+    padding: 10px 20px; /* 内側の余白を追加 */
+    display: inline-block; /* h1の幅を内容に合わせる */
+    border-radius: 5px; /* 角を丸めて柔らかい印象に */
 }
 
 .header p {
