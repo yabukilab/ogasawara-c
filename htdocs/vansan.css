@@ -28,6 +28,8 @@ body {
 .header p {
     font-size: 1.4rem;
     margin: 10px 0;
+    color: #3498db
+    background-color: #ffffff
 }
 
 /* 店舗情報のセクション */
