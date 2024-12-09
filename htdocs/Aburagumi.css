@@ -6,25 +6,22 @@ body {
     padding: 0;
     background-color: #f9f9f9; /* 背景色をより明るいグレーに */
     color: #333; /* テキスト色：ダークグレー */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 中央揃え */
-    justify-content: flex-start;
-    min-height: 100vh; /* 最小高さを100vhに設定 */
 }
 
 /* ヘッダー */
 .header {
-    background-color: #3498db;
     color: white;
     text-align: center;
     padding: 40px 20px;
-    border-bottom: 3px solid #2980b9; /* ヘッダー下に線を追加 */
 }
 
 .header h1 {
     font-size: 2.8rem;
     margin: 0;
+    color: #3498db;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 .header p {
