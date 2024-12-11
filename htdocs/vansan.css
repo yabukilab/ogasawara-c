@@ -70,7 +70,7 @@ body {
 
 /* おすすめセクション */
 .box21 {
-    background-color: #ecf0f1;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 25px;
@@ -81,7 +81,7 @@ body {
 
 .box21 .osusume h4 {
     font-size: 1.8rem;
-    color: #2c3e50;
+    color: #3498db;
     margin-bottom: 15px;
 }
 
