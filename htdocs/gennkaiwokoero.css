@@ -32,16 +32,19 @@ body {
 }
 
 /* メインセクション */
-main {
-  width: 100%;
-  max-width: 900px; /* 最大幅を設定 */
-  padding: 20px;
-  margin: 0 auto;
+.box15 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: left;
 }
 
 /* 店舗情報セクション */
-.about {
-  background-color: #fff;
+.box15 about {
+  background-color: #ffffff;
   padding: 25px;
   margin-bottom: 30px;
   border-radius: 10px;
