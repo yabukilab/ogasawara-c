@@ -70,7 +70,7 @@ body {
 
 /* おすすめセクション */
 .box21 {
-    background-color: #ffffff; /* 薄いブルーグレー */
+    background-color: #ffffff; 
     border-radius: 12px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
     padding: 30px; /* 内側の余白を広げる */
