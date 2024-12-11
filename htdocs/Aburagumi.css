@@ -155,11 +155,11 @@ img {
 
 /* モバイル対応 */
 @media (max-width: 600px) {
-    header h1 {
+    .header h1 {
         font-size: 2.4rem;
     }
 
-    header p {
+    .header p {
         font-size: 1.2rem;
     }
 
