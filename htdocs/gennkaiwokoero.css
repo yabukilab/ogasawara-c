@@ -51,10 +51,23 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.box15 .tenpo p {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 15px;
+.box15 .tenpo h2 {
+  font-size: 1.6rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.box15 .tenpo ul{
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.box15 .tennpo li {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 8px;
 }
 
 
@@ -70,7 +83,7 @@ body {
   text-align: left;
 }
 
-.box21 name h2 {
+.box21 name h3 {
   background-color: #3498db;
   padding: 25px;
   margin-bottom: 30px;
@@ -84,7 +97,7 @@ body {
   margin-bottom: 15px;
 }
 
-.box21 menu-item h3 {
+.box21 menu-item h4 {
   font-size: 1.6rem;
   color: #2c3e50;
   margin-bottom: 5px;
