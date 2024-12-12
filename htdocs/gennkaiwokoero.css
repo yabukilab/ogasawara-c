@@ -90,9 +90,9 @@ margin: 0;
 }
 
 .box21 .name p {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
 }
 
 .box21 .menu-item h4 {
