@@ -83,7 +83,7 @@ margin: 0;
   text-align: left;
 }
 
-.box21 name h3 {
+.box21 .name h3 {
   background-color: #3498db;
   padding: 25px;
   margin-bottom: 30px;
@@ -91,19 +91,19 @@ margin: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.box21 name p {
+.box21 .name p {
   font-size: 2rem;
   color: #2c3e50;
   margin-bottom: 15px;
 }
 
-.box21 menu-item h4 {
+.box21 .menu-item h4 {
   font-size: 1.6rem;
   color: #2c3e50;
   margin-bottom: 5px;
 }
 
-.box21 menu-item p {
+.box21 .menu-item p {
   font-size: 1.2rem;
   color: #7f8c8d;
   line-height: 1.8;
