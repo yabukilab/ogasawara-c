@@ -1,13 +1,13 @@
 <?php
 $host = 'localhost';
-$dbname = 'lost_and_found';
-$user = 'root';
-$pass = '';
+$dbname = 'otoshimono';
+$user = 'root'; 
+$pass = '';     
 
 try {
-  $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  echo 'DB接続エラー: ' . $e->getMessage();
-  exit;
+    exit('DB接続エラー: ' . $e->getMessage());
 }
 ?>
