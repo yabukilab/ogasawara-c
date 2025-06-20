@@ -3,8 +3,8 @@ require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $keyword = $_POST['keyword'];
-  $currentLocation = $_POST['currentLocation'];
-  $foundPlace = $_POST['foundPlace'];
+  $currentLocation = $_POST['current_location']; // ←修正！
+  $foundPlace = $_POST['found_place'];           // ←修正！
   $comment = $_POST['comment'];
 
   // 写真の保存

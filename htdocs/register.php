@@ -49,7 +49,7 @@
     </label>
 
     <label>現在の場所:
-      <select name="currentLocation">
+      <select name="current_location">
         <option value="">選んでください</option>
         <option value="C棟">C棟</option>
         <option value="D棟">D棟</option>
@@ -59,7 +59,7 @@
     </label>
 
     <label>見つけた場所:
-      <input type="text" name="foundPlace">
+      <input type="text" name="found_place">
     </label>
 
     <label>コメント:
@@ -72,8 +72,8 @@
   <script>
     function validateForm() {
       const keyword = document.querySelector('select[name="keyword"]').value;
-      const currentLocation = document.querySelector('select[name="currentLocation"]').value;
-      const foundPlace = document.querySelector('input[name="foundPlace"]').value;
+      const currentLocation = document.querySelector('select[name="current_location"]').value;
+      const foundPlace = document.querySelector('input[name="found_place"]').value;
       const photo = document.querySelector('input[name="photo"]').value;
 
       if (!keyword || !currentLocation || !foundPlace || !photo) {
