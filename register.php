@@ -41,20 +41,28 @@
     <label>キーワード:
       <select name="keyword">
         <option value="">選んでください</option>
-        <option value="財布">財布</option>
+        <option value="筆記用具">筆記用具</option>
         <option value="学生証">学生証</option>
         <option value="傘">傘</option>
-        <option value="文房具">文房具</option>
+        <option value="ノート">ノート</option>
+        <option value="ファイル">ファイル</option>
+        <option value="ハンカチ">ハンカチ</option>
+        <option value="衣類">衣類</option>
+        <option value="バッグ">バッグ</option>
+        <option value="電子機器">電子機器</option>
+         <option value="水筒">水筒</option>
+        <option value="キーホルダ">キーホルダ</option>
+        <option value="コード類">コード類</option>
+        <option value="3DS">3DS</option>
+        <option value="その他">その他</option>
       </select>
     </label>
 
     <label>現在の場所:
       <select name="current_location">
         <option value="">選んでください</option>
-        <option value="C棟">C棟</option>
-        <option value="D棟">D棟</option>
-        <option value="E棟">E棟</option>
-        <option value="図書館">図書館</option>
+        <option value="教務課">教務課</option>
+        <option value="見つけた場所">見つけた場所</option>
       </select>
     </label>
 
