@@ -1,25 +1,20 @@
 <?php
 require 'db.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $keyword = $_POST['keyword'];
-  $currentLocation = $_POST['current_location']; // ←修正！
-  $foundPlace = $_POST['found_place'];           // ←修正！
-  $comment = $_POST['comment'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $keyword = $_POST['keyword'];
+    $currentLocation = $_POST['current_location'];
+    $foundPlace = $_POST['found_place'];
+    $comment = $_POST['comment'];
 
-  // 写真の保存
-  $photoPath = '';
-  if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-    $uploadDir = 'uploads/';
-    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
-    $photoName = time() . "_" . basename($_FILES['photo']['name']);
-    $photoPath = $uploadDir . $photoName;
-    move_uploaded_file($_FILES['photo']['tmp_name'], $photoPath);
-  }
+    // 画像をバイナリで読み込む
+    $photoData = null;
+    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+        $photoData = file_get_contents($_FILES['photo']['tmp_name']);
+    }
 
-  // DB登録
-  $stmt = $pdo->prepare("INSERT INTO items (photo, keyword, current_location, found_place, comment) VALUES (?, ?, ?, ?, ?)");
-  $stmt->execute([$photoPath, $keyword, $currentLocation, $foundPlace, $comment]);
+    $stmt = $pdo->prepare("INSERT INTO items (photo, keyword, current_location, found_place, comment, is_received) VALUES (?, ?, ?, ?, ?, 0)");
+    $stmt->execute([$photoData, $keyword, $currentLocation, $foundPlace, $comment]);
 }
 ?>
 
@@ -29,15 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta charset="UTF-8">
   <title>登録完了</title>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h2 {
-      color: #4CAF50;
-      margin-bottom: 30px;
-    }
+    body { font-family: sans-serif; text-align: center; padding-top: 100px; }
+    h2 { color: #4CAF50; margin-bottom: 30px; }
     .btn {
       background-color: #4CAF50;
       color: white;

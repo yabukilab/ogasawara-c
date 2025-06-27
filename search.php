@@ -1,94 +1,101 @@
 <?php
 require 'db.php';
 
-// キーワードで絞り込み（GETパラメータ）
-$filter = isset($_GET['keyword']) ? $_GET['keyword'] : '';
+// 絞り込みキーワードの取得（POSTまたはGET）
+$searchKeyword = isset($_POST['search_keyword']) ? $_POST['search_keyword'] : '';
 
-// キーワード一覧をDBから取得（重複を除く）
-$keywordStmt = $pdo->query("SELECT DISTINCT keyword FROM items");
-$keywords = $keywordStmt->fetchAll(PDO::FETCH_COLUMN);
-
-// データ取得
-if ($filter) {
-  $stmt = $pdo->prepare("SELECT * FROM items WHERE keyword = ? ORDER BY created_at DESC");
-  $stmt->execute([$filter]);
+// SQL準備
+if ($searchKeyword !== '') {
+    $stmt = $pdo->prepare("SELECT * FROM items WHERE keyword = ? AND is_received = 0 ORDER BY id DESC");
+    $stmt->execute([$searchKeyword]);
 } else {
-  $stmt = $pdo->query("SELECT * FROM items ORDER BY created_at DESC");
+    $stmt = $pdo->query("SELECT * FROM items WHERE is_received = 0 ORDER BY id DESC");
+    //$stmt->execute();
 }
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>落とし物検索</title>
+  <title>落し物検索</title>
   <style>
     body {
       font-family: sans-serif;
-      padding: 20px;
+      padding: 30px;
+      background-color: #f7f7f7;
+    }
+    h2 {
       text-align: center;
     }
-    img {
-      max-width: 150px;
-      height: auto;
-      display: block;
-      margin: 10px auto;
+    .item {
+      background: #fff;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .item-box {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px auto;
-      width: 300px;
-      border-radius: 5px;
+    .item img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
     }
     .btn {
-      padding: 8px 16px;
-      font-size: 14px;
+      padding: 5px 15px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 3px;
       cursor: pointer;
+      margin-top: 10px;
+    }
+    form {
+      text-align: center;
+      margin-bottom: 20px;
     }
     select {
-      padding: 5px;
+      padding: 8px;
       font-size: 16px;
     }
   </style>
 </head>
 <body>
 
-  <h2>落とし物を検索</h2>
+<h2>落し物検索</h2>
 
-  <form method="get" action="search.php">
-    <label>キーワードで絞り込み:
-      <select name="keyword" onchange="this.form.submit()">
-        <option value="">全て表示</option>
-        <?php foreach ($keywords as $kw): ?>
-          <option value="<?= htmlspecialchars($kw) ?>" <?= $kw === $filter ? 'selected' : '' ?>><?= htmlspecialchars($kw) ?></option>
-        <?php endforeach; ?>
-      </select>
-    </label>
-  </form>
+<!-- 検索フォーム -->
+<form method="POST" action="search.php">
+  <label>
+    キーワードで検索：
+    <select name="search_keyword">
+      <option value="">すべて表示</option>
+      <option value="財布" <?= $searchKeyword == '財布' ? 'selected' : '' ?>>財布</option>
+      <option value="学生証" <?= $searchKeyword == '学生証' ? 'selected' : '' ?>>学生証</option>
+      <option value="傘" <?= $searchKeyword == '傘' ? 'selected' : '' ?>>傘</option>
+      <option value="文房具" <?= $searchKeyword == '文房具' ? 'selected' : '' ?>>文房具</option>
+    </select>
+    <button class="btn" type="submit">検索</button>
+  </label>
+</form>
 
-  <hr>
-
-  <?php if (count($items) === 0): ?>
-    <p>見つかりませんでした。</p>
-  <?php else: ?>
-    <?php foreach ($items as $item): ?>
-      <div class="item-box">
-        <img src="<?= htmlspecialchars($item['photo']) ?>" alt="画像">
-        <strong>キーワード:</strong> <?= htmlspecialchars($item['keyword']) ?><br>
-        <strong>現在の場所:</strong> <?= htmlspecialchars($item['current_location']) ?><br>
-        <form action="detail.php" method="get">
-          <input type="hidden" name="id" value="<?= $item['id'] ?>">
-          <button class="btn" type="submit">詳細</button>
-        </form>
-      </div>
-    <?php endforeach; ?>
-  <?php endif; ?>
+<!-- 検索結果表示 -->
+<?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+  <div class="item">
+    <?php if (!empty($row['photo'])) : ?>
+      <?php $base64 = base64_encode($row['photo']); ?>
+      <img src="data:image/png;base64,<?= $base64 ?>" alt="画像">
+    <?php else: ?>
+      <p>画像なし</p>
+    <?php endif; ?>
+    <p><strong>キーワード：</strong><?= htmlspecialchars($row['keyword']) ?></p>
+    <p><strong>現在の場所：</strong><?= htmlspecialchars($row['current_location']) ?></p>
+    <form action="detail.php" method="GET">
+      <input type="hidden" name="id" value="<?= $row['id'] ?>">
+      <button class="btn" type="submit">詳細</button>
+    </form>
+  </div>
+<?php endwhile; ?>
 
 </body>
 </html>
