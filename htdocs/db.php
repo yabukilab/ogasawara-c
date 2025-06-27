@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+
 $dbname = 'mydb'; // あなたのDB名
 $user = 'root';
 $pass = ''; // パスワードがない場合は空文字
