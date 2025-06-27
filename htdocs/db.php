@@ -1,13 +1,13 @@
 <?php
-//$host = '127.0.0.1'; // XAMPPでは通常これ
-//$dbname = 'mydb';    // 作ったDB名
-//$user = 'root';      // デフォルトユーザー
-//$pass = '';          // パスワードは空
+$host = 'localhost';
+$dbname = 'otoshimono';  // あなたのデータベース名
+$user = 'root';
+$pass = ''; // XAMPPの初期設定では空
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "DB接続成功しました！"; ←公開時はコメントアウトか削除！
+    // echo "DB接続成功しました！"; // ← 本番ではコメントアウト推奨
 } catch (PDOException $e) {
     exit('DB接続エラー: ' . $e->getMessage());
 }
