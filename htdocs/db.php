@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'otoshimono';  // あなたのデータベース名
+$dbname = 'mydb';  // あなたのデータベース名
 $user = 'root';
 $pass = ''; // XAMPPの初期設定では空
 
