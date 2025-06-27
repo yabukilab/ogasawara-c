@@ -1,8 +1,8 @@
 <?php
-$host = '127.0.0.1'; // XAMPPでは通常これ
-$dbname = 'mydb';    // 作ったDB名
-$user = 'root';      // デフォルトユーザー
-$pass = '';          // パスワードは空
+//$host = '127.0.0.1'; // XAMPPでは通常これ
+//$dbname = 'mydb';    // 作ったDB名
+//$user = 'root';      // デフォルトユーザー
+//$pass = '';          // パスワードは空
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
