@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'otoshimono'; // あなたのDB名
+$dbname = 'mydb'; // あなたのDB名
 $user = 'root';
 $pass = ''; // パスワードがない場合は空文字
 
