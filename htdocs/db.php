@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = '127.0.0.1';
 $dbname = 'mydb';  // あなたのデータベース名
 $user = 'root';
 $pass = ''; // XAMPPの初期設定では空
