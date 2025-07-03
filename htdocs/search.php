@@ -1,5 +1,6 @@
 <?php
 require 'db.php';
+require 'keywords.php';
 
 // 絞り込みキーワードの取得（POSTまたはGET）
 $searchKeyword = isset($_POST['search_keyword']) ? $_POST['search_keyword'] : '';
