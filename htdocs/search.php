@@ -83,8 +83,9 @@ if ($searchKeyword !== '') {
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
   <div class="item">
     <?php if (!empty($row['photo'])) : ?>
-      <?php $base64 = base64_encode($row['photo']); ?>
-      <img src="data:image/png;base64,<?= $base64 ?>" alt="画像">
+
+      <img src="data:image/jpeg;base64,<?= $base64 ?>" alt="画像">
+
     <?php else: ?>
       <p>画像なし</p>
     <?php endif; ?>
