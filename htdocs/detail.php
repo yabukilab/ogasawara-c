@@ -52,7 +52,7 @@ if (!$item) {
 </head>
 <body>
 
-  <form action="mark_received.php" method="post">
+   <form action="mark_received.php" method="post">
   <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
   <input type="hidden" name="keyword" value="<?= htmlspecialchars($item['keyword']) ?>">
   <input type="hidden" name="location" value="<?= htmlspecialchars($item['current_location']) ?>">
