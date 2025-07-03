@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-  <h2>登録完了しました</h2>
+  
   <p>ご協力ありがとうございました。</p>
   <a href="index.php" class="btn">戻る</a>
 
