@@ -87,7 +87,7 @@ if ($searchKeyword !== '') {
   <div class="item">
     <?php if (!empty($row['photo'])) : ?>
   <?php
-    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $finfo = new finfo(FILEINFO_MIME_TYPE);
     $mime = $finfo->buffer($row['photo']);
     $base64 = base64_encode($row['photo']);
   ?>
