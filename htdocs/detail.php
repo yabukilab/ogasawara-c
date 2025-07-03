@@ -52,19 +52,13 @@ if (!$item) {
 </head>
 <body>
 
-  <img src="<?= htmlspecialchars($item['photo']) ?>" alt="写真"><br>
-  <strong>キーワード:</strong> <?= htmlspecialchars($item['keyword']) ?><br>
-  <strong>見つけた場所:</strong> <?= htmlspecialchars($item['found_place']) ?><br>
-  <strong>現在の場所:</strong> <?= htmlspecialchars($item['current_location']) ?><br>
-  <strong>コメント:</strong> <?= htmlspecialchars($item['comment']) ?: "(なし)" ?><br><br>
-
-   <form action="search_complete.php" method="get">
-    <input type="hidden" name="keyword" value="<?= htmlspecialchars($item['keyword']) ?>">
-    <input type="hidden" name="location" value="<?= htmlspecialchars($item['current_location']) ?>">
-    <input type="hidden" name="id" value="<?= $item['id'] ?>">
-    <button class="btn green" type="button" onclick="window.history.back()">戻る</button>
-    <button class="btn red" type="submit">取りに行く</button>
-  </form>
+  <form action="mark_received.php" method="post">
+  <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
+  <input type="hidden" name="keyword" value="<?= htmlspecialchars($item['keyword']) ?>">
+  <input type="hidden" name="location" value="<?= htmlspecialchars($item['current_location']) ?>">
+  <button class="btn green" type="button" onclick="window.history.back()">戻る</button>
+  <button class="btn red" type="submit">取りに行く</button>
+</form>
 
 </body>
 </html>
