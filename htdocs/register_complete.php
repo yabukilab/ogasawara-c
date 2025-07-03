@@ -7,42 +7,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $foundPlace = $_POST['found_place'];
     $comment = $_POST['comment'];
 
-    file_put_contents('log.txt', print_r($_FILES, true));
-
-    // 画像をバイナリで読み込む
+    // 画像の処理
     $photoData = null;
+    $maxSize = 2 * 1024 * 1024; // 2MB上限
+
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $photoData = file_get_contents($_FILES['photo']['tmp_name']);
+        if ($_FILES['photo']['size'] > $maxSize) {
+            exit("画像サイズが大きすぎます。2MB以下にしてください。");
+        }
+
+        $tmpName = $_FILES['photo']['tmp_name'];
+
+        if (!is_uploaded_file($tmpName)) {
+            exit("画像ファイルが正しくアップロードされませんでした。");
+        }
+
+        $photoData = file_get_contents($tmpName);
+    } else {
+        exit("画像のアップロードに失敗しました。（エラーコード: " . $_FILES['photo']['error'] . "）");
     }
 
     $stmt = $pdo->prepare("INSERT INTO items (photo, keyword, current_location, found_place, comment, is_received) VALUES (?, ?, ?, ?, ?, 0)");
     $stmt->execute([$photoData, $keyword, $currentLocation, $foundPlace, $comment]);
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>登録完了</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding-top: 100px; }
-    h2 { color: #4CAF50; margin-bottom: 30px; }
-    .btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 30px;
-    }
-  </style>
-</head>
-<body>
-  <h2>登録完了しました</h2>
-  <p>ご協力ありがとうございました。</p>
-  <a href="index.php"><button class="btn">戻る</button></a>
-</body>
-</html>
