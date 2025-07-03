@@ -70,10 +70,13 @@ if ($searchKeyword !== '') {
     キーワードで検索：
     <select name="search_keyword">
       <option value="">すべて表示</option>
-      <option value="財布" <?= $searchKeyword == '財布' ? 'selected' : '' ?>>財布</option>
-      <option value="学生証" <?= $searchKeyword == '学生証' ? 'selected' : '' ?>>学生証</option>
-      <option value="傘" <?= $searchKeyword == '傘' ? 'selected' : '' ?>>傘</option>
-      <option value="文房具" <?= $searchKeyword == '文房具' ? 'selected' : '' ?>>文房具</option>
+        <?php
+          require 'keywords.php';
+          foreach ($keywords as $value => $label) {
+            $selected = ($searchKeyword ?? '') === $value ? 'selected' : '';
+            echo "<option value=\"{$value}\" {$selected}>{$label}</option>";
+          }
+      ?>
     </select>
     <button class="btn" type="submit">検索</button>
   </label>
@@ -83,17 +86,11 @@ if ($searchKeyword !== '') {
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
   <div class="item">
     <?php if (!empty($row['photo'])) : ?>
-    <?php $base64 = base64_encode($row['photo']); ?>
-    <img src="data:image/png;base64,<?= $base64 ?>" alt="画像">
+      <?php $base64 = base64_encode($row['photo']); ?>
+      <img src="data:image/png;base64,<?= $base64 ?>" alt="画像">
     <?php else: ?>
       <p>画像なし</p>
     <?php endif; ?>
-
-<?php
-  $base64 = base64_encode($row['photo']);
-  echo '<img src="data:image/png;base64,' . $base64 . '" alt="画像">';
-?>
-
     <p><strong>キーワード：</strong><?= htmlspecialchars($row['keyword']) ?></p>
     <p><strong>現在の場所：</strong><?= htmlspecialchars($row['current_location']) ?></p>
     <form action="detail.php" method="GET">
