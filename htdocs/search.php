@@ -79,11 +79,12 @@ if ($searchKeyword !== '') {
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
   <div class="item">
     <?php if (!empty($row['photo'])) : ?>
-      <?php $base64 = base64_encode($row['photo']); ?>
-      <img src="data:image/png;base64,<?= $base64 ?>" alt="画像">
-    <?php else: ?>
-      <p>画像なし</p>
-    <?php endif; ?>
+  <?php $mime = finfo_buffer(finfo_open(), $row['photo'], FILEINFO_MIME_TYPE); ?>
+  <?php $base64 = base64_encode($row['photo']); ?>
+  <img src="data:<?= $mime ?>;base64,<?= $base64 ?>" alt="画像">
+<?php else: ?>
+  <p>画像なし</p>
+<?php endif; ?>
     <p><strong>キーワード：</strong><?= htmlspecialchars($row['keyword']) ?></p>
     <p><strong>現在の場所：</strong><?= htmlspecialchars($row['current_location']) ?></p>
     <form action="detail.php" method="GET">
