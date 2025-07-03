@@ -1,17 +1,15 @@
 <?php
 require 'db.php';
-require 'keywords.php';
 
-// 絞り込みキーワードの取得（POSTまたはGET）
+// 検索キーワード取得
 $searchKeyword = isset($_POST['search_keyword']) ? $_POST['search_keyword'] : '';
 
-// SQL準備
+// クエリ準備（受け取ったものは除外）
 if ($searchKeyword !== '') {
     $stmt = $pdo->prepare("SELECT * FROM items WHERE keyword = ? AND is_received = 0 ORDER BY id DESC");
     $stmt->execute([$searchKeyword]);
 } else {
     $stmt = $pdo->query("SELECT * FROM items WHERE is_received = 0 ORDER BY id DESC");
-    //$stmt->execute();
 }
 ?>
 
@@ -21,14 +19,8 @@ if ($searchKeyword !== '') {
   <meta charset="UTF-8">
   <title>落し物検索</title>
   <style>
-    body {
-      font-family: sans-serif;
-      padding: 30px;
-      background-color: #f7f7f7;
-    }
-    h2 {
-      text-align: center;
-    }
+    body { font-family: sans-serif; padding: 30px; background-color: #f7f7f7; }
+    h2 { text-align: center; }
     .item {
       background: #fff;
       padding: 15px;
@@ -83,19 +75,15 @@ if ($searchKeyword !== '') {
   </label>
 </form>
 
-<!-- 検索結果表示 -->
+<!-- 検索結果 -->
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
   <div class="item">
     <?php if (!empty($row['photo'])) : ?>
-  <?php
-    $finfo = new finfo(FILEINFO_MIME_TYPE);
-    $mime = $finfo->buffer($row['photo']);
-    $base64 = base64_encode($row['photo']);
-  ?>
-  <img src="data:<?= $mime ?>;base64,<?= $base64 ?>" alt="画像">
-<?php else: ?>
-  <p>画像なし</p>
-<?php endif; ?>
+      <?php $base64 = base64_encode($row['photo']); ?>
+      <img src="data:image/png;base64,<?= $base64 ?>" alt="画像">
+    <?php else: ?>
+      <p>画像なし</p>
+    <?php endif; ?>
     <p><strong>キーワード：</strong><?= htmlspecialchars($row['keyword']) ?></p>
     <p><strong>現在の場所：</strong><?= htmlspecialchars($row['current_location']) ?></p>
     <form action="detail.php" method="GET">

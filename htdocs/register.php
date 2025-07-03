@@ -13,7 +13,7 @@
 
 <h2>落し物を登録</h2>
 
-<form action="register_complete.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
+<form action="register_complete.php" method="POST" enctype="multipart/form-data" >
   <label>写真を追加:
     <input type="file" name="photo" accept="image/*" required>
   </label>
