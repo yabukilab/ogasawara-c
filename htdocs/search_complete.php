@@ -1,4 +1,4 @@
-<?php
+<?php // GETパラメータからキーワードと場所を取得（なければ空文字）
 $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 $location = isset($_GET['location']) ? $_GET['location'] : '';
 ?>
