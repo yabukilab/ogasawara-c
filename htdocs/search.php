@@ -70,15 +70,15 @@ if ($searchKeyword !== '') {
   <label>
     キーワードで検索：
     <select name="search_keyword">
-      <option value="">すべて表示</option>
-        <?php
-          require 'keywords.php';
-          foreach ($keywords as $keyword => $label) {
-            $selected = ($searchKeyword ?? '') === $keyword ? 'selected' : '';
-            echo "<option value=\"{$keyword}\" {$selected}>{$label}</option>";
-          }
-      ?>
-    </select>
+  <option value="">すべて表示</option>
+  <?php
+    require 'keywords.php';
+    foreach ($keywords as $keyword) {
+      $selected = ($searchKeyword ?? '') === $keyword ? 'selected' : '';
+      echo "<option value=\"{$keyword}\" {$selected}>{$keyword}</option>";
+    }
+  ?>
+</select>
     <button class="btn" type="submit">検索</button>
   </label>
 </form>
