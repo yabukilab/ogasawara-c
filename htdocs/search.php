@@ -73,9 +73,9 @@ if ($searchKeyword !== '') {
       <option value="">すべて表示</option>
         <?php
           require 'keywords.php';
-          foreach ($keywords as $value => $label) {
-            $selected = ($searchKeyword ?? '') === $value ? 'selected' : '';
-            echo "<option value=\"{$value}\" {$selected}>{$label}</option>";
+          foreach ($keywords as $keyword => $label) {
+            $selected = ($searchKeyword ?? '') === $keyword ? 'selected' : '';
+            echo "<option value=\"{$keyword}\" {$selected}>{$label}</option>";
           }
       ?>
     </select>
