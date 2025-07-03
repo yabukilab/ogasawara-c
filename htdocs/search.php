@@ -89,8 +89,7 @@ if ($searchKeyword !== '') {
     <?php if (!empty($row['photo'])) : ?>
   <?php
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
-    $mime = finfo_buffer($finfo, $row['photo']);
-    finfo_close($finfo);
+    $mime = $finfo->buffer($row['photo']);
     $base64 = base64_encode($row['photo']);
   ?>
   <img src="data:<?= $mime ?>;base64,<?= $base64 ?>" alt="画像">
