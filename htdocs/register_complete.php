@@ -6,6 +6,12 @@ var_dump($_FILES);
 echo '</pre>';
 exit; // これを入れて登録処理が続かないようにする
 
+// それ以下の処理は一旦止まる
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    ...
+}
+?>
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $keyword = $_POST['keyword'];
     $currentLocation = $_POST['current_location'];
