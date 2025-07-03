@@ -1,5 +1,10 @@
 <?php
 require 'db.php';
+echo '<pre>';
+var_dump($_POST);
+var_dump($_FILES);
+echo '</pre>';
+exit; // これを入れて登録処理が続かないようにする
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $keyword = $_POST['keyword'];
