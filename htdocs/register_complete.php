@@ -17,11 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // ファイルの中身をバイナリとして読み込む
         $photoData = file_get_contents($tmpName);
-    } else {
-        // アップロードエラーの場合のエラーコードを取得
-        $uploadError = $_FILES['photo']['error'] ?? 'ファイルが送信されていません';
-        exit("ファイルアップロードエラー: エラーコード {$uploadError}");
-    }
+    } 
+    
 
     // DBに保存
     $stmt = $pdo->prepare("INSERT INTO items (photo, keyword, current_location, found_place, comment, is_received) VALUES (?, ?, ?, ?, ?, 0)");
