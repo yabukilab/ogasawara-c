@@ -10,15 +10,12 @@
 <body>
 
 <h2>落し物を登録</h2>
-
-<form action="register_complete.php" method="POST" enctype="multipart/form-data" >
-  <label>写真を追加:
+<form action="register_complete.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()"> <label>写真を追加:
     <input type="file" name="photo" accept="image/*" required>
   </label>
 
   <label>キーワード:
-      <select name="keyword">
-        <option value="">選んでください</option>
+      <select name="keyword" required> <option value="">選んでください</option>
 
         <?php
           require 'keywords.php';
@@ -30,8 +27,7 @@
     </label>
 
     <label>現在の場所:
-      <select name="current_location">
-        <option value="">選んでください</option>
+      <select name="current_location" required> <option value="">選んでください</option>
         <option value="教務課">教務課</option>
         <option value="見つけた場所">見つけた場所</option>
       </select>
@@ -47,8 +43,7 @@
 
   <button class="btn" type="submit">登録する</button>
 </form>
-
-<script>
+</div> <script>
 function validateForm() {
   const form = document.forms[0];
   if (!form.photo.value || !form.keyword.value || !form.current_location.value || !form.found_place.value) {
