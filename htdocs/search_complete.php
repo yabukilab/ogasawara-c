@@ -13,15 +13,14 @@ $location = isset($_GET['location']) ? $_GET['location'] : '';
    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
+  <div class="complete-container"> <h2>検索完了です</h2>
 
-  <h2>検索完了です</h2>
+    <p>
+      「<?= htmlspecialchars($keyword) ?>」は「<?= htmlspecialchars($location) ?>」にあります。<br>
+      ＊この画面は今後表示されないためご注意ください。
+    </p>
 
-  <p>
-    「<?= htmlspecialchars($keyword) ?>」は「<?= htmlspecialchars($location) ?>」にあります。<br>
-    ＊この画面は今後表示されないためご注意ください。
-  </p>
-
-  <a href="index.php"><button class="btn">戻る</button></a>
-
+    <a href="index.php"><button class="btn">戻る</button></a>
+  </div>
 </body>
 </html>
