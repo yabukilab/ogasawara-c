@@ -29,9 +29,8 @@ h1, h2 {
   opacity: 0.8;
 }
 
-/* 修正: 水色ボタンのスタイルを追加 */
 .btn-lightblue {
-  background-color: #746BFF; /* 水色の例 */
+  background-color: hsl(244, 100%, 64%);
   color: white;
 }
 
@@ -193,7 +192,7 @@ h1, h2 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .complete-container h2 {
-  color: #4CAF50;
+  color: #000000;
   margin-bottom: 30px;
   font-size: 30px;
 }
@@ -203,7 +202,7 @@ h1, h2 {
   line-height: 1.6;
 }
 .complete-container .btn {
-  background-color: #4CAF50;
+  background-color: #000000;
   color: white;
   padding: 12px 24px;
   font-size: 16px;
