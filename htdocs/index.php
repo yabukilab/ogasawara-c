@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>落し物管理システム</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
   <h1>落し物管理システム</h1>

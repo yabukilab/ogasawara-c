@@ -8,29 +8,9 @@ $location = isset($_GET['location']) ? $_GET['location'] : '';
 <head>
   <meta charset="UTF-8">
   <title>検索完了</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-    .btn {
-      background-color: #4CAF50;
-      color: white;
-      font-size: 16px;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 

@@ -36,32 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <title>登録完了</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 100px 20px;
-      background-color: #f7f7f7;
-    }
-    h2 {
-      color: #4CAF50;
-      margin-bottom: 30px;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
-    .btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-  </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 

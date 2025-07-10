@@ -18,40 +18,9 @@ if ($searchKeyword !== '') {
 <head>
   <meta charset="UTF-8">
   <title>落し物検索</title>
-  <style>
-    body { font-family: sans-serif; padding: 30px; background-color: #f7f7f7; }
-    h2 { text-align: center; }
-    .item {
-      background: #fff;
-      padding: 15px;
-      margin: 15px auto;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .item img {
-      width: 150px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .btn {
-      padding: 5px 15px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    form {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    select {
-      padding: 8px;
-      font-size: 16px;
-    }
-  </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 

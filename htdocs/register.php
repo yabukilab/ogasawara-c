@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>落し物登録</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding-top: 50px; }
-    label, select, input, textarea { display: block; margin: 10px auto; width: 300px; font-size: 16px; }
-    .btn { padding: 10px 25px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer; }
-  </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 
