@@ -22,33 +22,9 @@ if (!$item) {
 <head>
   <meta charset="UTF-8">
   <title>落とし物詳細</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    img {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-    .btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      margin: 10px;
-      cursor: pointer;
-    }
-    .green {
-      background-color: #4CAF50;
-      color: white;
-    }
-    .red {
-      background-color: #f44336;
-      color: white;
-    }
-  </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 
