@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>落し物登録</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-   <link rel="stylesheet" href="style.css"> 
-   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
+<div id="register-container"> <h2>落し物を登録</h2>
 
-<h2>落し物を登録</h2>
 <form action="register_complete.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()"> <label>写真を追加:
     <input type="file" name="photo" accept="image/*" required>
   </label>
