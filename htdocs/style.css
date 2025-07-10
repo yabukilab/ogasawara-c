@@ -3,13 +3,14 @@ body {
   font-family: sans-serif;
   text-align: center;
   background-color: #f7f7f7;
-  color: #333;
+  color: #333; /* 本文の文字色 */
   margin: 0;
   padding: 0;
 }
 
+/* 修正: h1 と h2 の色を黒色（またはデフォルト）に戻す */
 h1, h2 {
-  color: #4CAF50;
+  color: #333; /* ここを #333 に変更しました。元のテキスト色と同じになります。 */
   margin-bottom: 20px;
 }
 
@@ -20,7 +21,7 @@ h1, h2 {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block; /* ボタンを横並びにするため */
+  display: inline-block;
   margin: 5px;
   transition: background-color 0.3s ease;
 }
@@ -36,12 +37,15 @@ h1, h2 {
 #index-container h1 {
   margin-bottom: 100px;
   font-size: 36px;
+  /* ここに個別の色指定をしたい場合は追加できますが、
+     共通のh1, h2で#333にしたので不要です */
 }
 .btn-search { background-color: #4CAF50; color: white; }
 .btn-register { background-color: #f44336; color: white; }
 .note { color: red; margin-top: 10px; font-size: 14px; }
 
 
+/* 以下、変更なし */
 /* ==================== search.php スタイル ==================== */
 #search-container {
   padding: 30px;
@@ -161,7 +165,7 @@ h1, h2 {
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box; /* パディングを含めて幅を計算 */
+  box-sizing: border-box;
 }
 #register-container .btn {
   background-color: #f44336;
@@ -181,7 +185,7 @@ h1, h2 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .complete-container h2 {
-  color: #4CAF50;
+  color: #4CAF50; /* ここは緑色のままで良いですか？もし黒なら#333に変更してください */
   margin-bottom: 30px;
   font-size: 30px;
 }
