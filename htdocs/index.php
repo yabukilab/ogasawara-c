@@ -3,22 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>落し物管理システム</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding-top: 100px; }
-    h1 { margin-bottom: 100px; }
-    .btn {
-      font-size: 20px;
-      padding: 20px 40px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 0 20px;
-      color: white;
-    }
-    .btn-search { background-color: #4CAF50; }
-    .btn-register { background-color: #f44336; }
-    .note { color: red; margin-top: 10px; }
-  </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
   <h1>落し物管理システム</h1>

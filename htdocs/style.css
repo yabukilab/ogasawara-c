@@ -1,0 +1,198 @@
+/* ==================== 共通スタイル ==================== */
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block; /* ボタンを横並びにするため */
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* ==================== index.php スタイル ==================== */
+#index-container {
+  padding-top: 100px;
+}
+#index-container h1 {
+  margin-bottom: 100px;
+  font-size: 36px;
+}
+.btn-search { background-color: #4CAF50; color: white; }
+.btn-register { background-color: #f44336; color: white; }
+.note { color: red; margin-top: 10px; font-size: 14px; }
+
+
+/* ==================== search.php スタイル ==================== */
+#search-container {
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#search-container h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.search-form {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.search-form label {
+  font-size: 18px;
+}
+.search-form select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.search-form .btn {
+  padding: 8px 20px;
+  font-size: 16px;
+  margin-top: 0;
+}
+.item {
+  background: #fff;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.item img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.item p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+.item .btn {
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+
+/* ==================== detail.php スタイル ==================== */
+#detail-container {
+  padding: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#detail-container img {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+#detail-container p {
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+.btn-green {
+  background-color: #4CAF50;
+  color: white;
+}
+.btn-red {
+  background-color: #f44336;
+  color: white;
+}
+#detail-container form {
+  margin-top: 30px;
+}
+
+
+/* ==================== register.php スタイル ==================== */
+#register-container {
+  padding-top: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding-bottom: 30px;
+}
+#register-container h2 {
+  font-size: 30px;
+}
+#register-container label {
+  display: block;
+  margin: 15px auto;
+  width: 80%;
+  max-width: 350px;
+  font-size: 16px;
+  text-align: left;
+}
+#register-container input[type="file"],
+#register-container select,
+#register-container input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* パディングを含めて幅を計算 */
+}
+#register-container .btn {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+/* ==================== register_complete.php & search_complete.php スタイル ==================== */
+.complete-container {
+  padding: 100px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.complete-container h2 {
+  color: #4CAF50;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+.complete-container p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.complete-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+}
