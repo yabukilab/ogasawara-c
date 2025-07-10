@@ -26,9 +26,7 @@ if ($searchKeyword !== '') {
 
 <h2>落し物検索</h2>
 
-<!-- 検索フォーム -->
-<form method="POST" action="search.php">
-  <label>
+<form method="POST" action="search.php" class="search-form"> <label>
     キーワードで検索：
     <select name="search_keyword">
   <option value="">すべて表示</option>
@@ -44,7 +42,6 @@ if ($searchKeyword !== '') {
   </label>
 </form>
 
-<!-- 検索結果 -->
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
   <div class="item">
     <?php if (!empty($row['photo'])) : ?>
@@ -62,6 +59,5 @@ if ($searchKeyword !== '') {
     </form>
   </div>
 <?php endwhile; ?>
-
-</body>
+</div> </body>
 </html>
