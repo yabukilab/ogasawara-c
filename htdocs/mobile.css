@@ -1,7 +1,7 @@
 /* ==================== スマートフォン向けスタイル (768px以下) ==================== */
 @media (max-width: 768px) {
   body {
-    padding: 15px; /* 全体的なパディングを小さく */
+    padding: 15px;
   }
 
   /* index.php */
@@ -13,9 +13,9 @@
     margin-bottom: 50px;
   }
   #index-container .btn {
-    display: block; /* ボタンを縦に並べる */
-    width: 80%; /* ボタンの幅を調整 */
-    margin: 20px auto; /* 中央揃え */
+    display: block;
+    width: 80%;
+    margin: 20px auto;
     font-size: 18px;
     padding: 15px 30px;
   }
@@ -42,8 +42,8 @@
     margin: 10px auto;
   }
   .item img {
-    width: 100%; /* スマホで画像を横幅いっぱいに表示 */
-    max-width: 200px; /* 最大幅を設定して大きくなりすぎないように */
+    width: 100%;
+    max-width: 200px;
   }
   .item p {
     font-size: 14px;
@@ -80,7 +80,8 @@
   }
   #register-container label {
     width: 90%;
-    max-width: unset; /* PCでのmax-widthを解除 */
+    max-width: unset;
+    text-align: left; /* 修正: 左揃えにする */
   }
   #register-container input[type="file"],
   #register-container select,
