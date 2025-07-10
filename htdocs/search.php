@@ -39,7 +39,7 @@ if ($searchKeyword !== '') {
     }
   ?>
 </select>
-    <button class="btn btn-green" type="submit">検索</button> </label>
+    <button class="btn btn-lightblue" type="submit">検索</button> </label>
 </form>
 
 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
@@ -55,7 +55,7 @@ if ($searchKeyword !== '') {
     <p><strong>現在の場所：</strong><?= htmlspecialchars($row['current_location']) ?></p>
     <form action="detail.php" method="GET">
       <input type="hidden" name="id" value="<?= $row['id'] ?>">
-      <button class="btn btn-green" type="submit">詳細</button> </form>
+      <button class="btn btn-lightblue" type="submit">詳細</button> </form>
   </div>
 <?php endwhile; ?>
 </div>
