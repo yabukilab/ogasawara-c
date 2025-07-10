@@ -8,9 +8,8 @@ body {
   padding: 0;
 }
 
-/* 修正: h1 と h2 の色を黒色に戻す */
 h1, h2 {
-  color: #333; /* ここを #333 に変更しました。 */
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -28,6 +27,12 @@ h1, h2 {
 
 .btn:hover {
   opacity: 0.8;
+}
+
+/* 修正: 水色ボタンのスタイルを追加 */
+.btn-lightblue {
+  background-color: #746BFF; /* 水色の例 */
+  color: white;
 }
 
 /* ==================== index.php スタイル ==================== */
@@ -147,18 +152,17 @@ h1, h2 {
 }
 #register-container label {
   display: block;
-  margin: 15px auto; /* 上下は15px、左右はauto */
+  margin: 15px auto;
   width: 80%;
   max-width: 350px;
   font-size: 16px;
   text-align: left;
 }
-/* 修正: 各入力項目の下部にスペースを追加 */
 #register-container label + label,
 #register-container label + input[type="file"],
 #register-container label + select,
 #register-container label + input[type="text"] {
-  margin-top: 25px; /* 上の要素との間に余白を追加 */
+  margin-top: 25px;
 }
 #register-container input[type="file"],
 #register-container select,
@@ -189,7 +193,7 @@ h1, h2 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .complete-container h2 {
-  color: #4CAF50; /* 必要であればここも #333 に変更してください */
+  color: #4CAF50;
   margin-bottom: 30px;
   font-size: 30px;
 }
